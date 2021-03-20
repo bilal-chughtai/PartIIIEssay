@@ -6,10 +6,16 @@
 \usepackage{enumitem}% http://ctan.org/pkg/enumitem
 \usepackage[T1]{fontenc} % if needed
 
-
+\renewcommand{\v}[1]{\mathbf{#1}}
 \newcommand{\Mp}{M_{pl}}
 \newcommand{\half}{\frac{1}{2}}
 \newcommand{\bphi}{\bar{\phi}}
+\newcommand{\ann}[1]{\hat{a}_{\v{#1}}}
+\newcommand{\cre}[1]{\hat{a}^\dagger_{\v{#1}}}
+\newcommand{\anns}[2]{\hat{a}_{\v{#1}#2}}
+\newcommand{\cres}[2]{\hat{a}^\dagger_{\v{#1}#2}}
+\newcommand{\vac}{|0>}
+\newcommand{\fint}[1]{\int \frac{d^3 #1}{(2\pi)^3}}
 
 
 \title{\boldmath The Search for CMB B-mode Polarization from Inflationary Gravitational Waves}
@@ -50,8 +56,11 @@ define scale factor
 define proper time
 define dot and '
 units hbar = c = 1
+fourier convention
 
 \section{Inflation}
+
+$\v{t}$
 
 Inflation is a brief, but very important, period of accelerated expansion in the very early universe, first proposed by [Guth 1981]. It was initially motivated by three problems with the previous standard big bang cosmology, namely the flatness problem (why was the ratio of energy density and critical density so close to unity), the monopole problem, and the horizon problem (why are seemingly casually disconnected regions of the CMB at the same temperature to very high accuracy). Since the birth of the idea, it has become the leading paradigm to the early universe, as it conveniently also provides a quantum mechanical mechanism of generating the primordial density perturbations seeding cosmological evolution.
 
@@ -61,7 +70,7 @@ A flat, homogeneous and isotropic universe is described by the Friedmannâ€“LemaÃ
 
 \begin{equation}
 \label{FLRW}
-ds^2 = - dt^2 + a^2(t)d\vec{x}^2 = a^2(\tau)(-d\tau^2+d\vec{x}^2)
+ds^2 = - dt^2 + a^2(t)d\v{x}^2 = a^2(\tau)(-d\tau^2+d\v{x}^2)
 \end{equation}
 
 which obeys the Einstein equation $G_{ab} = \Mp^2 T_{ab}$ \footnote{Note throughout this essay we assume the validity of General Relativity to cosmology. One can study inflation without this assumption, as detailed in for example [] ........}, sourced by a perfect fluid with energy momentum tensor $T_{ab}$, which by homogeneity and isotropy must take form
@@ -101,9 +110,9 @@ In order to solve the horizon problem we require inflation to persist for a long
 
 \subsection{Single Scalar Field Dynamics}
 
-The simplest class of inflation models are those consisting of a single scalar field, slowly rolling down its potential. These postulate the existence of a scalar ``inflation'' field $\phi(t,\vec{x})$ with lagrangian density $\mathcal{L} = -\half \partial^\mu \phi \partial_\mu \phi - V(\phi)$ and energy momentum tensor $T_{\mu\nu}= \partial)_\mu \phi \partial_\nu \phi - g_{\mu\nu}\mathcal{L}$. \\
+The simplest class of inflation models are those consisting of a single scalar field, slowly rolling down its potential. These postulate the existence of a scalar ``inflation'' field $\phi(t,\v{x})$ with lagrangian density $\mathcal{L} = -\half \partial^\mu \phi \partial_\mu \phi - V(\phi)$ and energy momentum tensor $T_{\mu\nu}= \partial)_\mu \phi \partial_\nu \phi - g_{\mu\nu}\mathcal{L}$. \\
 
-Here we consider the classical background evolution, ie take $\phi(t,\vec{x}) = \bphi(t)$. There is of course no reason why the field should not also fluctuate spatially, which we consider in the next section. From \ref{densityandpressure} we see that 
+Here we consider the classical background evolution, ie take $\phi(t,\v{x}) = \bphi(t)$. There is of course no reason why the field should not also fluctuate spatially, which we consider in the next section. From \ref{densityandpressure} we see that 
 
 
 SOME MISTAKE HERE OR IN PREVIOUS DEF
@@ -150,6 +159,7 @@ From here we may calculate the number of e folds of inflation from some time to 
 
 \begin{equation}
 N(t) := \ln{\frac{a(t_{end}}{a(t)}} = \int_a^a(t) d(\ln{a}) = \int_t^{t_{end}} HDt = \int_{\bphi(t)}^{\bphi_end} \frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}
+\label{efolds}
 \end{equation}
 
 using $Hdt=\frac{H}{\dot{\bphi}}d\bphi=\frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}$
@@ -159,21 +169,22 @@ using $Hdt=\frac{H}{\dot{\bphi}}d\bphi=\frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}$
 If the inflaton can vary in time, it can also vary in space. The discussion here follows [Baumann]. We consider pertubations over a background
 
 \begin{equation}
-\phi(\vec{x},\tau) = \bphi(\tau) + \frac{f(\tau, \vec{x})}{a(\tau})
+\phi(\v{x},\tau) = \bphi(\tau) + \frac{f(\tau, \v{x})}{a(\tau})
 \label{phiexpand}
 \end{equation}
 
 We begin with the action for the inflaton, minimally coupled to the metric.
 
 \begin{equation}
-S = \int d\tau d^3x \sqrt{-g} (-\half g^{\mu \nu}\partial_\mu \phi\partial_\nu \phi - V(\phi)  
+S =\int d\tau d^3x \mathcal{L}  =  \int d\tau d^3x \sqrt{-g} (-\half g^{\mu \nu}\partial_\mu \phi\partial_\nu \phi - V(\phi)  
 \end{equation}
 
 Plugging in the unperturbed FLRW metric we get 
 
 
 \begin{equation}
-S = \int d\tau d^3x \half a^2 [(\phi ' )^2 -(\nabla \phi)^2]-a^4V(\phi)
+S = \int d\tau d^3x \mathcal{L}  = \int d\tau d^3x \half a^2 [(\phi ' )^2 -(\nabla \phi)^2]-a^4V(\phi)
+\label{scalarfieldaction}
 \end{equation}
 
 We now plug in \ref{phiexpand} and expand to 2nd order in $f$. The first order piece just gives the Klein Gordon for the background field (in conformal time), as expected. We get
@@ -184,8 +195,133 @@ S^{(2)} = \half \int d\tau d^3x (f')^2 - (\nabla f)^2 + (\frac{a''}{a}-a^2V'')f^
 
 after integrating by parts and making use of \ref{F2} in conformal time. In the slow roll approximation we may drop the potential term since:
 
+NEED TO ADD
+
+and so 
+
+\begin{equation}
+S^{(2)} \approx \half \int d\tau d^3x (f')^2 - (\nabla f)^2 + \frac{a''}{a}f^2
+\end{equation}
+
+Note since we have dropped the potential entirely, this is just the second order action for a massless scalar field. Integrating by parts and demanding $S^{(2)}=0$ gives the Muhkanov Sasaki equation, which we can write in real or fourier space:
+
+\begin{align}
+f''-\nabla^2f-\frac{a''}{a}f &= 0 \\
+\Leftrightarrow f''_{\v{k}} + (k^2-\frac{a''}{a})f_{\v{k}} &= 0
+\label{MS}
+\end{align}
+
+We treat these perturbations $f$ quantum mechanically, and so require the technqiques of QFT on curved spacetimes. We'll outline the key steps in quantising this system.
+
+The conjugate momentum to $f$ is $\pi(\tau, \v{x}) =  \frac{\partial \mathcal{L}}{\partial f'} = f'$ using \ref{scalarfieldaction}. We promote these to operators $\hat{f}(\tau, \v{x})$ and $\hat{\pi}(\tau, \v{x})$ satisfying equal time commutation relations $[\hat{f}(\tau, \v{x}), \hat{\pi}(\tau, \v{x'}] = i\delta(\v{x}-\v{x'}$ or equivalently in fourier space $[\hat{f}_{\v{k}}(\tau), \hat{\pi}_{\v{k'}}(\tau)] = (2\pi)^3i\delta(\v{k}+\v{k'})$.
+
+We mode expand $\hat{f}_{\v{k}}(\tau) = f_k(\tau)\ann{k}+f_k^*(\tau)\cre{k}$, demanding the modefunctions $f_k(\tau)$ and $f_k^*(\tau)$ are two linearly independent solutions of the Muhkanov-Sasaki equation. 
+
+Substiuting into the commutation relations we get 
+
+\begin{equation}
+W[f_k,f_k^*]\times[\ann(k), \cre(k)] = (2\pi)^3\delta(\v{k}+\v{k'})
+\end{equation}
+
+which after normalising the Wronskian to 1 gives the usual commutator of annhilation and creation operators
+
+\begin{equation}
+[\ann{k}, \cre{k}] = (2\pi)^3\delta(\v{k}+\v{k'})
+\end{equation}
+
+We can now define the Hilbert space as the usual Fock space formed by unions of n particle states obtained by applying n creation operators to the the vacuum, satisfying 
+
+\begin{equation}
+\ann{k}\vac =0 \forall \v{k}
+\end{equation}
+
+Note this doesn't completely fix the vacuum, since we have not yet fixed our mode functions. We'll construct the Bunch-Davies vacuum, by imposing the mode functions must be positive frequency \footnote{this is required for our hilbert space to only consist of positive norm states, and is a common requirement in many quantum field theories}, and also match the minkowski mode functions $f_k(\tau) \alpha e^{\pm ik\tau}$ at early times, since at early times $\tau \rightarrow -\infty$, $\ref{MS} \rightarrow  f''_{\v{k}} + (k^2)f_{\v{k}} = 0$. 
+
+We further make the quasi-deSitter approximation, where H is constant and $a=-\frac{1}{H\tau}$, and so \ref{MS} becomes
+
+\begin{equation}
+f''_k + (k^2-\frac{2}{\tau^2})f_k = 0
+\end{equation}
+
+with general solution
+
+\begin{equation}
+f_k(\tau) = \alpha \frac{e^{-ik\tau}}{\sqrt{2k}}{(1-\frac{i}{k\tau}} + \beta \frac{e^{ik\tau}}{\sqrt{2k}}{(1+\frac{i}{k\tau}})
+\end{equation}
+
+which matches our initial condition for $\beta = 0$ and $\alpha=1$ giving the Bunch Davies mode function 
+
+\begin{equation}
+f_k(\tau) = \frac{e^{-ik\tau}}{\sqrt{2k}}{(1-\frac{i}{k\tau}})
+\end{equation}
+
+We now have all we require to calcuate the spatial variance, or two point correlator $\varepsilon(0)$ of $f$ and therefore of $\delta \phi = f/a$. First recall the relevant definitions:
+
+the two point correlation function of a field f is given by at fixed (omitted) time $\tau$ by
+
+\begin{equation} 
+\varepsilon_f(\v{x})f(\v{y}) = <f(\v{x})f(\v{y})> = <0|f(\v{x}f(\v{y})|0>
+\end{equation}
+
+Assuming statistical homogeneity and isotropy, this depends only on $|\v{x}-\v{y}|$, and is related to the power spectrum:
+
+\begin{equation}
+<f_{\v{k}}f_{\v{k'}}> = <0|f_{\v{k}}f_{\v{k'}}|0>=(2\pi)^3\delta(\v{k}+\v{k'})P_f(k)\
+\end{equation}
+
+by
+
+\begin{equation}
+\varepsilon(r)=\varepsilon(\v{x},\v{x}+\v{r})=\fint{k} P_f(k)e^{i\v{k}\cdot\v{r}}
+\end{equation}
 
 
+The power spectrum of our field is easily computed to be 
+
+\begin{equation}
+<f_{\v{k}}f_{\v{k'}}> = <(f_k(\tau)\ann{k}+f_k^*(\tau)\cre{k})(f_k(\tau)\ann{k'}+f_k^*(\tau)\cre{k'}> = |f_k|^2
+\end{equation}
+
+and so the dimensionless power spectra of interest are  
+
+\begin{align}
+\Delta^2_f(k):=\frac{k^3}{2\pi^2}P_f(k) &= \frac{k^3}{2\pi^2}|f_k|^2\\
+\Rightarrow \Delta^2_{\delta\phi}(k) &=\frac{k^3}{2\pi^2a^2}|f_k|^2\\
+&=\frac{k^2}{4\pi^2a^2}(1+\frac{1}{k^2\tau^2}\\
+&=(\frac{H}{2\pi})^2(1+\frac{k^2}{a^2H^2} \text{using $a=\frac{-1}{H\tau}$}\\
+&\rightarrow \frac{H}{2\pi})^2 \text{on superhorizon scales $k<<\mathcal{H}$}
+\label{inflatonpower}
+\end{align}
+
+We approximate the power spectrum at horizon crossing to be 
+
+\begin{equation}
+\Delta^2_{\delta\phi}(k) \approx (\frac{H}{2\pi})^2\rvert_{k=aH}
+\end{equation}
+
+We will return to this result later.
+
+\subsection{Metric Pertubations}
+
+dsopfuadsiopfuadiosuf
+
+It turns out that $\mathcal{R}$ is the relevant scalar metric pertubation, because it can be shown to be conserved on superhorizon scales, and so is the relevant quantity to consider to source initial conditions for our universe, as it remains frozen until late times when it renters the horizon. It may be related to the inflaton field rather simply as 
+
+\begin{equation}
+\mathcal{R} = -\frac{\mathcal{H}}{\bphi'}\delta\phi
+\end{equation}
+
+and so 
+
+\begin{align}
+\Delta^2_{\mathcal{R}}(k) &=(\frac{\mathcal{H}}{\bphi'})^2\Delta^2_{\delta\phi}(k)\\
+&=\frac{1}{2\epsilon\Mp^2}(\frac{H}{2\pi})^2\rvert_{k=aH}
+\end{align}
+
+by \ref{epsilon}
+
+
+........
 
 
 
@@ -194,7 +330,161 @@ after integrating by parts and making use of \ref{F2} in conformal time. In the 
 
 
 
+\subsection{Gravitational Wave Background}
 
+The remaining piece of the most general metric pertubation we must still consider are the two degrees of freedom in tensor pertubations. Considering just these we have
+
+\begin{equation}
+ds^2 = a^2(\tau)(-d\tau^2 + (\delta_{ij}+\gamma_{ij})dx^idx^j)
+\end{equation}
+
+where $\gamma_ij$ is symmetric, transverse, and traceless: ie $\gamma_{ij}=\gamma_{ji}$, $\partial_i\gamma_{ij}=0$ and $\gamma_{ii}=0$.
+
+As previously, we need to insert this into the action, which here is the Einstein-Hilbert action, and expand to second order in pertubations. This calculation is rather long, so we omit the details here, but one can find them at gjkdhfghsdfg. 
+
+\begin{equation}
+S=\frac{\Mp^2}{2} \int d\tau d^3x \sqrt{-g}R \rightarrow S^{(2)} = \frac{\Mp^2}{8}\int d\tau d^3x \gamma_{ij}'\gamma_{ij}'-\partial_k\gamma_{ij}\partial_k\gamma_{ij}
+\end{equation}
+
+By the symmetries of the problem these are the only terms we expect to appear at second order, though one has to go through the calculation to get the correct numerical factors as they turn out to be important.
+
+For the scalar case we were able to deduce the classical equation of motion directly from the second order action, but here it will be easier to work in fourier space from the get go. We therefore expand the graviton in plane waves
+
+\begin{equation}
+\gamma_{ij}(\tau, \v{x}) = \fint{k} \sum_{s=+,x} \epsilon_{ij}^s(\v{k})\gamma_s(\tau,\v{k})e^{i\v{k}\cdot\v{x}}
+\end{equation}
+
+where $\epsilon_{ij}^s$ are in general complex polarisation tensors satisfying
+
+
+\begin{align}
+\epsilon_{ii}^s(\v{k}) &= k^i \epsilon_{ij}^s(\v{k}) = 0 &\text{transverse and traceless}\\
+\epsilon_{ij}^s(\v{k}) &= \epsilon_{ji}^s(\v{k}) &\text{symettric}\\
+\epsilon_{ij}^s(\v{k})\epsilon_{jk}^s(\v{k}) &= 0&\text{null}\\
+\epsilon_{ij}^s(\v{k})\epsilon_{ij}^s(\v{k})^* &= 2\delta_{ss'} &\text{normalisation}\\
+\epsilon_{ij}^s(\v{k})^* &= \epsilon_{ij}^s(\v{-k})&\text{$\gamma_{ij}$ real}
+\end{align}
+
+we may insert this expansion into $S^{(2)}$ and obtain MAYBE INCLUDE THE STEPS
+
+\begin{equation}
+S^{(2)} = \frac{\Mp^2}{2} \half \fint{k} d\tau a^2 \sum_{s=+,x} \gamma_s'(\tau,\v{k})\gamma_s '(\tau,\v{-k})+k^2 \gamma_s(\tau,\v{k})\gamma_s (\tau,\v{-k})
+\label{gravwaveaction}
+\end{equation}
+
+We find this is, up to a constant, really just two copies of a special case of the action \ref{scalarfieldaction}. To see this, consider \ref{scalarfieldaction} in the special case where $\bphi = V(\bphi) = 0$, i.e. $\phi = \delta \phi$ so we have 
+
+
+\begin{equation}
+S = \half \int d\tau d^3x a^2 [(\phi ' )^2 -(\nabla \phi)^2]
+\end{equation}
+
+which, in fourier space $\phi = \fint{k} \phi(\v{k})e^{i\v{k}\cdot\v{x}}$ is just
+
+\begin{equation}
+S = \half \int d\tau d^3x a^2 [\phi'(\v{k})\phi'(\v{-k}) + k^2 \phi(\v{k})\phi(\v{-k})]
+\end{equation}
+
+comparing with \ref{gravwaveaction} we see we may quantise the two independent fields $\tilde{\gamma_s} = \frac{\Mp a}{\sqrt{2}} \gamma_s$ exactly as we did $ f = a \delta \phi$. The normalisation is required to give canonical factor of $\half$ in the action, which plays a role when we fix the Wronskian to 1. Going through the same procedure as before, we get:
+
+operators $\hat{\gamma}_s(\v{k}) = \frac{\sqrt{2}\Mp}{a}(f_k\anns{k}{s}+f_k^*\cres{k}{s})$
+
+with commutation relations $[\anns{k}{s},\cres{k'}{s}] = (2\pi)^3\delta(\v{k}-\v{k'})\delta_{ss'}$
+
+where the mode functions $f_k$ are the same Bunch Davies mode functions as last time.
+
+
+The final result of this section is to calculate the tensor power spectrum. 
+We have
+
+\begin{align}
+<\gamma_{ij}(\v{k})\gamma_{ij}(\v{k'})> & = \sum_{ss'} \epsilon^s_{ij}(\v{k})\epsilon^s_{ij}(\v{k'})<\gamma_{s}(\v{k})\gamma_{s}(\v{k'})>\\
+&= (\frac{\sqrt{2}\Mp}{a})^2 \sum_{ss'} \epsilon^s_{ij}(\v{k})\epsilon^s_{ij}(\v{k'})(2\pi)^3\delta(\v{k}+\v{k'})|f_k|^2\\
+&= (\frac{\sqrt{2}\Mp}{a})^2 \sum_{ss'} 2\delta_{ss'}(2\pi)^3\delta(\v{k}+\v{k'})|f_k|^2\\
+&= (2\pi)^3\delta(\v{k}+\v{k'})\frac{8}{\Mp^2a^2}|f_k|^2
+\end{align}
+
+From which we can read off 
+
+\begin{equation}
+P_t(k)=\frac{8}{\Mp^2}P_{\delta\phi}(k) \Rightarrow \Delta^2_t(k)=\frac{8}{\Mp^2}\Delta^2_{\delta\phi}(k) = \frac{2}{\pi^2}(\frac{H}{\Mp})^2
+\end{equation}
+
+
+\subsection{Properties of the scalar and tensor power spectra}
+
+In summary, we have calculated the scalar and tensor power spectra:
+
+\begin{equation}
+\Delta^2_{\mathcal{R}}(k) = \frac{1}{2\epsilon\Mp^2}(\frac{H}{2\pi})^2\rvert_{k=aH} \qquad
+\Delta^2_t(k)\frac{2}{\pi^2}(\frac{H}{\Mp})^2\rvert_{k=aH}
+\end{equation}
+
+These freeze out after horizon exit, and thus provide the initial conditions of the universe. Given a good understanding of the physics of proceeding cosmological evolution we have several direct probes of these power spectra. The remainder of this essay will go into more detail about how we do this this: we will explicitly calculate the effect these scalar and tensor perturbations have on several CMB observables, thus providing a way to detect these primordial fluctuations.
+
+To provide some constraining power, we convert the information contained into these power spectra into a more useful form. Recall H is approximately constant during inflation, but not perfectly so, since $H^2 \sim V(\phi)$, and $\phi$ is slowly rolling down its potential. Similarly $\epsilon$ also varies slightly. We can parametrise this deviation from scale invariance to first order by the scalar and tensor spectral indexes $n_i$, and also introduce the respective amplitudes $A_i$ via:
+
+\begin{equation}
+\Delta^2_{\mathcal{R}}(k) \approx A_s(\frac{k}{k_*})^{n_s-1} \qquad
+\Delta^2_t(k) \approx A_t(\frac{k}{k_*})^{n_t}
+\end{equation}
+
+where $k_*$ is some pivot scale, often taken to be $0.05Mpc^{-1}$.
+
+We can compute the spectral indexes in terms of the slow roll parameters. 
+
+\begin{align}
+n_s-1 &= \frac{d\ln{\Delta^2_{\mathcal{R}}}}{d\ln{k}} = \frac{d}{d\ln{k}}(2\ln{H}-ln{\epsilon} \approx \frac{1}{H}\frac{d}{dt}(2\ln{H}-\ln{\epsilon}) = \frac{2\dot{H}}{H^2}-\frac{\dot{\epsilon}}{H\epsilon} = -2\epsilon-\eta = -6\epsilon_V+2\eta_V\\
+n_t &= \frac{d\ln{\Delta^2_t}}{d\ln{k}} = \frac{d}{d\ln{k}}2\ln{H}=-2\epsilon=-2\epsilon_V
+\end{align}
+noting that that $d\ln{k} = d\ln{aH} \approx d\ln{a} = Hdt$ since we evaluate the power spectra 
+at horizon exit, and H is slowly varying (so $d\ln{H}$ provides a next to leading order correction.
+
+
+During inflation $\epsilon>0$ since energy density is monotonically decreasing, and so $n_t<0$ and tensor pertubations are said to have a red spectrum.
+
+We can also define the scalar to tensor ratio 
+
+\begin{equation}
+r=\frac{A_t}{A_s} \approx 16\epsilon
+\end{equation}
+
+leading to the consistency condition $r=-8n_t$, serving as an easy test for single field slow roll inflation. Other inflation models predict different consistency conditions.
+
+
+\subsection{What can we learn?}
+We can learn several interesting things about the physics of inflation itself from these. We'll go into some detail about several. It shouldn't be suprising that this information is contained within the parameters we previously defined. Writing $n_s$ in terms of the potential slow roll parameters indicates $n_s$ contains information about the shape of the inflationary potential.\\ 
+
+Recent CMB experiments have managed to measure $n_s$ to good precision to be $n_s=0.968\pm0.006$, differing from a scale invariant $n_s=1$ by over $5\sigma$. [REF] SFSR inflation models can be written down with either a red ($n_s<1$) or blue ($n_s>1$ spectrum, and this measurement therefore rules out a large slew of such models. \\
+
+At present, we have gained no statistically significant evidence for tensor modes, i.e. have no measured value of $n_t$ or $r$, though the lack of detection constrains $r<0.1$ [BICEP 2 KECK + PLANCK]. Upcoming experiments [CMbS4] seek to improve this, though as we will show this constraint is already useful. 
+
+Given the large number of inflation models, even within the SFSR regime, that exist in the literature, it is useful to work model independently. We'll describe some ifnromation we can gather:
+
+\subsubsection{The energy scale of inflation}
+
+In the slow roll approximation, we may write 
+
+\begin{equation}
+\Delta^2_{\mathcal{R}}\approx \frac{V}{24\pi^2\epsilon\Mp^4}
+\end{equation}
+
+Current measurements [QBM -> PLANCK] give $\Delta^2_{\mathcal{R}} \approx A_s \approx 2.2\times10^{-9}$. Making use of $r\approx 16\epsilon$, we learn
+
+\begin{equation}
+V=24\pi^2A_s\frac{r}{16}\Mp^4 \Rightarrow V^{1/4} \approx 3.12\times10^{16}\text{GeV}r^{1/4} \leq 1.75\times10^{16}\text{GeV}
+\end{equation}
+
+This can be further improved with more accurate bounds on r.
+
+\subsubsection{Field excursion}
+Recall \ref{efolds} giving 
+
+\begin{equation}
+N(t) =  \int_{\bphi(t)}^{\bphi_end} \frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}
+\Rightarrow dN=\frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}
+\Rightarrow \frac{\Delta \phi}{\Mp} = \int_0^N \sqrt{2\epsilon} dN = \int_0^N \sqrt{r/8} dN 
+\end{equation}
 
 
 
