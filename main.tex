@@ -14,9 +14,13 @@
 \newcommand{\cre}[1]{\hat{a}^\dagger_{\v{#1}}}
 \newcommand{\anns}[2]{\hat{a}_{\v{#1}#2}}
 \newcommand{\cres}[2]{\hat{a}^\dagger_{\v{#1}#2}}
-\newcommand{\vac}{|0>}
+\newcommand{\vac}{|0\rangle}
 \newcommand{\fint}[1]{\int \frac{d^3 #1}{(2\pi)^3}}
-
+\newcommand{\unit}[1]{\hat{\v{#1}}}
+\newcommand{\sr}{\text{\normalfont\dh}}
+\renewcommand{\sl}{\bar{\text{\normalfont\dh}}}
+\newcommand{\ltwo}{[\frac{(l+2)!}{(l-2)!}]}
+\newcommand{\ltwof}{[\frac{(l-2)!}{(l+2)!}]}
 
 \title{\boldmath The Search for CMB B-mode Polarization from Inflationary Gravitational Waves}
 
@@ -62,7 +66,7 @@ fourier convention
 
 $\v{t}$
 
-Inflation is a brief, but very important, period of accelerated expansion in the very early universe, first proposed by [Guth 1981]. It was initially motivated by three problems with the previous standard big bang cosmology, namely the flatness problem (why was the ratio of energy density and critical density so close to unity), the monopole problem, and the horizon problem (why are seemingly casually disconnected regions of the CMB at the same temperature to very high accuracy). Since the birth of the idea, it has become the leading paradigm to the early universe, as it conveniently also provides a quantum mechanical mechanism of generating the primordial density perturbations seeding cosmological evolution.
+Inflation is a brief, but very important, period of accelerated expansion in the very early universe, first proposed by [Guth 1981]. It was initially motivated by three problems with the previous standard big bang cosmology, namely the flatness problem (why was the ratio of energy density and critical density so close to unity), the monopole problem, and the horizon problem (why are seemingly casually disconnected regions of the CMB at the same temperature to very high accuracy). Since the birth of the idea, it has become the leading paradigm to the early universe, in part because it provides a quantum mechanical mechanism of generating the primordial density perturbations seeding cosmological evolution. In this chapter we quickly review some important features of inflation.
 
 \subsection{Inflation Basics}
 
@@ -73,14 +77,14 @@ A flat, homogeneous and isotropic universe is described by the Friedmannâ€“LemaÃ
 ds^2 = - dt^2 + a^2(t)d\v{x}^2 = a^2(\tau)(-d\tau^2+d\v{x}^2)
 \end{equation}
 
-which obeys the Einstein equation $G_{ab} = \Mp^2 T_{ab}$ \footnote{Note throughout this essay we assume the validity of General Relativity to cosmology. One can study inflation without this assumption, as detailed in for example [] ........}, sourced by a perfect fluid with energy momentum tensor $T_{ab}$, which by homogeneity and isotropy must take form
+and, assuming General Relativity, obeys the Einstein equation $G_{ab} = \frac{1}{\Mp^2} T_{ab}$, sourced by a perfect fluid with energy momentum tensor $T_{ab}$, which by homogeneity and isotropy must take form
 
 \begin{equation}
 \label{densityandpressure}
-T_{00} = - \rho(t) \quad T_{0i} = 0 \quad T_{ij} = P(t)g_{ij}
+T^0_0 = - \rho(t) \quad T^0_i = 0 \quad T^i_j = P(t)\delta^i_j
 \end{equation}
 
-where we have identify $\rho(t)$ as the total energy density and $P(t)$ as the total pressure, ie summed over all fluid components. For our purposes, we will consider one component, the inflaton field, to dominate.  Substituting \ref{FLRW} and \ref{densityandpressure} into the Einstein Equation we obtain the Friedmann equations
+where we  identify $\rho(t)$ as the total energy density and $P(t)$ as the total pressure, ie summed over all fluid components. For our purposes, we will consider one component, the inflaton field, to dominate.  Substituting \ref{FLRW} and \ref{densityandpressure} into the Einstein Equation we obtain the Friedmann equations
 
 \begin{equation}
 H^2 = (\frac{\dot{a}}{a})^2 = \frac{1}{3\Mp^2}\rho
@@ -93,16 +97,16 @@ H^2 = (\frac{\dot{a}}{a})^2 = \frac{1}{3\Mp^2}\rho
 \label{F2}
 \end{equation}
 
-The condition for inflation to occur is \textit{accelerated expansion}, ie $\ddot{a} >0$. We define the first hubble slow roll parameter 
+The condition for inflation to occur is \textit{accelerated expansion}, ie $\ddot{a} >0$. Recall the definition of the first hubble slow roll parameter 
 
 \begin{equation}
 \label{epsilon}
-\epsilon := -\frac{\dot{H}}{H^2} = -\frac{d\ln{H}}{d\ln{a}} = \frac{3}{2}(1+\frac{P}{\rho}
+\epsilon := -\frac{\dot{H}}{H^2} = -\frac{d\ln{H}}{d\ln{a}} = \frac{3}{2}(1+\frac{P}{\rho})
 \end{equation}
 
-where the last inequality follows from the Friedmann Equations. We find $\ddot{a} >0$ is equivalent to $\epsilon<1$ and to the condition on the equation of state parameter $\omega=P/\rho < -1/3$. 
+where the last inequality follows from the Friedmann Equations. We find $\ddot{a} >0$ is equivalent to $\epsilon<1$ and to the condition on the equation of state parameter $\omega=P/\rho < -1/3$.\\ 
 
-In order to solve the horizon problem we require inflation to persist for a long duration of time, so $\epsilon$ to remain small. We parametrise how quickly $\epsilon$ changes in the second hubble slow roll parameter 
+In order to solve the horizon problem we require inflation to persist for a relatively long duration of time (~60 e-folds), so $\epsilon$ to must remain small. We parametrise how quickly $\epsilon$ changes in the second hubble slow roll parameter 
 
 \begin{equation}
 \eta = -\frac{\dot{\epsilon}}{H\epsilon} = -\frac{d\ln{\epsilon}}{d\ln{a}}
@@ -110,7 +114,7 @@ In order to solve the horizon problem we require inflation to persist for a long
 
 \subsection{Single Scalar Field Dynamics}
 
-The simplest class of inflation models are those consisting of a single scalar field, slowly rolling down its potential. These postulate the existence of a scalar ``inflation'' field $\phi(t,\v{x})$ with lagrangian density $\mathcal{L} = -\half \partial^\mu \phi \partial_\mu \phi - V(\phi)$ and energy momentum tensor $T_{\mu\nu}= \partial)_\mu \phi \partial_\nu \phi - g_{\mu\nu}\mathcal{L}$. \\
+The simplest class of inflation models are those consisting of a single scalar field, slowly rolling down its potential. These postulate the existence of a scalar ``inflation'' field $\phi(t,\v{x})$ with lagrangian density $\mathcal{L} = -\half \partial^\mu \phi \partial_\mu \phi - V(\phi)$ and energy momentum tensor $T_{\mu\nu}= \partial_\mu \phi \partial_\nu \phi + g_{\mu\nu}\mathcal{L}$. \\
 
 Here we consider the classical background evolution, ie take $\phi(t,\v{x}) = \bphi(t)$. There is of course no reason why the field should not also fluctuate spatially, which we consider in the next section. From \ref{densityandpressure} we see that 
 
@@ -125,13 +129,14 @@ Inserting these into the Friedmann equations we get the Klein Gordon Equation
 
 \begin{equation}
 \tag{KG}
+\label{KG}
 \ddot{\bphi}+3H\dot{\bphi}=-V_{,\phi}
 \end{equation}
 
 We also find that by \ref{epsilon} that 
 
 \begin{equation}
-\epsilon = \frac{1}{\Mp^2}\frac{\half\dot{bphi^2}}{H^2} < 1
+\epsilon = \frac{1}{\Mp^2}\frac{\half\dot{\bphi^2}}{H^2} < 1
 \end{equation}
 
 \subsection{Slow Roll}
@@ -155,10 +160,10 @@ where we have defined the first \textit{potential} slow roll parameter. We can a
 \eta_V = \Mp^2 \frac{V''}{V} \approx 2\epsilon - \half\eta
 \end{equation}
 
-From here we may calculate the number of e folds of inflation from some time to until the end of inflation. 
+From here we may calculate the number of e folds of inflation from some time $t$ until the end of inflation. 
 
 \begin{equation}
-N(t) := \ln{\frac{a(t_{end}}{a(t)}} = \int_a^a(t) d(\ln{a}) = \int_t^{t_{end}} HDt = \int_{\bphi(t)}^{\bphi_end} \frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}
+N(t) := \ln{\frac{a(t_{end})}{a(t)}} = \int_a^{a(t)} d(\ln{a}) = \int_t^{t_{end}} Hdt = \int_{\bphi(t)}^{\bphi_{end}} \frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}
 \label{efolds}
 \end{equation}
 
@@ -169,7 +174,7 @@ using $Hdt=\frac{H}{\dot{\bphi}}d\bphi=\frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}$
 If the inflaton can vary in time, it can also vary in space. The discussion here follows [Baumann]. We consider pertubations over a background
 
 \begin{equation}
-\phi(\v{x},\tau) = \bphi(\tau) + \frac{f(\tau, \v{x})}{a(\tau})
+\phi(\v{x},\tau) = \bphi(\tau) + \frac{f(\tau, \v{x})}{a(\tau)}
 \label{phiexpand}
 \end{equation}
 
@@ -187,15 +192,13 @@ S = \int d\tau d^3x \mathcal{L}  = \int d\tau d^3x \half a^2 [(\phi ' )^2 -(\nab
 \label{scalarfieldaction}
 \end{equation}
 
-We now plug in \ref{phiexpand} and expand to 2nd order in $f$. The first order piece just gives the Klein Gordon for the background field (in conformal time), as expected. We get
+We now plug in \ref{phiexpand} and expand to 2nd order in $f$. The first order piece just gives the Klein Gordon for the background field (in conformal time), as expected. The second order piece gives
 
 \begin{equation}
 S^{(2)} = \half \int d\tau d^3x (f')^2 - (\nabla f)^2 + (\frac{a''}{a}-a^2V'')f^2
 \end{equation}
 
-after integrating by parts and making use of \ref{F2} in conformal time. In the slow roll approximation we may drop the potential term since:
-
-NEED TO ADD
+after integrating by parts and making use of \ref{F2} in conformal time. In the slow roll approximation we may drop the potential term since it is slow roll suppressed compared to the other terms.
 
 and so 
 
@@ -211,16 +214,19 @@ f''-\nabla^2f-\frac{a''}{a}f &= 0 \\
 \label{MS}
 \end{align}
 
-We treat these perturbations $f$ quantum mechanically, and so require the technqiques of QFT on curved spacetimes. We'll outline the key steps in quantising this system.
+We treat these perturbations $f$ quantum mechanically, and so require the techniques of QFT on curved spacetimes. We'll outline the key steps in quantising this system.\\
 
-The conjugate momentum to $f$ is $\pi(\tau, \v{x}) =  \frac{\partial \mathcal{L}}{\partial f'} = f'$ using \ref{scalarfieldaction}. We promote these to operators $\hat{f}(\tau, \v{x})$ and $\hat{\pi}(\tau, \v{x})$ satisfying equal time commutation relations $[\hat{f}(\tau, \v{x}), \hat{\pi}(\tau, \v{x'}] = i\delta(\v{x}-\v{x'}$ or equivalently in fourier space $[\hat{f}_{\v{k}}(\tau), \hat{\pi}_{\v{k'}}(\tau)] = (2\pi)^3i\delta(\v{k}+\v{k'})$.
+The conjugate momentum to $f$ is $\pi(\tau, \v{x}) =  \frac{\partial \mathcal{L}}{\partial f'} = f'$ using \ref{scalarfieldaction}. We promote these to operators $\hat{f}(\tau, \v{x})$ and $\hat{\pi}(\tau, \v{x})$ satisfying equal time commutation relations which read in real and fourier space:
 
-We mode expand $\hat{f}_{\v{k}}(\tau) = f_k(\tau)\ann{k}+f_k^*(\tau)\cre{k}$, demanding the modefunctions $f_k(\tau)$ and $f_k^*(\tau)$ are two linearly independent solutions of the Muhkanov-Sasaki equation. 
+\begin{align}
+[\hat{f}(\tau, \v{x}), \hat{\pi}(\tau, \v{x'}] &= i\delta(\v{x}-\v{x'}) 
+[\hat{f}_{\v{k}}(\tau), \hat{\pi}_{\v{k'}}(\tau)] &= (2\pi)^3i\delta(\v{k}+\v{k'})
+\end{align}
 
-Substiuting into the commutation relations we get 
+We mode expand $\hat{f}_{\v{k}}(\tau) = f_k(\tau)\ann{k}+f_k^*(\tau)\cre{k}$, demanding the modefunctions $f_k(\tau)$ and $f_k^*(\tau)$ are two linearly independent solutions of the Muhkanov-Sasaki equation. Substituting into the commutation relations we get 
 
 \begin{equation}
-W[f_k,f_k^*]\times[\ann(k), \cre(k)] = (2\pi)^3\delta(\v{k}+\v{k'})
+W[f_k,f_k^*]\times[\ann{k}, \cre{k}] = (2\pi)^3\delta(\v{k}+\v{k'})
 \end{equation}
 
 which after normalising the Wronskian to 1 gives the usual commutator of annhilation and creation operators
@@ -232,10 +238,14 @@ which after normalising the Wronskian to 1 gives the usual commutator of annhila
 We can now define the Hilbert space as the usual Fock space formed by unions of n particle states obtained by applying n creation operators to the the vacuum, satisfying 
 
 \begin{equation}
-\ann{k}\vac =0 \forall \v{k}
+\ann{k}\vac =0 \qquad \forall \v{k}
 \end{equation}
 
-Note this doesn't completely fix the vacuum, since we have not yet fixed our mode functions. We'll construct the Bunch-Davies vacuum, by imposing the mode functions must be positive frequency \footnote{this is required for our hilbert space to only consist of positive norm states, and is a common requirement in many quantum field theories}, and also match the minkowski mode functions $f_k(\tau) \alpha e^{\pm ik\tau}$ at early times, since at early times $\tau \rightarrow -\infty$, $\ref{MS} \rightarrow  f''_{\v{k}} + (k^2)f_{\v{k}} = 0$. 
+Note this doesn't completely fix the vacuum, since we have not yet fixed our mode functions. We construct the Bunch-Davies vacuum, by imposing the mode functions must be positive frequency \footnote{this is required for our hilbert space to only consist of positive norm states, and is a common requirement in many quantum field theories}, and also match the minkowski mode functions $f_k(\tau) \propto e^{\pm ik\tau}$ at early times, since at early times $\tau \rightarrow -\infty$
+
+\begin{equation}
+\ref{MS} \rightarrow  f''_{\v{k}} + (k^2)f_{\v{k}} = 0
+\end{equation}
 
 We further make the quasi-deSitter approximation, where H is constant and $a=-\frac{1}{H\tau}$, and so \ref{MS} becomes
 
@@ -249,37 +259,39 @@ with general solution
 f_k(\tau) = \alpha \frac{e^{-ik\tau}}{\sqrt{2k}}{(1-\frac{i}{k\tau}} + \beta \frac{e^{ik\tau}}{\sqrt{2k}}{(1+\frac{i}{k\tau}})
 \end{equation}
 
-which matches our initial condition for $\beta = 0$ and $\alpha=1$ giving the Bunch Davies mode function 
+which matches our initial condition for $\beta = 0$ and $\alpha=1$, giving the Bunch Davies mode function 
 
 \begin{equation}
 f_k(\tau) = \frac{e^{-ik\tau}}{\sqrt{2k}}{(1-\frac{i}{k\tau}})
 \end{equation}
 
-We now have all we require to calcuate the spatial variance, or two point correlator $\varepsilon(0)$ of $f$ and therefore of $\delta \phi = f/a$. First recall the relevant definitions:
+The key result of this section is the power spectrum of fluctuations, given by 
 
-the two point correlation function of a field f is given by at fixed (omitted) time $\tau$ by
-
-\begin{equation} 
-\varepsilon_f(\v{x})f(\v{y}) = <f(\v{x})f(\v{y})> = <0|f(\v{x}f(\v{y})|0>
-\end{equation}
-
-Assuming statistical homogeneity and isotropy, this depends only on $|\v{x}-\v{y}|$, and is related to the power spectrum:
-
-\begin{equation}
-<f_{\v{k}}f_{\v{k'}}> = <0|f_{\v{k}}f_{\v{k'}}|0>=(2\pi)^3\delta(\v{k}+\v{k'})P_f(k)\
-\end{equation}
-
-by
+%We now have all we require to calcuate the spatial variance, or two point correlator $\varepsilon(0)$ of $f$ and therefore of $\delta \phi = f/a$. First recall the relevant definitions:
+%
+%the two point correlation function of a field f is given by at fixed (omitted) time $\tau$ by
+%
+%\begin{equation} 
+%\varepsilon_f(\v{x})f(\v{y}) = <f(\v{x})f(\v{y})> = <0|f(\v{x}f(\v{y})|0>
+%\end{equation}
+%
+%Assuming statistical homogeneity and isotropy, this depends only on $|\v{x}-\v{y}|$, and is related to the power spectrum:
 
 \begin{equation}
-\varepsilon(r)=\varepsilon(\v{x},\v{x}+\v{r})=\fint{k} P_f(k)e^{i\v{k}\cdot\v{r}}
+\langle f_{\v{k}}f_{\v{k'}} \rangle = \langle 0|f_{\v{k}}f_{\v{k'}}|0\rangle =(2\pi)^3\delta(\v{k}+\v{k'})P_f(k)\
 \end{equation}
+
+%by
+%
+%\begin{equation}
+%\varepsilon(r)=\varepsilon(\v{x},\v{x}+\v{r})=\fint{k} P_f(k)e^{i\v{k}\cdot\v{r}}
+%\end{equation}
 
 
 The power spectrum of our field is easily computed to be 
 
 \begin{equation}
-<f_{\v{k}}f_{\v{k'}}> = <(f_k(\tau)\ann{k}+f_k^*(\tau)\cre{k})(f_k(\tau)\ann{k'}+f_k^*(\tau)\cre{k'}> = |f_k|^2
+\langle f_{\v{k}}f_{\v{k'}}\rangle = \langle (f_k(\tau)\ann{k}+f_k^*(\tau)\cre{k})(f_k(\tau)\ann{k'}+f_k^*(\tau)\cre{k'}\rangle = |f_k|^2
 \end{equation}
 
 and so the dimensionless power spectra of interest are  
@@ -287,7 +299,7 @@ and so the dimensionless power spectra of interest are
 \begin{align}
 \Delta^2_f(k):=\frac{k^3}{2\pi^2}P_f(k) &= \frac{k^3}{2\pi^2}|f_k|^2\\
 \Rightarrow \Delta^2_{\delta\phi}(k) &=\frac{k^3}{2\pi^2a^2}|f_k|^2\\
-&=\frac{k^2}{4\pi^2a^2}(1+\frac{1}{k^2\tau^2}\\
+&=\frac{k^2}{4\pi^2a^2}(1+\frac{1}{k^2\tau^2})\\
 &=(\frac{H}{2\pi})^2(1+\frac{k^2}{a^2H^2} \text{using $a=\frac{-1}{H\tau}$}\\
 &\rightarrow \frac{H}{2\pi})^2 \text{on superhorizon scales $k<<\mathcal{H}$}
 \label{inflatonpower}
@@ -346,9 +358,7 @@ As previously, we need to insert this into the action, which here is the Einstei
 S=\frac{\Mp^2}{2} \int d\tau d^3x \sqrt{-g}R \rightarrow S^{(2)} = \frac{\Mp^2}{8}\int d\tau d^3x \gamma_{ij}'\gamma_{ij}'-\partial_k\gamma_{ij}\partial_k\gamma_{ij}
 \end{equation}
 
-By the symmetries of the problem these are the only terms we expect to appear at second order, though one has to go through the calculation to get the correct numerical factors as they turn out to be important.
-
-For the scalar case we were able to deduce the classical equation of motion directly from the second order action, but here it will be easier to work in fourier space from the get go. We therefore expand the graviton in plane waves
+By the symmetries of the problem these are the only terms we expect to appear at second order, though one has to go through the calculation to get the correct numerical factors as they turn out to be important. We may expand the graviton in plane waves 
 
 \begin{equation}
 \gamma_{ij}(\tau, \v{x}) = \fint{k} \sum_{s=+,x} \epsilon_{ij}^s(\v{k})\gamma_s(\tau,\v{k})e^{i\v{k}\cdot\v{x}}
@@ -365,46 +375,40 @@ where $\epsilon_{ij}^s$ are in general complex polarisation tensors satisfying
 \epsilon_{ij}^s(\v{k})^* &= \epsilon_{ij}^s(\v{-k})&\text{$\gamma_{ij}$ real}
 \end{align}
 
-we may insert this expansion into $S^{(2)}$ and obtain MAYBE INCLUDE THE STEPS
+inserting this expansion into $S^{(2)}$ we obtain 
 
 \begin{equation}
 S^{(2)} = \frac{\Mp^2}{2} \half \fint{k} d\tau a^2 \sum_{s=+,x} \gamma_s'(\tau,\v{k})\gamma_s '(\tau,\v{-k})+k^2 \gamma_s(\tau,\v{k})\gamma_s (\tau,\v{-k})
 \label{gravwaveaction}
 \end{equation}
 
-We find this is, up to a constant, really just two copies of a special case of the action \ref{scalarfieldaction}. To see this, consider \ref{scalarfieldaction} in the special case where $\bphi = V(\bphi) = 0$, i.e. $\phi = \delta \phi$ so we have 
+We find this is, up to a constant, really just two copies of a special case of the action \ref{scalarfieldaction}. To see this, consider write \ref{scalarfieldaction} in fourier space $\phi = \fint{k} \phi(\v{k})e^{i\v{k}\cdot\v{x}}$, in the special case where $\bphi = V(\bphi) = 0$, i.e. $\phi = \delta \phi$.
 
 
-\begin{equation}
-S = \half \int d\tau d^3x a^2 [(\phi ' )^2 -(\nabla \phi)^2]
-\end{equation}
+\begin{align}
+S &= \half \int d\tau d^3x a^2 [(\phi ' )^2 -(\nabla \phi)^2]\\
+ &= \half \int d\tau d^3x a^2 [\phi'(\v{k})\phi'(\v{-k}) + k^2 \phi(\v{k})\phi(\v{-k})]
+\end{align}
 
-which, in fourier space $\phi = \fint{k} \phi(\v{k})e^{i\v{k}\cdot\v{x}}$ is just
+we see \ref{gravwaveaction} is just two independent copies of this action, allowing us to quantise the two independent fields $\tilde{\gamma_s} = \frac{\Mp a}{\sqrt{2}} \gamma_s$ exactly as we did $ f = a \delta \phi$. The normalisation is required to give canonical factor of $\half$ on the kinetic term in the action, which plays a role when we fix the Wronskian to 1. Going through the same procedure as before, we get:
 
-\begin{equation}
-S = \half \int d\tau d^3x a^2 [\phi'(\v{k})\phi'(\v{-k}) + k^2 \phi(\v{k})\phi(\v{-k})]
-\end{equation}
-
-comparing with \ref{gravwaveaction} we see we may quantise the two independent fields $\tilde{\gamma_s} = \frac{\Mp a}{\sqrt{2}} \gamma_s$ exactly as we did $ f = a \delta \phi$. The normalisation is required to give canonical factor of $\half$ in the action, which plays a role when we fix the Wronskian to 1. Going through the same procedure as before, we get:
-
-operators $\hat{\gamma}_s(\v{k}) = \frac{\sqrt{2}\Mp}{a}(f_k\anns{k}{s}+f_k^*\cres{k}{s})$
-
-with commutation relations $[\anns{k}{s},\cres{k'}{s}] = (2\pi)^3\delta(\v{k}-\v{k'})\delta_{ss'}$
-
-where the mode functions $f_k$ are the same Bunch Davies mode functions as last time.
-
+\begin{itemize}
+\item{operators $\hat{\gamma}_s(\v{k}) = \frac{\sqrt{2}\Mp}{a}(f_k\anns{k}{s}+f_k^*\cres{k}{s})$}
+\item{commutation relations $[\anns{k}{s},\cres{k'}{s}] = (2\pi)^3\delta(\v{k}-\v{k'})\delta_{ss'}$}
+\item{the same bunch-davies mode functions $f_k$}
+\end{itemize}
 
 The final result of this section is to calculate the tensor power spectrum. 
 We have
 
 \begin{align}
-<\gamma_{ij}(\v{k})\gamma_{ij}(\v{k'})> & = \sum_{ss'} \epsilon^s_{ij}(\v{k})\epsilon^s_{ij}(\v{k'})<\gamma_{s}(\v{k})\gamma_{s}(\v{k'})>\\
+\langle\gamma_{ij}(\v{k})\gamma_{ij}(\v{k'})\rangle & = \sum_{ss'} \epsilon^s_{ij}(\v{k})\epsilon^s_{ij}(\v{k'})\langle\gamma_{s}(\v{k})\gamma_{s}(\v{k'})\rangle\\
 &= (\frac{\sqrt{2}\Mp}{a})^2 \sum_{ss'} \epsilon^s_{ij}(\v{k})\epsilon^s_{ij}(\v{k'})(2\pi)^3\delta(\v{k}+\v{k'})|f_k|^2\\
 &= (\frac{\sqrt{2}\Mp}{a})^2 \sum_{ss'} 2\delta_{ss'}(2\pi)^3\delta(\v{k}+\v{k'})|f_k|^2\\
 &= (2\pi)^3\delta(\v{k}+\v{k'})\frac{8}{\Mp^2a^2}|f_k|^2
 \end{align}
 
-From which we can read off 
+using several of the properties listed earlier. We can read off 
 
 \begin{equation}
 P_t(k)=\frac{8}{\Mp^2}P_{\delta\phi}(k) \Rightarrow \Delta^2_t(k)=\frac{8}{\Mp^2}\Delta^2_{\delta\phi}(k) = \frac{2}{\pi^2}(\frac{H}{\Mp})^2
@@ -416,13 +420,13 @@ P_t(k)=\frac{8}{\Mp^2}P_{\delta\phi}(k) \Rightarrow \Delta^2_t(k)=\frac{8}{\Mp^2
 In summary, we have calculated the scalar and tensor power spectra:
 
 \begin{equation}
-\Delta^2_{\mathcal{R}}(k) = \frac{1}{2\epsilon\Mp^2}(\frac{H}{2\pi})^2\rvert_{k=aH} \qquad
-\Delta^2_t(k)\frac{2}{\pi^2}(\frac{H}{\Mp})^2\rvert_{k=aH}
+\Delta^2_{s}(k) = \frac{1}{2\epsilon\Mp^2}(\frac{H}{2\pi})^2\rvert_{k=aH} \qquad
+\Delta^2_t(k)= \frac{2}{\pi^2}(\frac{H}{\Mp})^2\rvert_{k=aH}
 \end{equation}
 
-These freeze out after horizon exit, and thus provide the initial conditions of the universe. Given a good understanding of the physics of proceeding cosmological evolution we have several direct probes of these power spectra. The remainder of this essay will go into more detail about how we do this this: we will explicitly calculate the effect these scalar and tensor perturbations have on several CMB observables, thus providing a way to detect these primordial fluctuations.
+These freeze out after horizon exit, and thus provide the initial conditions of the universe. Given a good understanding of the physics of proceeding cosmological evolution we have several direct probes of these power spectra. The remainder of this essay will go into more detail about how we do this this: we will explicitly calculate the effect these scalar and tensor perturbations have on several CMB observables, thus providing a way to detect these primordial fluctuations.\\
 
-To provide some constraining power, we convert the information contained into these power spectra into a more useful form. Recall H is approximately constant during inflation, but not perfectly so, since $H^2 \sim V(\phi)$, and $\phi$ is slowly rolling down its potential. Similarly $\epsilon$ also varies slightly. We can parametrise this deviation from scale invariance to first order by the scalar and tensor spectral indexes $n_i$, and also introduce the respective amplitudes $A_i$ via:
+Here we investigate some of their properties. Recall H is approximately constant during inflation, but not perfectly so, since $H^2 \sim V(\phi)$, and $\phi$ is slowly rolling down its potential. Similarly $\epsilon$ also varies slightly. We can parametrise this deviation from scale invariance to first order by the scalar and tensor spectral indexes $n_i$, and also introduce the respective amplitudes $A_i$ via:
 
 \begin{equation}
 \Delta^2_{\mathcal{R}}(k) \approx A_s(\frac{k}{k_*})^{n_s-1} \qquad
@@ -437,6 +441,7 @@ We can compute the spectral indexes in terms of the slow roll parameters.
 n_s-1 &= \frac{d\ln{\Delta^2_{\mathcal{R}}}}{d\ln{k}} = \frac{d}{d\ln{k}}(2\ln{H}-ln{\epsilon} \approx \frac{1}{H}\frac{d}{dt}(2\ln{H}-\ln{\epsilon}) = \frac{2\dot{H}}{H^2}-\frac{\dot{\epsilon}}{H\epsilon} = -2\epsilon-\eta = -6\epsilon_V+2\eta_V\\
 n_t &= \frac{d\ln{\Delta^2_t}}{d\ln{k}} = \frac{d}{d\ln{k}}2\ln{H}=-2\epsilon=-2\epsilon_V
 \end{align}
+
 noting that that $d\ln{k} = d\ln{aH} \approx d\ln{a} = Hdt$ since we evaluate the power spectra 
 at horizon exit, and H is slowly varying (so $d\ln{H}$ provides a next to leading order correction.
 
@@ -449,7 +454,7 @@ We can also define the scalar to tensor ratio
 r=\frac{A_t}{A_s} \approx 16\epsilon
 \end{equation}
 
-leading to the consistency condition $r=-8n_t$, serving as an easy test for single field slow roll inflation. Other inflation models predict different consistency conditions.
+leading to the consistency condition $r=-8n_t$, which serves as a test, at least in principle, of SFSR. Other inflation models predict different consistency conditions.
 
 
 \subsection{What can we learn?}
@@ -513,6 +518,429 @@ N(t) =  \int_{\bphi(t)}^{\bphi_end} \frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}
 
 
 \section{CMB}
+
+\subsection{Introduction}
+
+\subsection{Observables}
+A CMB Photon detector measures the electric field $\v{E}$ perpendicular to the direction of observation $\hat{\v{n}}$, from which we can definite a rank two intensity correlation tensor
+
+\begin{equation}
+I_ij = \langle E_aE_b* \rangle
+\end{equation}
+
+where $\langle\rangle$ denotes a time average over many periods. Rank two tensors can be decomposed into three irreducible components: a part proportional to $\delta_{ab}$, a symettric tracefree part, and an antisymettric part. The antisymettric part encodes a phase lag between $E_1$ and $E_2$, and therefore circular polarization. Thomson scattering induces no such polarisation \footnote{as shown for example in [Kowosky], since the V boltzmann equation has no source term}, and so we may neglect this. Fixing an orthonormal basis $\{\unit{e_1},\unit{e_2}\}$ we encode the three remaining degrees of freedom as 
+
+\begin{equation}
+I_{ij} = T\delta{ij}+2P_ij
+=\begin{pmatrix}
+T+Q & U\\ 
+U & T-Q
+\end{pmatrix}
+\end{equation}
+
+where 
+
+\begin{equation}
+P_{ij} =\half \begin{pmatrix}
+Q & U\\ 
+U & -Q
+\end{pmatrix}
+\end{equation}
+
+is the polarisation tensor and Q and U are standard Stokes' parameters. Note $P_{ij}$ has eigenvalues $\pm (Q^2 + U^2)^\half$, and eigenvectors making an angle of $\half\arctan(\frac{U}{Q})$ with $\unit{e_1}$. We call the magnitude of the eigenvalue the polarisation amplitude. Diagramtically, we often depict polarisation as headless vectors of length $(Q^2 + U^2)^\half$, making an angle of $\arctan(\frac{U}{Q})$ to $\unit{e_1}$, which indicates the direction of measurement which would maximise the signal.
+
+
+Since $\delta_{ij}$ is an invariant tensor under rotations we see that $T$ is invariant under rotations, but $Q$, and $U$ are not. In particular if we perform a right handed rotation around $\unit{n}$ by an angle $\psi$ we get the following transformations:
+
+
+\begin{equation}
+\begin{pmatrix}
+\unit{e_1}'\\
+\unit{e_2}' 
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos{\psi} & \sin{\psi}\\ 
+\-sin{\psi} & \cos{\psi}
+\end{pmatrix}
+\begin{pmatrix}
+\unit{e_1}\\
+\unit{e_2} 
+\end{pmatrix}
+\end{equation}
+
+
+\begin{equation}
+\begin{pmatrix}
+Q'\\
+U' 
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos{2\psi} & \sin{2\psi}\\ 
+\-sin{2\psi} & \cos{2\psi}
+\end{pmatrix}
+\begin{pmatrix}
+Q\\
+U
+\end{pmatrix}
+\label{QUtranform}
+\end{equation}
+
+The fact that Q and U are basis dependent quantities means they aren't physical: we will fix this soon.
+
+MAYBE DROP
+An alternative choice of basis is given by the complex combinations $e_\pm = \unit{e_1} \pm i\unit{e_2}$, with respect to which the components of $P$ are 
+
+
+
+It is convinient to instead work with quantities $Q\pm iU$. Using \ref{QUtranform} it is easy to see under a rotation we get  
+
+\begin{equation}
+Q'\pm iU' = e^{-2i\psi}(Q\pm iU)
+\end{equation}
+
+A function $f(\theta, \phi)$ defined on a sphere is said to have spin $s$ if under a right handed rotation by angle $\psi$ of orthogonal vectors tangential to the sphere $(\unit{e_1}, \unit{e_2})$, transforms as $f'(\theta, \phi) = e^{-is\psi}f(\theta, \phi)$. Thus $Q+iU$ is a spin 2 quantity, and $Q-iU$ a spin 2 quantity. From here onwards we use the natural choice of tangential basis on the sphere $(\unit{e_1}, \unit{e_2}) = (\unit{e_theta}, \unit{e_\phi})$. The reason we construct these quantities of definite spin, is that analogously to the expansion of a scalar quantity
+
+\begin{equation}
+T(\unit{n}) = \sum_{lm} T_{lm}Y_{lm}(\unit{n})
+\end{equation}
+
+in terms of spherical harmonics, there exist so called `spin weighted spherical harmonics' $_sY_{lm}$ forming a complete orthonormal basis for spin s weighted functions:
+
+\begin{equation}
+(Q\pm iU)(\unit{n}) = \sum_{lm} a_{\pm2,lm} {}_{\pm2}Y_{lm}(\unit{n})
+\label{QUexp}
+\end{equation}
+
+By reality conditions on $T, Q$ and $U$, we have
+
+\begin{equation}
+T_{lm}^* = T_{l,-m} \qquad a_{-2lm}^*=a_{2lm}
+\end{equation}
+
+Now Q and U are defined with respect to different bases all over the sphere and depend on this choice of basis, so cannot be compared at different positions in a full sky treatment. We amend this issue by using spin raising and lowering operators to construct two rotationally invariant quantities out of $Q\pm iU$. Acting twice on \ref{QUexp} with our raising and lowering operators we get
+
+\begin{align}
+\sr^2(Q-iU)(\unit{n}) &= \sum_{lm} \ltwo^{1/2} a_{2,lm} {}Y_{lm}(\unit{n})\\
+\sl^2(Q+iU)(\unit{n}) &= \sum_{lm} \ltwo^{1/2} a_{-2,lm} {}Y_{lm}(\unit{n})
+\end{align}
+
+where now we can express $a_{\pm2,lm}$ using orthogonality in two ways
+
+
+\begin{align}
+a_{2,lm} &= \int d\Omega {}_2Y_{lm}^*(\unit{n})(Q+iU)(\unit{n})\\
+&= \ltwo^{-1/2}\int d\Omega Y_{lm}^*(\unit{n})\sl^2(Q+iU)(\unit{n})\\
+a_{-2,lm} &= \int d\Omega {}_2Y_{lm}^*(\unit{n})(Q-iU)(\unit{n})\\
+&= \ltwo^{-1/2}\int d\Omega Y_{lm}^*(\unit{n})\sr^2(Q-iU)(\unit{n})
+\end{align}
+
+We now introduce two linear combinations, expressible in terms of the rotationally invariant quantities, which will be slightly more physical. Note there is a choice of sign made here which ultimately won't matter
+
+\begin{align} 
+E_{lm} &= -(a_{2,lm} + a_{-2,lm})/2\\
+B_{lm} &= -(a_{2,lm} - a_{-2,lm})/2
+\end{align}
+
+Using these we can rewrite \ref{QUexp} as 
+
+\begin{equation}
+(Q\pm iU)(\unit{n}) = -\sum_{lm} (E_{lm} \pm i B_{lm}) {}_{\pm2}Y_{lm}(\unit{n})
+\label{QUEB}
+\end{equation}
+
+In real space we introduce related quantities 
+
+\begin{align}
+\tilde{E}(\unit{n}) &:= -\half[\sl^2(Q+iU) + \sr^2(Q-iU)]\\
+&= \sum_{lm} \ltwo^{1/2}E_{lm}Y_{lm}(\unit{n})\\
+\tilde{B}(\unit{n}) &:= i\half[\sl^2(Q+iU) - \sr^2(Q-iU)]\\
+&= \sum_{lm} \ltwo^{1/2}B_{lm}Y_{lm}(\unit{n})
+\label{EBmodes}
+\end{align}
+
+which only differs from how you'd expect to define $E$ and $B$ by factors of $\ltwo$ on each multipole: 
+
+\begin{align}
+\tilde{E}_{lm}&=\ltwo^{1/2}E_{lm}
+\tilde{B}_{lm}&=\ltwo^{1/2}B_{lm}
+\label{EBtwiddle}
+\end{align}
+
+\subsubsection{Parity}
+
+Note that all the $E$ and $B$ quantities we have defined are rotationally invariant, and therefore carry some physical meaning. In this short section we attempt to gain some intuition to what that is.
+
+We will first show E and B have distinct parity. Consider a space inversion reversing the sign of the x coordinate. In spherical coordinates this leaves $r, \theta$ invariant, but varies $\phi \rightarrow -\phi$.  Let $\unit{n}=(\theta, \phi)$ and $\unit{n}'=(\theta', \phi')$ refer to the same physical direction in the two frames. From the definition of the Stokes parameters $Q=\langle |E_x|^2 \rangle - \langle |E_y|^2 \rangle$ and $U = \langle E_xE_y^* \rangle + \langle E_yE_x^* \rangle$ we expect $Q'(\unit{n}') = Q'(\unit{n})$ but $U'(\unit{n}') = -U(\unit{n})$. Thus $(Q\pm iU)'(\unit{n}') = (Q\mp iU)(\unit{n})$. Now we should act with spin raising and lowering operators twice. We have
+
+\begin{align}
+\sl(Q+iU)'(\unit{n}') &= -\sin^{-2}{\theta'}[\partial_{\theta'}-i\csc{\theta'}\partial_{\phi'}]\sin^{2}{\theta'}(Q+iU)'(\unit{n}')\\
+&= -\sin^{-2}{\theta}[\partial_{\theta}+i\csc{\theta}\partial_{\phi}]\sin^{2}{\theta}(Q-iU)'(\unit{n})\\
+&= \sr (Q-iU)(\unit{n})
+\end{align}
+
+and repeating almost the same calculation gives 
+
+\begin{align}
+\sl^2(Q+iU)'(\unit{n}') = \sr^2 (Q-iU)(\unit{n})\\
+\sr^2(Q-iU)'(\unit{n}') = \sl^2 (Q+iU)(\unit{n})
+\end{align}
+
+and so we see from \ref{EBmodes} that under parity $\tilde{E}'(\unit{n'})=\tilde{E}(\unit{n})$ but $\tilde{B}'(\unit{n'})=-\tilde{B}(\unit{n})$. This parity property is the important distinguishing feature of E and B modes, and can be used to understand what a typical E and B mode pattern looks like:
+
+TO ADD
+
+\subsection{Statistics}
+Parity also constrains the statistics of CMB pertubations. From measurements, we get the expansion coefficients $T_{lm}. E_{lm}$ and $B_{lm}$. We care about the cross correlations between these various quantities. There are four rotationally invariant power spectra of interest:
+
+\begin{align}
+\langle T_{lm}T_{l'm'} \rangle &= C_{Tl}\delta_{ll'}\delta_{mm'}
+\langle E_{lm}E_{l'm'} \rangle &= C_{El}\delta_{ll'}\delta_{mm'}
+\langle B_{lm}B_{l'm'} \rangle &= C_{Bl}\delta_{ll'}\delta_{mm'}
+\langle T_{lm}E_{l'm'} \rangle &= C_{Cl}\delta_{ll'}\delta_{mm'}
+\end{align}
+
+since by parity, the cross correlations $B$ with $T$ and $E$ must vanish. We will show this later explicitly. 
+
+
+
+
+
+\subsection{The flat sky approximation}
+
+The flat sky approximation is the small scale limit of the above discussion. It neglects the curvature of the sphere, allowing us to work instead with a standard flat space fourier basis, instead of (spin-weighted) spherical harmonics. It provides a useful tool to give some intuition about physical effects, though to link to observation a full sky treatment is required, especially given we expect for example the B mode polarisation to only contribute on large angular scales. It is also historically relevant: much of the early work on CMB polarisation focussed on this limit, before the techniques discussed above to deal with the full sky were discovered. Here, we'll describe how to get the small scale limit out of the full sky treatment.
+
+We take $\unit{n}$ to be close to $\unit{z}$, and substitute as follows, bearing in mind we are working with large l:
+
+\begin{equation}
+T(\unit{n}) = \sum_{lm} T_{lm}Y_{lm}(\unit{n}) \rightarrow (2\pi)^{-2} \int d^2\v{l} T(\v{l})e^{i\v{l}\cdot\unit{n}}
+\end{equation}
+
+\begin{align}
+{}_2Y_{lm} &= \ltwo^\half\sr^2Y_{lm} \rightarrow (2\pi)^{-2} \frac{1}{l^2}\sr^2e^{i\vec{l}\cdot\unit{n}}\\
+{}_{-2}Y_{lm} &= \ltwo^\half\sl^2Y_{lm} \rightarrow (2\pi)^{-2} \frac{1}{l^2}\sl^2e^{i\vec{l}\cdot\unit{n}}
+\end{align}
+
+and so \ref{QUEB} becomes
+
+\begin{align}
+(Q+iU)(\unit{n}) &= -(2\pi)^2\int d^2l [E(l)+iB(l)]  \frac{1}{l^2}\sr^2e^{i\vec{l}\cdot\unit{n}}\\
+(Q+iU)(\unit{n}) &= -(2\pi)^2\int d^2l [E(l)+iB(l)] \frac{1}{l^2}\sl^2e^{i\vec{l}\cdot\unit{n}}
+\end{align}
+
+In the small scale limit we can derive:
+
+\subsection{The Boltzmann Equation}
+
+We use kinetic theory to describe the evolution of photons from the fluid-like, pre-recombination regime to free-streaming radiation. To track pol
+
+
+\subsection{Power spectrum of tensor modes}
+
+Now we have set up all the machinery we require in order to calculate polarisation correlations on the sphere. The main goal of this section is to show that tensor pertubations source a non zero B mode polarisation, whose power spectrum depends on the primordial tensor power spectrum. Our starting point is the boltzmann equation describing the evolution of temperature and polarisation fluctuations.  We'll work in Fourier space throughout, focussing on a mode with wave vector $\unit{k}$, which we may choose to be aligned with the $\unit{z}$ direction, and take the basis on which we evaluate $Q$ and $U$ to be the natural basis on the sphere: $(\unit{e_1}, \unit{e_2}) = (\unit{e_\theta}, \unit{e_\phi})$.
+
+As we saw earlier, there exist two independent polarizations $\gamma_s$ of the gravitational wave in fourier space: $+$ and $\times$. We work instead with the following linear combinations, and change notation to use $\zeta$ instead
+
+\begin{equation}
+\zeta^1 = (\zeta^+ - i\zeta^\times)/\sqrt{2} \qquad \zeta^2 = (\zeta^+ + i\zeta^\times)/\sqrt{2}
+\end{equation}
+
+These modes are independent random variables, each having half of the primordial tensor power spectra:
+
+\begin{equation}
+\langle \zeta^{1*}(\v{k})\zeta^{1*}(\v{k'})\rangle=\langle \zeta^{2*}(\v{k})\zeta^{2*}(\v{k'})\rangle=\half P_t(k)\delta(\v{k}-\v{k'})
+\end{equation}
+\begin{equation}
+\langle \zeta^{1*}(\v{k})\zeta^{2*}(\v{k'})\rangle=0
+\end{equation}
+
+In order to decouple the Boltzmann equations describing evolution of T, U and Q, we introduce new variables, first introduced by Polnarev [] $\tilde{\Delta}_T$ and $\tilde{\Delta}_P$ describing the temperature and polarisation pertubations induced by gravitational waves. They are written in terms of the standard pertubations as:
+
+\begin{align}
+\Delta_T(\tau,\unit{n},\v{k}) &= [(1-\mu^2) e^{2i\phi} \zeta^1(\v{k})+(1-\mu^2) e^{-2i\phi} \zeta^2(\v{k})]\tilde{\Delta_T}(\tau,\mu,k)\\
+\Delta_Q+i\Delta_U((tau,\unit{n},\v{k}) &=[(1-\mu)^2 e^{2i\phi} \zeta^1(\v{k})+(1+\mu)^2 e^{-2i\phi} \zeta^2(\v{k})]\tilde{\Delta_P}(\tau,\mu,k) \\
+\Delta_Q-i\Delta_U((tau,\unit{n},\v{k}) &=[(1+\mu)^2 e^{2i\phi} \zeta^1(\v{k})+(1-\mu)^2 e^{-2i\phi} \zeta^2(\v{k})]\tilde{\Delta_P}(\tau,\mu,k)
+\end{align}
+
+and satisfy the two uncoupled Boltzmann equations
+
+\begin{align}
+\tilde{\Delta}_T'+ik\mu \tilde{\Delta}_T &= -h' -\kappa'[\tilde{\Delta}_T - \Psi]\\
+\tilde{\Delta}_P'+ik\mu\tilde{\Delta}_P &= -\kappa'[\tilde{\Delta}_P + \Psi]
+\end{align}
+
+where the source is
+
+\begin{equation}
+\Psi = \frac{1}{10}\tilde{\Delta}_{T0} + \frac{1}{7}\tilde{\Delta}_{T2} + \frac{3}{70}\tilde{\Delta}_{T4} - \frac{3}{5}\tilde{\Delta}_{P0} + \frac{6}{7}\tilde{\Delta}_{P2} - \frac{3}{70}\tilde{\Delta}_{P4}
+\end{equation}
+
+
+involving multipole moments, defined for any function as $f(k, \mu) = \sum_l (2l+1)(-i)^lf_l(k)P_l(\mu)$ for $P_l(\mu)$ the order l legendre polynomial. All derivatives are taken with respect to conformal time $\tau$. The \textit{differential optical depth} for Thomson scattering is $\kappa'=an_ex_e\sigma_T$, where $n_e$ is the electron density, $x_e$ is the ionization fraction, and $\sigma_T$ is the Thomson cross section. The \textit{optical depth} is given by the integral $\kappa(\tau) = \int_\tau^{\tau_0} \kappa'(tau)d\tau$. 
+
+
+We may now formally integrate these first order linear ODEs, using an `integrating factor' - this is the `line of sight' method. Introducing $x=k(\tau_0-\tau)$ we get that 
+
+\begin{align}
+\tilde{\Delta}_T(\tau,\mu,k) &= \int_0^{\tau_0} e^{ix\mu}S_T(k,\tau)\\
+\tilde{\Delta}_P(\tau,\mu,k) &= \int_0^{\tau_0} e^{ix\mu}S_P(k,\tau)
+\end{align}
+
+where all the physics is hidden in the source terms:
+
+\begin{align}
+S_T(k,\tau) &= -h'e^{-\kappa}+g\Psi\\
+S_P(k,\tau) &= -g\Psi
+\end{align}
+
+$g(\tau) = \kappa'e^{-\kappa}$ is the visibility function, peaking at the epoch of recombination. A simple approximation takes recombination to be instantaneous, at $\tau_*$, in which case $g(\tau) = \delta(\tau-\tau_*)$. Combining the last two results we attain expressions for the original T,Q,U pertubations we care about:
+
+
+
+\begin{align}
+\Delta_T(\tau,\unit{n},\v{k}) &= [(1-\mu^2) e^{2i\phi} \zeta^1(\v{k})+(1-\mu^2) e^{-2i\phi} \zeta^2(\v{k})]\int_0^{\tau_0} e^{ix\mu}S_T(k,\tau)\\
+(\Delta_Q+i\Delta_U)(\tau,\unit{n},\v{k}) &=[(1-\mu)^2 e^{2i\phi} \zeta^1(\v{k})+(1+\mu)^2 e^{-2i\phi} \zeta^2(\v{k})]\int_0^{\tau_0} e^{ix\mu}S_P(k,\tau)\\
+(\Delta_Q-i\Delta_U)(\tau,\unit{n},\v{k}) &=[(1+\mu)^2 e^{2i\phi} \zeta^1(\v{k})+(1-\mu)^2 e^{-2i\phi} \zeta^2(\v{k})]\int_0^{\tau_0} e^{ix\mu}S_P(k,\tau)
+\end{align}
+
+
+
+The T result is what we want. For Q and U however we saw earlier these are coordinate dependent quantities on the sphere, and so instead we work with $\tilde{E}$ and $\tilde{B}$. To do so, by \ref{EBmodes} all we need to do is act twice via our raising and lowering operators. Here is where we need \ref{+-2}, which conveniently pass through the source terms, which have no angular dependence. We get
+
+\begin{align}
+\sl^2(\Delta_Q+i\Delta_U)(\tau,\unit{n},\v{k}) &= \zeta^1(\v{k})e^{2i\phi}\int_0^{\tau_0}S_P(k,\tau)(\partial_\mu+\frac{2}{1-\mu^2})^2[(1-\mu^2)(1-\mu)^2 e^{ix\mu}]\\
+&{} + \zeta^2(\v{k})e^{-2i\phi}\int_0^{\tau_0}S_P(k,\tau)(\partial_\mu+\frac{2}{1-\mu^2})^2[(1-\mu^2)(1+\mu)^2 e^{ix\mu}]\\
+&= \zeta^1(\v{k})e^{2i\phi}\int_0^{\tau_0}S_P(k,\tau)(-\mathcal{E}(x)-i\mathcal{B}(x))[(1-\mu^2) e^{ix\mu}] \\
+&{} + \zeta^2(\v{k})e^{-2i\phi}\int_0^{\tau_0}S_P(k,\tau)(-\mathcal{E}(x)-i\mathcal{B}(x))[(1-\mu^2) e^{ix\mu}] not sure about this line
+\end{align}
+
+\begin{align}
+\sr^2(\Delta_Q-i\Delta_U)(\tau,\unit{n},\v{k}) &= \zeta^1(\v{k})e^{2i\phi}\int_0^{\tau_0}S_P(k,\tau)(\partial_\mu-\frac{2}{1-\mu^2})^2[(1-\mu^2)(1+\mu)^2 e^{ix\mu}] \\ 
+&{} + \zeta^2(\v{k})e^{-2i\phi}\int_0^{\tau_0}S_P(k,\tau)(\partial_\mu-\frac{2}{1-\mu^2})^2[(1-\mu^2)(1-\mu)^2 e^{ix\mu}]\\
+&= \zeta^1(\v{k})e^{2i\phi}\int_0^{\tau_0}S_P(k,\tau)(-\mathcal{E}(x)+i\mathcal{B}(x))[(1-\mu^2) e^{ix\mu}] \\
+&{} + \zeta^2(\v{k})e^{-2i\phi}\int_0^{\tau_0}S_P(k,\tau)(-\mathcal{E}(x)+i\mathcal{B}(x))[(1-\mu^2) e^{ix\mu}] not sure about this line
+\end{align}
+where we have introduced differential operators, which will save us some work very soon.
+
+\begin{equation}
+\mathcal{E}(x)=-12+x^2(1-\partial^2_x)-8x\partial_x \qquad \mathcal{B}(x) = 8x+2x^2\partial_x
+\end{equation}
+
+Plugging these into \ref{EBmodes} we find our final results for each fourier mode to be:
+
+\begin{align}
+\Delta_T(\tau_0,\unit{n},\v{k}) &= [(1-\mu^2) e^{2i\phi} \zeta^1(\v{k})+(1-\mu^2) e^{-2i\phi} \zeta^2(\v{k})]\int_0^{\tau_0} e^{ix\mu}S_T(k,\tau)\\
+\Delta_{\tilde{E}}(\tau_0,\unit{n},\v{k}) &= [(1-\mu^2) e^{2i\phi} \zeta^1(\v{k})+(1-\mu^2) e^{-2i\phi} \zeta^2(\v{k})]\mathcal{E}(x)\int_0^{\tau_0} e^{ix\mu}S_P(k,\tau)\\
+\Delta_{\tilde{B}}(\tau_0,\unit{n},\v{k}) &= [(1-\mu^2) e^{2i\phi} \zeta^1(\v{k})+(1-\mu^2) e^{-2i\phi} \zeta^2(\v{k})]\mathcal{B}(x)\int_0^{\tau_0} e^{ix\mu}S_P(k,\tau)
+\end{align}
+
+The complete solution requires integration over all fourier modes, which evolve independently. Note the fourier factor is omitted since we measure each mode from the same spatial position $\v{x}$.
+
+FOURIER CONVENTION NEEDS MODIFYING HERE: IJUSFHAIUSHF
+
+\begin{align}
+\Delta_T(\tau_0,\unit{n}) &= \int d^3k \Delta_T(\tau_0,\unit{n},\v{k})\\
+\Delta_{\tilde{E}}(\tau_0,\unit{n}) &= \int d^3k\Delta_{\tilde{E}}(\tau_0,\unit{n},\v{k})\\
+\Delta_{\tilde{B}}(\tau_0,\unit{n}) &= \int d^3k\Delta_{\tilde{B}}(\tau_0,\unit{n},\v{k})
+\end{align}
+
+Note here is where the convoluted definition of E and B modes help us out. Recall Q and U were defined with respect to a fixed basis, dependent on the the direction on the sphere $\unit{n}$. In order to add up all the modes over the sphere we would need to rotate each $Q\pm iU$ $\v{k}$ mode by a $\v{k}$ and $\unit{n}$ dependent phase(since we aligned $\v{k}$ with $\unit{z}$). This was a complication in early attempts to characterise the CMB polarisation beyond the flat sky regime, and we have avoided it through our definition of rotationally invariant E and B modes.\\
+
+We see tensor perturbations have induced both E and B modes.
+
+\subsection{Correlation Functions}
+
+Since the form of these are so similar, we can compute the TT, EE and BB correlation functions in one fall swoop. We can also, with more work, verify that T does not correlate with E or B.
+
+We'll begin by calculating the TT power spectrum ($C_{Tl}^{(T)}$, where the superscript reminds us these are only those sourced by tensor perturbations). Recalling the definition of the angular power spectrum, we first require the spherical multipole coeffiecents $T_{lm}$  
+
+\begin{equation}
+T_{lm} = \int d\Omega Y_{lm}^*(\unit{n})\Delta_T(\tau_0,\unit{n})
+\end{equation}
+
+From \ref{powerspectra} we can write 
+
+\begin{align}
+C_{Tl} &= \frac{1}{2l+1}\sum_m \langle T_{lm}^*T_{lm} \rangle \\
+&= \frac{1}{2l+1} \sum_m [\int d\Omega Y_{lm}^*(\unit{n})\int d^3k\int_0^{\tau_0}d\tau S_T(\tau,k)e^{ix\mu}]^*
+[\int d\Omega Y_{lm}^*(\tilde{\unit{n}})\int d^3\tilde{k}\int_0^{\tau_0}d\tilde{\tau}S_T(\tau,\tilde{k})e^{i\tilde{x}\tilde{\mu}}]\\
+&\times
+\langle [(1-\mu^2) e^{2i\phi} \zeta^1(\v{k})+(1-\mu^2) e^{-2i\phi} \zeta^2(\v{k})]^*[(1-\tilde{\mu}^2) e^{2i\tilde{\phi}} \zeta^1(\v{\tilde{k}})+(1-\tilde{\mu}^2) e^{-2i\tilde{\phi}} \zeta^2(\v{\tilde{k}})]
+\end{align}
+
+The expectation value evaluates to
+SOMEHTING FISHY HERE
+\begin{align}
+&(1-\mu^2)(1-\tilde{\mu}^2)[\langle\zeta^{1*}(\v{k})\zeta^1(\v{\tilde{k}})e^{2i\tilde{\phi}-2i\phi}+\langle\zeta^{2*}(\v{k})\zeta^2(\v{\tilde{k}})e^{-2i\tilde{\phi}+2i\phi}]\\
+&~ (1-\mu^2)(1-\tilde{\mu}^2)P_t(k)\delta(\v{k}-\v{\tilde{k}})e^{2i\tilde{\phi}-2i\phi}
+\end{align}
+
+where we've used $\phi\rightarrow -\phi$ 
+
+\begin{align}
+C_{Tl} = \frac{1}{2l+1} \int k^2 dk P_t(k) \sum_m \bigg| \int d\Omega Y^*_{lm}(\unit{n}) \int_0^{\tau_0} S_T(k,\tau)(1-\mu^2)e^{2i\phi}e^{ix\mu} \bigg|^2
+\end{align}
+
+To evaluate this, we use the expression $Y_{lm} = [\frac{(2l+1)(l-m)!}{4\pi(l+m)!}]^\half P_l^m(\mu)e^{-im\phi}$ for spherical harmonics in terms of legendre polynomials, and note that the $\phi$ integral gives 0 unless m=2, in which case it gives $2\pi$. So we get 
+
+\begin{align}
+C_{Tl} = 4\pi^2\ltwof \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} S_T(k,\tau)\int_{-1}^1 d\mu P_l^2(\mu)(1-\mu^2)e^{ix\mu} \bigg|^2
+\end{align}
+
+To evaluate the $\mu$ integral, we use $P^m_l(\mu)=(-1)^m(1-\mu^2)^{m/2}(\partial_\mu)^mP_l(\mu)$
+
+
+\begin{align}
+\int d\mu P_l^2(\mu)(1-\mu^2)e^{ix\mu} \\
+&= \int d\mu(1-\mu^2)^2 \partial_\mu^2P_l(\mu)e^{ix\mu}\\
+&= \int d\mu \partial_\mu^2P_l(\mu)(1+\partial_x^2)^2e^{ix\mu}\\
+&= \int d\mu P_l(\mu)(1+\partial_x^2)^2(x^2e^{ix\mu})\\
+&= 2i^l(1+\partial_x^2)^2(x^2j_l(x))\\
+&= 2i^l(\frac{j_l(x)}{x^2})
+\end{align}
+
+where we used a combination of and $\int d\Omega Y_{lm}^*(\unit{n})e^{ix\mu} = \sqrt{4\pi(2l+1)}i^l j_l(x) \delta_{m0}$ and $Y_{l0} = \sqrt{\frac{2l+1}{4\pi}}P_l(\mu)$. In the final line we used ODE for spherical bessel functions: $j_l''+\frac{2j_l'}{x}+(1-\frac{l(l+1)}{x^2}j_l)=0$.
+
+Thus our final result is:
+
+\begin{align}
+C_{Tl} = (4\pi)^2\ltwof \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} S_T(k,\tau)\frac{j_l(x)}{x^2} \bigg|^2
+\end{align}
+
+\subsection{E and B mode power spectra}
+
+Now we abuse the similarity of expressions in dsfhs to write down the EE and BB power spectra. The angular dependence of $\Delta_{\tilde{E}}$ and $\Delta_{\tilde{B}}$ are exactly the same as those of $\Delta_T$. The expressions differ only in the $\mathcal{E}$ and $\mathcal{B}$ operators, acting seperately on each k mode, which can be applied after the angular integrals are performed. We lose the $l$ dependent factor in front by converting from $\tilde{E}, \tilde{B}$ to $E,B$, using \ref{EBtwiddle}
+
+
+\begin{align}
+C_{El} &= (4\pi)^2 \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} S_T(k,\tau)\mathcal{E}(x)\frac{j_l(x)}{x^2} \bigg|^2\\
+&= (4\pi)^2\int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} S_T(k,\tau)[-j_l(x) +j_l''(x)+\frac{2j_l(x)}{x^2} \frac{4j_l'(x)}{x}]\bigg|^2\\
+C_{Bl} &= (4\pi)^2 \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} S_T(k,\tau)\mathcal{B}(x)\frac{j_l(x)}{x^2} \bigg|^2\\
+&= (4\pi)^2\int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} S_T(k,\tau)[2j_l'(x)+\frac{4j_l(x)}{x}]\bigg|^2
+\end{align}
+
+
+\subsection{Scalar pertubations}
+
+One can go through an almost identical, and actually simpler, process to derive analgous power spectra sourced by scalar pertubations. We'll omit these here, but will explain the reason why they produce no B mode polarisation. As before, we work in fourier space with wave vector $\v{k}$, which we may choose to be aligned with the $\unit{z}$ direction, and take the basis on which we evaluate $Q$ and $U$ to be the natural basis on the sphere: $(\unit{e_1}, \unit{e_2}) = (\unit{e_\theta}, \unit{e_\phi})$. The angular dependence of the Boltzmann equations are only in $\mu=\v{k}\cdot\unit{n}$, and thus we have azimuthal symmetry, or $\phi$ independence, causing only the Q stokes parameter to be generated. Another way to say the same thing is that the polarisation eigenvector must be proportional to $\unit{e_\theta}$, which by the form of polarisation matrix forces $U=0$. Now by \ref{EBmodes}, we see if $U=0$, then $B(\unit{n})$ is identically 0. Physically speaking, the reason tensor perturbations induce both Q and U polarisation, is because of the additional degree of freedom we have in tensor modes compared to scalar modes.
+
+
+\subsection{Summary}
+
+We have seen that primordial metric tensor pertubations produce a B mode signal in the CMB polarisation, unlike scalar pertubations. Four angular power spectra depend on tensor pertubations, though three of these observables also depend also on scalar perturbations, since E and T are also sourced by  these. As we discussed in the inflation chapter, we know this is at least an order of magnitude larger a signal, likely more. Therefore B mode polarisation provides the most promising route to detecting primordial tensor pertubations. Note we have only so far discussed the early universe. As we will see in the next chapter, late time effects also generate a B mode signal, which for the purposes of studying inflation is a large is an obstacle, though some of these extra B modes provide interesting insights, useful elsewhere.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Some examples and best-practices}
@@ -616,6 +1044,54 @@ from the hyperref package when you have math in the section titles
 
 
 \appendix
+
+\section{Properties of spin-weighted functions}
+We list here the properties of spin-weighted functions we'll need. 
+
+For each s, there exist a set of spin-weighted functions $_sY_lm$ on the sphere, satisfying the same orthogonality and completeness relations as regular spherical harmonics
+
+\begin{align}
+\int_0^{2\pi} d\phi \int_{-1}^{1} d(\cos{\theta}) {}_sY_{l'm'}^*(\theta,\phi){}_sY_{lm}(\theta,\phi) = \delta_{ll'}\delta{mm'} \\
+\sum_{lm} {}_sY_{lm}^*(\theta,\phi){}_sY_{lm}(\theta',\phi')=\delta(\phi-\phi')\delta(\theta-\theta')
+\end{align}
+
+There also exist spin raising ($\sr$) and spin lowering ($\sl$) operators, which raise or lower the spin weight of a function by 1. Their explicit expression is given by
+
+\begin{align}
+\sr {}_sf(\theta, \phi) &= -\sin^s{\theta}[\partial_\theta+i\csc{\theta}\partial_\phi]\sin^{-s}{\theta}{}_sf(\theta, \phi)\\
+\sl {}_sf(\theta, \phi) &= -\sin^{-s}{\theta}[\partial_\theta-i\csc{\theta}\partial_\phi]\sin^{s}{\theta}{}_sf(\theta, \phi)
+\end{align}
+
+Polarisation quantities are spin $\pm 2$. In the case where we have ${}_{\pm2}f(\mu,\phi)$ satisfying $\partial_\phi{}_{\pm2}f=im_{\pm2}f$ we can derive the following forms of the $\sr^2$ and $\sl^2$ operators
+
+\begin{align}
+\sl^2{}_2f(\mu, \phi) = (-\partial_\mu+\frac{m}{1+\mu^2})^2[(1-\mu^2)_2f(\mu,\phi)]\\
+\sr^2{}_{-2}f(\mu, \phi) = (-\partial_\mu-\frac{m}{1-\mu^2})^2[(1-\mu^2)_{-2}f(\mu,\phi)]
+\label{+-2}
+\end{align}
+
+
+We can also relate $_sY_{lm}$ to $Y_lm$:
+
+\begin{equation}
+_sY_{lm} = 
+\begin{cases}
+[\frac{(l-s)!}{(l+s)!}]^{1/2}\sr^s Y_{lm} & 0\leq s\leq l\\
+[\frac{(l-s)!}{(l+s)!}]^{1/2}(-1)^s\sl^s Y_{lm} & -l\leq s\leq 0
+\end{cases}
+\end{equation}
+
+
+Finally the following properties are useful
+
+\begin{align}
+{}_sY_{lm}^* &= (-1)^s {}_{-s}Y_{l,-m}\\
+\sr {}_sY_{lm} &= \sqrt{(l-s)(l+s+1)}{}_{s+1}Y_{l,m}\\
+\sl {}_sY_{lm} &= \sqrt{(l-s)(l-s+1)}{}_{s-1}Y_{l,m}\\
+\sl\sr {}_sY_{lm} &= -(l-s)(l+s+1){}_{s}Y_{l,m}
+\label{propertiesofspin}
+\end{align}
+
 \section{Essay Description}
 Our most promising theory for the early universe involves a phase of cosmic inflation, which not only rapidly expands and flattens the universe, but also generates the primordial density perturbations from quantum fluctuations in the inflaton field. While we have good evidence for inflation, e.g. from the Gaussianity, adiabaticity and near-scale invariance of the scalar density perturbations, one prediction of inflation has not yet been found: many inflationary models produce a stochastic background of primordial gravitational waves. A detection of this background would not only provide a definitive confirmation of inflation, but could also give new insights into the microphysics of inflation and, more broadly, physics at the highest energies.\\
 
