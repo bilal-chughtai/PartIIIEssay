@@ -733,7 +733,104 @@ In the small scale limit we can derive:
 
 \subsection{The Boltzmann Equation}
 
-We use kinetic theory to describe the evolution of photons from the fluid-like, pre-recombination regime to free-streaming radiation. To track pol
+Now that we understand how to describe the relevant quantities on the sphere, we must understand the physics describing their evolution in the early universe, at the epoch of recombination. We use the formalism of distribution functions, and the boltzmann equation, only slightly extending the treatment described in lectures. There are four distribution functions to keep track of now, one for each of the Stokes parameters. We'll make concrete the claim that we may neglect the V stokes parameter, by showing it doesn't evolve from its primordial black body $V=0$ distribution. We'll first derive the Liouville equation, the left hand side of the Boltzmann equation, describing the evolution of the phase space distribution without the presence of a collision term. We'll omit deriving the collision term for Thomson scattering in detail, as the calculation is rather long, but a full discussion may be found in [], on which much of this section is based, although some different conventions are used: notably we use conformal time, and have swapped the newtonian potentials.
+
+We seek to understand both scalar and tensor pertubations to a background FLRW spacetime. We neglect vector pertubations, which decay and are unimportant, unless sourced continuously, by topological defects for example. We use the Newtonian gauge form of the perturbed metric, and work to linear order in pertubations throughout.
+
+\begin{equation}
+ds^2 = a^2(\tau) [-(1+2\Psi)d\tau^2 + ((1-2\Phi)\delta_{ij} +h_{ij})dx^idx^j]
+\end{equation}
+
+where the newtonian potentials are $\Phi$ and $\Psi$ and the metric pertubations $h_{ij}$ are transverse and traceless. 
+
+
+Photons are described by space time coordinate $x^\mu$ and four momentum $p^\mu=\frac{dx^\mu}{d\lambda}$, and are null
+
+\begin{align}
+g_{\mu\nu}p^\mu p^\nu&=0\\
+-a^2(1+2\Psi)((p^0)^2 + p^2) = 0\\
+\Rightarrow p^0 = \frac{p}{a}(1-\Psi)
+\end{align}
+
+We have introduced $p^2=g_{ij}p^ip^j$, the physical photon momentum. We now factorise the spatial part of the metric into an amplitude an angular part $p^i = C\hat{p}^i$, such that $\delta_{ij}\hat{p}^i\hat{p}^j=1$ with $C$ being determines by the constraint:
+
+\begin{equation}
+a^2((1-2\Phi)\delta_{ij}+h_{ij})p^ip^j = p^2 \Rightarrow C=\frac{p}{a}(1+\Phi-\half h_ij\hat{p}^i\hat{p}^j)
+\end{equation}
+
+so the photon 4 momentum may be written as 
+
+\begin{equation}
+p^\mu = \frac{p}{a}(1-\Psi, (1+\Phi-\half h_{jk}\hat{p}^j\hat{p}^k)\hat{p}^i))
+\end{equation}
+
+The Liouville equation for a distribution $f=f(\tau, x^\mu, p^\mu)$ as
+
+\begin{equation}
+\frac{df}{d\tau} = \frac{\partial f}{\partial\tau} + \frac{\partial f}{\partial x^i} \frac{dx^i}{d\tau} + \frac{\partial f}{\partial p} \frac{dp}{d\tau} + \frac{\partial f}{partial\hat{p}^i} \frac{d\hat{p}^i}{d\tau}  = 0
+\label{Liouville}
+\end{equation}
+
+We wish to evaluate this to 0'th and 1'st order. It can be shown the final term is second order, as both $\frac{\partial f}{partial\hat{p}^i}$ and  $\frac{d\hat{p}^i}{d\tau}$ are first order quantities. Physically, the first is because the background distribution is isotropic, and the second is since the unperturbed geodesics are straight lines. \\
+
+The $\frac{dx^i}{d\tau}$ term is easily computed:
+
+\begin{equation}
+\frac{dx^i}{d\tau} = \frac{dx^i}{d\lambda}\frac{d\lambda}{d\tau} = \frac{p^i}{p^0} = (1+\Phi+\Psi-\half h_jk\hat{p}^j\hat{p}^k)\hat{p}^i
+\end{equation}
+
+whereas $\frac{dp}{d\tau}$ requires more work - it describes the evolution of the photon energy, which is described by the geodesic equation. Since we are working to linear order here, the scalar and tensor pertubation contributions decouple, and we can calculate the contribution of each separately. After a slightly tedious calculation we arrive at 
+
+include steps??? got them on a piece of paper somewhere
+
+\begin{equation}
+\frac{dp}{d\tau} = p (\Phi' - \hat{p}^i\frac{\partial \Psi}{\partial x^i} -\half h_ij\hat{p}^i\hat{p}^j -\mathcal{H})
+\end{equation}
+
+That's all we need. We may decompose any distribution to linear order as $f(x^\mu, p^\mu) = f^{(0)}(p,\tau) + f^{(1)}(\v{x},p,\hat{p}^i,\tau)$. Plugging this, and the above results into \ref{Liouville} we get the following 0'th and 1'st order equations
+
+\begin{align}
+\frac{\partial f^{(0)}}{d\tau} - p\mathcal{H}\frac{\partial f^{(0)}}{dp} &=0\\
+\frac{\partial f^{(1)}}{d\tau} + \hat{p}^i\frac{\partial f^{(1)}}{dx^i} - p\mathcal{H}\frac{\partial f^{(1)}}{dp} +p\frac{\partial f^{(0)}}{dp}(\frac{\partial\Phi}{d\tau}-\hat{p}^i\frac{\partial \Psi}{dx^i}-\half \frac{\partial h_{ij}}{d\tau}\hat{p}^i\hat{p}^j) &=0
+\end{align}
+
+The zeroth order equation has solution $f^{(0)}(k,\tau) = f^{(0)}(ka)$, explaining the background uniform redshift, as expected. We can fourier transform over the spartial $\v{x}$ dependence of the first order equation, and reintroduce the collision term, obtaining $f = f^{(1)} = f^{(1)}(\v{k}, p, \hat{p}^i, \tau)$
+
+\begin{equation}
+f^{(1)'} + ik\mu f^{(1)}-\mathcal{H}p\frac{\partial f^{(1)}}{\partial p} - \frac{\partial f^{(0)}}{\partial k} [ \Phi ' - \Psi ' + ik\mu \Phi + \half h_{ij}'\hat{p}^i\hat{p}^j] = 
+C
+\end{equation}
+where we have introduced $\mu = \unit{k} \cdot \unit{p}$, the angle cosine between photon propagation and fourier mode.
+
+C represents the collision term. For scalar pertubations, it contains source terms proportional to $\unit{p}\cdot\v{v_e}$, for $v_e$ the photon velocity. However, scalar perturbations produce velocities $\v{v} \propto \v{k}$, so we may choose spherical coordinates for $\unit{p}$ to be aligned with $v{k}$. In this case  $f^{(1)}(\v{k}, p, \hat{p}^i, \tau) = f^{(1)}(\v{k}, p, \mu, \tau)$, and is manifestly invariant of $\theta$.
+
+Tensor pertubations do depend on $\phi$. Neglecting any electron velocity arising from tensor pertubations, all the $\phi$ dependence is characterised by the tensor pertubation in the boltzmann equation:
+
+\begin{equation}
+h_{ij}'(\v{k},\tau)\hat{p}^i\hat{p}^j = \hat{p}^i\hat{p}^j (h^{+'}(\vec{k},\tau)e_{ij}^+(\vec{k}) + h^{\times'}(\vec{k},\tau)e_{ij}^\times(\vec{k})
+\end{equation}
+
+Choosing spherical coordinates with z axis aligned with $\v{k}$, we choose simple polarisation vectors $e^+_{xx}=-e^+_{yy}=1$ and $e^\times_{xy}=e^\times{yx}=1$ with other components 0. From this we calculate using $\hat{k}^i = (\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\phi)$
+
+\begin{align}
+\hat{p}^i\hat{p}^je_{ij}^+ &= \sin^2{\theta}\cos{2\phi} \\
+\hat{p}^i\hat{p}^je_{ij}^\times &= \sin^2{\theta}\sin{2\phi}
+\end{align}
+
+and so we may write 
+
+\begin{equation}
+f^{(1)}(\v{k}, p, \hat{p}^i, \tau) = f^{(1)}(\v{k}, p, \mu, \tau)\cos{2\phi}
+\end{equation}
+
+for a + polarized wave
+
+
+\begin{equation}
+f^{(1)}(\v{k}, p, \hat{p}^i, \tau) = f^{(1)}(\v{k}, p, \mu, \tau)\sin{2\phi}
+\end{equation}
+
+for a x polarized wave
 
 
 \subsection{Power spectrum of tensor modes}
