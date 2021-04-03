@@ -16,6 +16,7 @@
 \newcommand{\cres}[2]{\hat{a}^\dagger_{\v{#1}#2}}
 \newcommand{\vac}{|0\rangle}
 \newcommand{\fint}[1]{\int \frac{d^3 #1}{(2\pi)^3}}
+\newcommand{\finttwo}[1]{\int \frac{d^2 #1}{(2\pi)^2}}
 \newcommand{\unit}[1]{\hat{\v{#1}}}
 \newcommand{\sr}{\text{\normalfont\dh}}
 \renewcommand{\sl}{\bar{\text{\normalfont\dh}}}
@@ -468,32 +469,62 @@ Given the large number of inflation models, even within the SFSR regime, that ex
 
 \subsubsection{The energy scale of inflation}
 
-In the slow roll approximation, we may write 
+
+
+
+In the slow roll approximation, the tensor power spectrum depends only on the hubble rate during inflation, which in SFSR models can be related to the inflaton potential via $3H^2\Mp^2\approx V$. The scalar power spectrum depends both on the hubble rate, as well as the slow roll parameter $\epsilon$, which is directly related to the scalar to tensor ratio $r$. Given these, we may compute the energy scale of inflation. Working at the pivot scale $k_* = 0.05Mpc^{-1}$
 
 \begin{equation}
-\Delta^2_{\mathcal{R}}\approx \frac{V}{24\pi^2\epsilon\Mp^4}
+\Delta^2_{\mathcal{s}}\approx \frac{V}{24\pi^2\epsilon\Mp^4}
 \end{equation}
 
-Current measurements [QBM -> PLANCK] give $\Delta^2_{\mathcal{R}} \approx A_s \approx 2.2\times10^{-9}$. Making use of $r\approx 16\epsilon$, we learn
+Current measurements [QBM -> PLANCK] give $\Delta^2_{\mathcal{s}} \approx A_s \approx 2.2\times10^{-9}$. Making use of $r\approx 16\epsilon$, and $\Mp \approx 2.43\times 10^{18} GeV$ we learn
 
-\begin{equation}
-V=24\pi^2A_s\frac{r}{16}\Mp^4 \Rightarrow V^{1/4} \approx 3.12\times10^{16}\text{GeV}r^{1/4} \leq 1.75\times10^{16}\text{GeV}
-\end{equation}
+\begin{align}
+V=24\pi^2A_s\frac{r}{16}\Mp^4 \Rightarrow V^{1/4} &\approx 3.22\times10^{16}\text{GeV}r_*^{1/4}\\
+&= 1.04\times10^{16}\text{GeV}(\frac{r_*}{0.01})^{1/4} \leq 1.75\times10^{16}\text{GeV}
+\end{align}
 
-This can be further improved with more accurate bounds on r.
+Using the current bound $r_*\leq 0.1$ gives an upper bound on this energy scale, which can be improved and also bounded below given a measurement of r. Let us not understate this - this will give a new fundamental scale of particle physics beyond the standard model, and will be significantly higher than that achievable in terrestrial experiments.
+
 
 \subsubsection{Field excursion}
-Recall \ref{efolds} giving 
+
+As before, combining the scalar and tensor power spectrum gives information about $\epsilon$, which in the slow roll regime contains information about the background evolution of the field. In particular, recalling our previous calculation \ref{efolds} we can compute the "field excursion" of the inflaton field in planck units:
+
+\begin{align}
+N(t) &=  \int_{\phi(t)}^{\phi_{end}} \frac{d\phi}{\sqrt{2\epsilon}\Mp}\\
+\Rightarrow dN&=\frac{d\phi}{\sqrt{2\epsilon}\Mp}\\
+\Rightarrow \frac{\Delta \phi}{\Mp} &= \int_0^N \sqrt{2\epsilon} dN = \int_0^N \sqrt{r/8} dN 
+\end{align}
+
+Now recall each mode inflates do a slightly different degree: we can apply this formula to the pivot scale mode $k_*$ to learn 
+
+\begin{align}
+\frac{\Delta \phi}{\Mp} =  \int_0^N \sqrt{r(N)/8} dN 
+\end{align}
+
+In slow roll inflation $r$ is approximately constant, but depends slightly on $N$, precisely because $\epsilon$ varies slightly during inflation. 
+
+SOMETHING WRONG HERE
+
+In most models, we can take $\epsilon$ to increase over time monotonically, and so $r$ is monotonically increasing with $N$ and so
 
 \begin{equation}
-N(t) =  \int_{\bphi(t)}^{\bphi_end} \frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}
-\Rightarrow dN=\frac{d\bphi}{\sqrt{2\epsilon_V}\Mp}
-\Rightarrow \frac{\Delta \phi}{\Mp} = \int_0^N \sqrt{2\epsilon} dN = \int_0^N \sqrt{r/8} dN 
+\frac{\Delta \phi}{\Mp} > \sqrt{r_*/8}N_* > (\frac{r}{0.01})^{1/2}
 \end{equation}
 
+where the second inequality comes from a conservative lower limit on $N_* > 30$. This is a lot lower than the requirement of about 60 e folds of inflation we require to solve the horizon and flatness problems. Nevertheless, we see can seperate inflation models into two (vaguely) distinct classes, depending on if $r\lessapprox 0.01$ or $r\gtrapprox 0.01$, known as small and large field models. 
 
+While both small and large field models are challenging to construct consistently, and require some degree of fine tuning, large field models prove more difficult. Suppose we expand the inflaton potential in a SFSR model as 
 
+\begin{equation}
+V(\phi) = \half m^2\phi^2 + \sum_{p=3}^\infty \lambda_p(\frac{\phi}{\Mp})^p
+\end{equation}
 
+We can fine tune $\lambda_p$ such that at any $\phi$, $\epsilon, \eta << 1$, though these coefficients are expected to receive quantum corrections $\Delta\phi_p(\\phi)$, which generically will be of order unity in superplanckian field ranges, which are expected in large field inflation, likely ending inflation since $\epsilon, \eta << 1$ would likely not be preserved of this full range. 
+
+This is exciting, as upcoming CMB experiments [] are forecasted to have a sensitivity of $r\approx 10^{-3}$, which would be able to definitively either validate or rule out such large field models.
 
 
 
@@ -597,7 +628,7 @@ An alternative choice of basis is given by the complex combinations $e_\pm = \un
 It is convinient to instead work with quantities $Q\pm iU$. Using \ref{QUtranform} it is easy to see under a rotation we get  
 
 \begin{equation}
-Q'\pm iU' = e^{-2i\psi}(Q\pm iU)
+Q'\pm iU' = e^{\mp 2i\psi}(Q\pm iU)
 \end{equation}
 
 A function $f(\theta, \phi)$ defined on a sphere is said to have spin $s$ if under a right handed rotation by angle $\psi$ of orthogonal vectors tangential to the sphere $(\unit{e_1}, \unit{e_2})$, transforms as $f'(\theta, \phi) = e^{-is\psi}f(\theta, \phi)$. Thus $Q+iU$ is a spin 2 quantity, and $Q-iU$ a spin 2 quantity. From here onwards we use the natural choice of tangential basis on the sphere $(\unit{e_1}, \unit{e_2}) = (\unit{e_theta}, \unit{e_\phi})$. The reason we construct these quantities of definite spin, is that analogously to the expansion of a scalar quantity
@@ -725,11 +756,41 @@ T(\unit{n}) = \sum_{lm} T_{lm}Y_{lm}(\unit{n}) \rightarrow (2\pi)^{-2} \int d^2\
 and so \ref{QUEB} becomes
 
 \begin{align}
-(Q+iU)(\unit{n}) &= -(2\pi)^2\int d^2l [E(l)+iB(l)]  \frac{1}{l^2}\sr^2e^{i\vec{l}\cdot\unit{n}}\\
-(Q+iU)(\unit{n}) &= -(2\pi)^2\int d^2l [E(l)+iB(l)] \frac{1}{l^2}\sl^2e^{i\vec{l}\cdot\unit{n}}
+(Q+iU)(\unit{n}) &= -(2\pi)^{-2}\int d^2l [E(l)+iB(l)]  \frac{1}{l^2}\sr^2e^{i\vec{l}\cdot\unit{n}}\\
+(Q+iU)(\unit{n}) &= -(2\pi)^{-2}\int d^2l [E(l)+iB(l)] \frac{1}{l^2}\sl^2e^{i\vec{l}\cdot\unit{n}}
 \end{align}
 
 In the small scale limit we can derive:
+
+\begin{align}
+\frac{1}{l^2}\sr^2e^{i\vec{l}} &= -e^{-2i(\phi-\phi_l}e^{i\v{l}\cdot\v{\theta}}\\
+\frac{1}{l^2}\sl^2e^{i\vec{l}} &= -e^{2i(\phi-\phi_l}e^{i\v{l}\cdot\v{\theta}}
+\end{align}
+
+Finally, in the flat sky approximation we consider a fixed basis $\unit{e_x}, \unit{e_y}$ orthonormal to $\unit{z}$, while above we have been using the coordinate dependent $\unit{e_\theta}, \unit{e_\phi}$ basis. We may rotate between them using $Q'\pm iU' = e^{\mp 2i\phi}(Q\pm iU)$ derived earlier, and find that (dropping the prime label)
+
+\begin{align}
+Q(\unit{n}) &= (2\pi)^{-2}\int d^2l [E(l)\cos{2\phi_l}-B(l)\sin{2\phi_l}]  e^{i\vec{l}\cdot\unit{n}}\\
+U(\unit{n}) &= (2\pi)^{-2}\int d^2l [E(l)\sin{2\phi_l}+B(l)\cos{2\phi_l}]  e^{i\vec{l}\cdot\unit{n}}\\
+\end{align}
+
+or alternatively, E and B modes are related to Q and U modes by a rotation in fourier space, as how introduced in FTC lectures. 
+
+\begin{equation}
+\begin{pmatrix}
+Q(l)\\
+U(l) 
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos{2\phi_l} & -\sin{2\phi_l}\\ 
+\sin{2\phi_l} & \cos{2\phi_l}
+\end{pmatrix}
+\begin{pmatrix}
+E(l)\\
+B(l) 
+\end{pmatrix}
+\end{equation}
 
 \subsection{The Boltzmann Equation}
 
@@ -739,6 +800,7 @@ We seek to understand both scalar and tensor pertubations to a background FLRW s
 
 \begin{equation}
 ds^2 = a^2(\tau) [-(1+2\Psi)d\tau^2 + ((1-2\Phi)\delta_{ij} +h_{ij})dx^idx^j]
+\label{perturbmetric}
 \end{equation}
 
 where the newtonian potentials are $\Phi$ and $\Psi$ and the metric pertubations $h_{ij}$ are transverse and traceless. 
@@ -1032,13 +1094,223 @@ We have seen that primordial metric tensor pertubations produce a B mode signal 
 
 
 
+\section{Observational Challenges}
 
 
+So far we have assumed photons last scattered at recombination have travelled to us unimpeded. This can be seen directly through the dependence of derived temperature, E and B mode  power spectra dependence on the visibility function, which has support only in the epoch of recombination. Of course CMB photons experience late time effects too, as a result of the intervening large scale structure present between redshift 0 and recombination ($z ~ 1100$). 
 
 
+\subsection{Lensing}
+
+Having introduced some of the potential challenges, we will go into slightly more detail on gravitational lensing. Lensing is a second order effect, intuitively because it is a combination of two first order effects: it deflects the photon path away from its straight line geodesic, as a result of clustering of LSS. We dropped the term in the boltzmann equation describing this effect:  $\frac{\partial f}{partial\hat{p}^i}\frac{d\hat{p}^i}{d\tau}$ for precisely its second order nature, as at linear order fourier modes neatly decouple and allow us to make progress. Lensing mixes these fourier modes together again, making the statistics of the lensed sky more complicated than those of the unlensed one. \\
+We treat lensing in the `weak lensing' regime, where images (and other fields on the sphere) experience a small shift compared to the original unlensed field. The effect of gravitational lensing is greatest when the lens is massive, and close to the source. While lenses for the purposes of CMB some lenses certainly are massive, they are relatively far from the $z~1100$ source, since structure doesn't form in the universe until a much later time. The contrary `strong lensing' regime is also very interesting, though not relevant here.\\
+
+Lensing effects all three of our observable CMB fields: the temperature fluctuation $\Theta$, and Stokes parameters $Q$ and $U$, and in doing so also the derived physical $E$ and $B$ fields in a way that will be made precise later. It has the effect of locally (i.e. on small patches of the sky) sqaushing and stretching the CMB, mixing fourier modes, and having the effect of shifting local power spectra left or right. Summing over many patches we see a small smoothing of acoustic oscillations in the temperature and E mode spectra at several percent. \\
+
+Importantly, it also has the effect of converting some primordial E modes to lensed B modes, which we demonstrate and quantify in the flat sky limit. This obscures the brimordial B mode signal, and so is a nuisance in terms of early universe physics. However, lensing provides a probe of the matter distribution universe out to much larger redshifts than currently possible through galaxy surveys. One can extract a lot of information from this ...........
+
+\subsection{Mathematical Description of Lensing}
+
+The mathematical formalism to used to describe lensing is rather simple. From general relativity and a flat\footnote{similar expressions exist in positive and negative curvature universes} FLRW metric, one can derive an expression for the displacement vector or angle $\v{\alpha}$ on the sphere, dependent on observed direction $\unit{n}$, by which the lensed and unlensed fields differ:
+
+\begin{equation}
+\tilde{X}(\unit{n}) = X(\unit{n}+\v{\alpha})
+\end{equation}
+
+\begin{equation}
+\v{\alpha} = -2 \int_0^{\chi_*}d\chi \frac{\chi_*-\chi}{\chi_*\chi}\nabla_{\unit{n}}\Psi(\chi\unit{n},\tau_0-\chi)
+\end{equation}
+
+where $X$ is an observable field: $X \in \{ \Theta, U, V\}$, $\chi$ is conformal distance, $\tau_0-\chi$ is the conformal time at which the photon was at position $\chi\unit{n}$, $\nabla_{\unit{n}}$ is the angular derivative, or covariant derivative on the sphere, and $\Psi$ is the Weyl potential, defined in terms of \ref{perturbmetric} as $\Psi =\half (\psi+\phi)$. This quantity is related to matter perturbations by what is commonly known as the Poisson Equation, derived from Einstein's equations:
+
+\begin{equation}
+\nabla^2\Psi = 4\pi G\bar{\delta\rho}
+\end{equation}
+
+where $\bar{\delta\rho}$ is the comoving total density perturbation, evaluated in its rest frame, and we have assumed no anisotropic stress. It is convenient to write the deflection angle instead in terms of a lensing potential:
+
+\begin{align}
+\psi(\unit{n}) &= -2 \int_0^{\chi_*}d\chi \frac{\chi_*-\chi}{\chi_*\chi}\Psi(\chi\unit{n},\tau_0-\chi)\\
+\v{\alpha} &= \nabla \psi
+\end{align}
+
+One may worry about the lensing potential being divergent as $\chi \rightarrow 0$. We can amend this by setting the monopole of $\psi$ to 0, without modifying $\v{\alpha}$. 
+
+\subsection{Lensing Potential power spectrum}
+
+In the calculation of lensed power spectra, we will need the lensing potential power spectrum. Here we derive an expression for it, showing as expected it is simply a weighted matter power spectrum. We'll make use of fourier space the expression
+
+\begin{equation}
+\langle \Psi(\v{k},\tau,\tau')\Psi^*(\v{k}',\tau,\tau')\rangle=\frac{2\pi}{k^3}\Delta^2_\Psi(k,\tau,\tau')(2\pi)^3\delta(\v{k}-\v{k}')
+\end{equation}
+
+and so 
+
+\begin{align}
+\langle \psi(\unit{n})\psi(\unit{'n}) \rangle &= 4\int d\chi \int d\chi'(\frac{\chi_*-\chi}{\chi_*\chi})(\frac{\chi_*-\chi'}{\chi_*\chi'}\fint{k}\frac{2\pi^2}{k^3}\delta^2_\Psi(k,\tau,\tau')e^{i\v{k}\cdot\v{x}}e^{-i\v{k}\cdot\v{x'}}\\
+&= 16\pi \sum_{ll'mm'}\int d\chi \int d\chi'(\frac{\chi_*-\chi}{\chi_*\chi})(\frac{\chi_*-\chi'}{\chi_*\chi'}\int \frac{dk}{k}j_l(k\chi)j_{l'}(k\chi')Y_{lm}(\unit{n})Y^*_{l'm'}(\unit{n}')\delta_{ll'}\delta{mm'}
+\end{align}
+
+where we have made use of the Rayleigh Plane Wave identity with $\v{x}=\chi\unit{n}$
+
+\begin{equation}
+e^{i\v{k}\cdot\v{x}} = 4\pi\sum_{lm}i^lj_l(k\chi)Y_{lm}^*(\unit{n})Y_{lm}(\unit{k})
+\end{equation}
+
+and done the angular $\unit{k}$ using orthogonality of spherical harmonics. Finally we expand
+
+\begin{equation}
+\psi(\unit{n}) = \sum_{lm}\psi_{lm}Y_{lm}(\unit{n})
+\end{equation}
+
+and recalling the definition of $C_l^\psi$:
+
+\begin{equation}
+\langle \psi_{lm}\psi_{l'm'}^* \rangle = \delta_{ll'}\delta_{mm'}C_l^\psi
+\end{equation}
+
+we can read off the power spectrum:
+
+\begin{equation}
+C_l^\psi = 16\pi int_0^{\chi_*} d\chi \int_0^{\chi_*} d\chi' \int \frac{dk}{k} (\frac{\chi_*-\chi}{\chi_*\chi})(\frac{\chi_*-\chi'}{\chi_*\chi'}\Delta^2_\Psi(k, \tau_0-\chi, \tau_0-\chi')
+\end{equation}
+
+Finally we may relate the scale invariant power spectrum of $\Psi$ to that of $\bar{\delta}$ via the fourier transforming the Poisson Equation:
+
+TO DO
+
+\subsection{Lensing of B modes} 
+
+We calculate in this section, in the flat sky regime, the effect lensing has on temperature, E mode, and importantly, B mode power spectra. 
+
+We'll perform the calculation explicitly for temperature, with the polarisation calculations following similarly. We use here the series expansion approach, which gives good intuition and qualitatively correct results, though is not a good approximation on all scales. For larger scales a real space correlation function approach is used. In the series expansion approach we may expand
+
+\begin{equation}
+\tilde{\Theta(\unit{n}}) = \Theta(\unit{n}+\nabla\psi) =\Theta(\unit{n})+\nabla^a\psi(\unit{n})\nabla_a\Theta(\unit{n})+\half\nabla^a\psi(\unit{n})\nabla^b\psi(\unit{n})\nabla_a\nabla_b\Theta(\unit{n})
+\end{equation}
+
+Fourier transforming the above equation and using the convolution theorem we obtain
+
+\begin{align}
+\tilde{\Theta}(\v{l}) &= \Theta(\v{l}) - \finttwo{l_1} \v{l_1}\cdot(\v{l}-\v{l_1})\Theta(\v{l_1})\psi(\v{l}-\v{l_1}) -\half \finttwo{l_1}\finttwo{l_2}\v{l_1}\cdot(\v{l_1}+\v{l_2}-\v{l})\v{l_1}\cdot\v{l_2}\Theta(\v{l_1})\psi(\v{l_2})\psi^*(\v{l_1}+\v{l_2}-\v{l})\\
+&= \Theta(\v{l}) - \finttwo{l_1} \Theta(\v{l_1})L(\v{l},\v{l_1})
+\label{lensedtemp}
+\end{align}
+
+making use of $\psi(\v{l})=\psi^*(-\v{l})$, and where we have defined the lensing kernel
+
+\begin{equation}
+L(\v{l},\v{l_1}) = \v{l_1}\cdot(\v{l}-\v{l_1})\psi(\v{l}-\v{l_1})+\finttwo{l_2}\v{l_1}\cdot(\v{l_1}+\v{l_2}-\v{l})\v{l_1}\cdot\v{l_2}\psi(\v{l_2})\psi^*(\v{l_1}+\v{l_2}-\v{l})\\
+\end{equation}
+
+Now we may calculate the (lensed) power spectrum of temperature perturbations to lowest order in the lensing potential power spectrum, defined as:
+
+\begin{equation}
+\langle \Theta^*(\v{l})\Theta(\v{l}')\rangle = (2\pi)^2\delta(\v{l}-\v{l}')C_l^{\Theta\Theta}
+\end{equation}
+
+using the fact that $\Theta$ and $\psi$ don't correlate, and Wick's theorem
+
+\begin{align}
+\tilde{C}_l^{\Theta \Theta} &\approx C_l^{\Theta \Theta}+\finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1}]^2 C^\psi_{|\v{l}-\v{l_1}|}C_{l_1}^{\Theta\Theta} - C_l^{\Theta\Theta}\finttwo{l_1} [\v{l}\cdot\v{l_1}]^2C_{l_1}^{\psi\psi}\\
+&=(1-l^2R^\psi)C_l^{\Theta\Theta}+\finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1}]^2 C^{\psi}_{|\v{l}-\v{l_1}|}C_{l_1}^{\Theta\Theta}
+\end{align}
+
+where we have defined
+
+\begin{equation}
+R^\psi = \frac{1}{4\pi}\int \frac{dl}{l} l^4 C_l^{\psi\psi}
+\end{equation}
+
+this gives our final lensed spectrum. SOME ANALYSIS OF LIMITING BEHAVIOUR
+
+For polarisation, the calculation is rather similar. Recall that in the flat sky limit we must rotate Q and U fourier modes into E and B modes as:
+
+\begin{align}
+(Q\pm iU(\unit{n}) := P_{\pm} (\unit{n}) &= \finttwo{l}(E(\v{l})\pm i B(\v{l}))e^{\pm 2i\phi_{\v{l}}}e^{i\v{l}\cdot\unit{n}}\\
+\Leftrightarrow  P_{\pm}(\v{l}) &= (E(\v{l})\pm i B(\v{l}))e^{\pm 2i\phi_{\v{l}}}
+\label{relationship}
+\end{align}
+
+Now lensing acts on $P_{\pm}$ exactly as it did on the temperature field 
+
+\begin{equation}
+\tilde{P_{\pm}(\unit{n}}) = P_{\pm}(\unit{n}+\nabla\psi) =P_{\pm}(\unit{n})+\nabla^a\psi(\unit{n})\nabla_aP_{\pm}(\unit{n})+\half\nabla^a\psi(\unit{n})\nabla^b\psi(\unit{n})\nabla_a\nabla_bP_{\pm}(\unit{n})
+\end{equation}
+
+which in fourier space gives
+
+\begin{equation}
+\tilde{P}_{\pm}(\v{l}) = P_{\pm} - \finttwo{l_1} P_{\pm}(\v{l_1})L(\v{l},\v{l_1})
+\end{equation}
+
+Finally to we use the relationship \ref{relationship} between $P_\pm$ and $E$ and $B$ modes twice:
+
+\begin{align}
+\tilde{E}(\v{l})\pm i\tilde{B}(\v{l}) &= e^{-2i\phi_\v{l}}\tilde{P}_{\pm}(\v{l})\\
+&=e^{\mp 2i\phi_\v{l}}(P_{\pm}(\v{l}) - \finttwo{l_1} P_{\pm}(\v{l_1})L(\v{l},\v{l_1}))\\
+&=e^{\mp 2i\phi_\v{l}}(e^{\pm 2i\phi_\v{l}}(E(\v{l})\pm iB(\v{l}))-\finttwo{l_1} e^{+2i\phi_\v{l_1}}(E(\v{l_1})\pm iB(\v{l_1}))L(\v{l},\v{l_1}))\\
+&=E(\v{l})\pm iB(\v{l})-\finttwo{l_1} e^{\pm 2i(\phi_\v{l_1}-\phi_\v{l})}(E(\v{l_1})\pm iB(\v{l_1}))L(\v{l},\v{l_1})
+\end{align}
+
+From this, we may calculate (lensed) power spectra for E and B (and the = TE cross correlation), defined on the flat sky as :
+
+\begin{equation}
+\langle E^*(\v{l})E(\v{l}')\rangle = (2\pi)^2\delta(\v{l}-\v{l}')C_l^{EE} \qquad \langle B^*(\v{l})B(\v{l}')\rangle = (2\pi)^2\delta(\v{l}-\v{l}')C_l^{BB}
+\end{equation}
 
 
+Schematically, this calculation is similar to that for lensed temperature perturbations, and we pick up identical terms. By correlating $\tilde{E}(\v{l})\pm i\tilde{B}(\v{l})$ with itself and $\tilde{E}(\v{l})\mp i\tilde{B}(\v{l})$ we obtain
 
+\begin{align}
+\tilde{C}_l^{EE}+\tilde{C}_l^{BB} &\approx C_l^{EE}+C_l^{BB}+\finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1})]^2 C^\psi_{|\v{l}-\v{l_1}|}(C_{l_1}^{EE}+C_{l_1}^{BB}) - (C_{l}^{EE}+C_{l}^{BB})\finttwo{l_1} [\v{l}\cdot\v{l_1}]^2C_{l_1}^{\psi\psi}\\
+\tilde{C}_l^{EE}-\tilde{C}_l^{BB} &\approx C_l^{EE}-C_l^{BB}+\finttwo{l_1}e^{4i(\phi_{\v{l_1}}-\phi_\v{l})}[ \v{l_1}\cdot(\v{l}-\v{l_1})]^2 C^\psi_{|\v{l}-\v{l_1}|}(C_{l_1}^{EE}-C_{l_1}^{BB}) - (C_{l}^{EE}-C_{l}^{BB}\finttwo{l_1} )[\v{l}\cdot\v{l_1}]^2C_{l_1}^{\psi\psi}
+\end{align}
+
+The integrals are actually all real (WHY?), and so we may replace the exponentials by cosines. Altogether we get:
+
+\begin{align}
+\tilde{C}_l^{EE} &= (1-l^2R^\psi)C_l^{EE}+\half \finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1})]^2 C^\psi_{|\v{l}-\v{l_1}|}\\
+& \times [(C_{l}^{EE}+C_{l}^{BB})+\cos{4(\v{l_1}-\phi_\v{l}}(C_{l}^{EE}+C_{l}^{BB})]\\
+\tilde{C}_l^{BB} &= (1-l^2R^\psi)C_l^{BB}+\half \finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1})]^2 C^\psi_{|\v{l}-\v{l_1}|}\\
+& \times [(C_{l}^{EE}+C_{l}^{BB})-\cos{4(\v{l_1}-\phi_\v{l}}(C_{l}^{EE}+C_{l}^{BB})]\\
+\end{align}
+
+Here comes the key point: even if $C_{l}^{BB}$ is zero, in which case we have no primordial inflationary gravitational waves - lensing creates some. This has important consequences for the detectability of B modes.
+
+DISCUSSION - RELATIVE SIZE OF EFFECTS
+
+\subsection{Delensing}
+
+In the limit of small instrumental noise, largest source of B-mode power on large angular scales is gravitational lensing. The lensed B-mode power spectrum $\tilde{C}^{BB}_l$ is roughly constant on large angular scales, and can thus be interpreted as an extra source of white noise, whose amplitude is found to be 4.4 K-arcmin For instrumental noise levels fall below this level, experiments will be lensing-limited: the limiting factor in constraining r will be the lensing B-mode, which acts as the dominant source of noise. Delensing algorithms have been proposed [14, 15, 16] which statistically separate the gravitational wave and lensing B-mode signals, offering the prospect for reducing the eective noise level below the 4.4 K-arcmin, and unlocking more modes for observation. These algorithms are based on a relatively simple idea: given information about noisy observed E modes, together information about the lensing potential and so the deflection field, we can estimate the large-scale lensing B-mode and subtract it from
+the observed B-mode. The required estimate for the defection field is usually obtained internally - using CMB data, as opposed to externaly, through other probes of the universe matter distribution.
+
+\subsection{Lensing reconstruction}
+
+The first step in delensing is to reconstruct the lensing potential. Here we discuss the simplest such estimators, which have recently been used to create lensing mass maps over large portions of the sky by the ACT collaboration. 
+
+The idea here is that the unlensed CMB is statistically very simple - it is Gaussian, ie distinct fourier modes are statistically independent: $\langle X^*(\v{l})X(\v{l'})\rangle =0 \text{for} \v{l} \neq \v{l'}$. Lensing, being a non linear effect mixes these fourier modes: we saw above by the convolution theorem that  $\tilde{X}(\v{l})$ picks up contributions from all modes ${X}(\v{l_1}$ and $\phi(\v{l_2}$ with $\v{l_1}+\v{l_2}=\v{l}$.. It thus contains information about the lensing potential.
+
+Let us demonstrate this explicitly for the case of temperature pertubations. From the expression \ref{lensedtemp} we calculate 
+
+\begin{align}
+\langle \tilde{\Theta}(\v{l})\tilde{\Theta}^*(\v{l}-\v{L})\rangle &= \delta(\v{L}C_l^{\Theta\Theta} \finttwo{l_1}  \v{l_1}\cdot(\v{l}-\v{l_1})\psi(\v{l}-\v{l_1}) \langle \Theta(\v{l_1})\Theta^*(\v{l}-\v{L})\rangle + \v{l_1}\cdot(\v{l}-\v{L}-\v{l_1})\psi^*(\v{l}-\v{L}-\v{l_1}) \langle \Theta(\v{l})\Theta^*(\v{l_1}\rangle\\
+&=\delta(\v{L}C_l^{\Theta\Theta} + [(\v{L}-\v{l})\cdot\v{L}C^{\Theta\Theta}_{|\v{l}-\v{L}|}+\v{l}\cdot\v{L}C_l^{\Theta\Theta}]\psi(\v{l})
+\end{align}
+
+and so the $\v{L}\neq 0 $ modes probe the lensing potential. Note a similar calculation shows any of $TT, TE, TB, EE$ can be used in place of $TT$ here, and in the proceeding construction of a minimum variance estimator. with details presented in Hu and Otomoto. To estimate the lensing potential we perform a weighted average of all off diagonal terms:
+
+\begin{equation}
+\hat{\psi}(\v{L}) = N(\v{L})\finttwo{l} \tilde{\Theta}(\v{l})\tilde{\Theta}^*(\v{l-L})g(\v{l},\v{L})
+\end{equation}
+
+where $g(\v{l},\v{L})$ is some weighting function. To be unbiased at lowest order we want $\langle \hat{\psi}(\v{L}) \rangle = \psi(\v{L})$, which by the previous calculation gives:
+
+\begin{equation}
+N(\v{L})^{-1} = \finttwo{l} [(\v{L}-\v{l})\cdot\v{L}C^{\Theta\Theta}_{|\v{l}-\v{L}|}+\v{l}\cdot\v{L}C_l^{\Theta\Theta}]g(\v{l},\v{L})
+\end{equation}
+
+with g is chosen to maximise the signal to noise.
 
 \section{Some examples and best-practices}
 \label{sec:intro}
