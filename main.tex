@@ -5,8 +5,10 @@
                      % see the JCAP-author-manual          
 \usepackage{enumitem}% http://ctan.org/pkg/enumitem
 \usepackage[T1]{fontenc} % if needed
+\usepackage{hyperref}
 
 \graphicspath{ {images/} }
+
 
 \renewcommand{\v}[1]{\mathbf{#1}}
 \newcommand{\Mp}{M_{pl}}
@@ -66,6 +68,8 @@ units hbar = c = 1
 fourier convention
 
 \section{Inflationary Cosmology}
+\nocite{*}
+\cite{QBM}
 
 Inflation is a brief, but very important, period of accelerated expansion in the very early universe, first proposed by [Guth 1981]. It was initially motivated by three problems with the previous standard big bang cosmology, namely the flatness problem (why was the ratio of energy density and critical density so close to unity), the monopole problem, and the horizon problem (why are seemingly casually disconnected regions of the CMB at the same temperature to very high accuracy). Since the birth of the idea, it has become the leading paradigm to the early universe, in part because it provides a quantum mechanical mechanism of generating the primordial density perturbations seeding cosmological evolution. In this chapter we quickly review some important features of inflation.
 
@@ -2119,38 +2123,8 @@ available to maintain the same layout and spelling of the heading.
 \paragraph{Note added.} This is also a good position for notes added
 after the paper has been written.
 
+\bibliographystyle{plain}
+\bibliography{ref}
 
 
-
-
-% The bibliography will probably be heavily edited during typesetting.
-% We'll parse it and, using the arxiv number or the journal data, will
-% query inspire, trying to verify the data (this will probalby spot
-% eventual typos) and retrive the document DOI and eventual errata.
-% We however suggest to always provide author, title and journal data:
-% in short all the informations that clearly identify a document.
-
-\begin{thebibliography}{99}
-
-\bibitem{a}
-Author, \emph{Title}, \emph{J. Abbrev.} {\bf vol} (year) pg.
-
-\bibitem{b}
-Author, \emph{Title},
-arxiv:1234.5678.
-
-\bibitem{c}
-Author, \emph{Title},
-Publisher (year).
-
-
-% Please avoid comments such as "For a review'', "For some examples",
-% "and references therein" or move them in the text. In general,
-% please leave only references in the bibliography and move all
-% accessory text in footnotes.
-
-% Also, please have only one work for each \bibitem.
-
-
-\end{thebibliography}
 \end{document}
