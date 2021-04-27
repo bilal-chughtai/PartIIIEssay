@@ -594,7 +594,7 @@ At $\tau=0$, inflation tells us $\xi^+$ and $\xi^\times$ are independent, and dr
 \label{statprops}
 \end{equation}
 
-where $P_t(k) = \frac{2\pi^2}{k^3}\Delta_t^2(k)$ is the standard dimensionfull power spectrum. Note our fourier convention differs from \cite{all-sky}, who absorb the $(2\pi)^3$ into the power spectrum. This means our final angular power spectra will also differ by this factor.\\
+where $P_t(k) = \frac{2\pi^2}{k^3}\Delta_t^2(k)$ is the standard dimensionfull power spectrum. Note our fourier convention differs from \cite{all-sky}, which will give us a different final angular power spectrum.
 
 To completely understand the full photon distribution we must follow the evolution of four distributions $f_X$, one for each Stokes parameter $X\in\{I,Q,U,V\}$. Thomson scattering of anisotropic radiation by free electrons gives rise to only linear polarization, so we may safely ignore $f_V$. For homogeneous and isotropic unpolarised radiation the distribution is simply $\bar{f}_I(\tau)= [e^{\hbar \nu/k_b T(\tau)}-1]^{-1}$, $f_Q=f_U=0$, the black body Planck distribution. The presence of metric perturbations breaks this homogeneity, inducing frequency independent perturbations $\Delta_X(\tau,\unit{n},\v{x})$ in real space or $\Delta_X(\tau,\unit{n},\v{k})$ in Fourier space.  Here, $\unit{n}$ is the line of sight, $\v{x}$ denotes spatial position, with conjugate $\v{k}$, and $\tau$ is conformal time. In principle these anisotropies additionally have frequency dependence, but since spectral distortions are second order we may ignore them at linear order. $Q$ and $U$ are measured in their natural basis ($\unit{e}_\theta, \unit{e}_\phi$) on the sphere, and the intensity anisotropy may be related to the temperature anisotropy via $\Delta_I/4=\Delta_T=\frac{\delta T}{\bar{T}}$. Following a method first introduced by Polnarev \cite{polnarev}, we introduce new variables $\tilde{\Delta}_T(\tau,\mu,k)$ and $\tilde{\Delta}_P(\tau,\mu,k)$ with simpler angular dependence to describe temperature and polarisation anisotropies, depending only on $\mu=\unit{n}\cdot\unit{k}=\cos\theta$ rather than on both $\theta$ and $\phi$. They are related to our original variables via
 \begin{equation}\begin{split}
@@ -720,14 +720,14 @@ T_{lm} = \int d\Omega Y_{lm}^*(\unit{n})\Delta_T(\tau_0,\unit{n})
 and making use of \ref{powerspectra} we can write 
 \begin{equation}\begin{split}
 C_l^{TT} &= \frac{1}{2l+1}\sum_m \langle T_{lm}^*T_{lm} \rangle \\
-&\supset \frac{4\pi}{2l+1} \int k^2 dk \frac{P_t(k)}{2} \sum_m \bigg| \int d\Omega Y^*_{lm}(\unit{n}) \int_0^{\tau_0} d\tau  S_T(k,\tau)(1-\mu^2)e^{2i\phi}e^{-ix\mu} \bigg|^2\\
-&= 2\pi^2\ltwof \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\int_{-1}^1 d\mu P_l^2(\mu)(1-\mu^2)e^{-ix\mu} \bigg|^2\\
-&= 2\pi^2\ltwof \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\int_{-1}^1 d\mu \partial_\mu^2P_l(\mu)(1-\mu^2)^2e^{-ix\mu}\bigg|^2\\
-&= 2\pi^2\ltwof \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\int_{-1}^1 d\mu \partial_\mu^2P_l(\mu)(1+\partial_x^2)^2e^{-ix\mu} \bigg|^2\\
-&= 2\pi^2\ltwof \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\int_{-1}^1 d\mu P_l(\mu)(1+\partial_x^2)^2(x^2e^{-ix\mu}) \bigg|^2\\
-&= 2\pi^2\ltwof \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)(1+\partial_x^2)^2\left(x^2 \int_{-1}^1 d\mu P_l(\mu)e^{-ix\mu} \right)\bigg|^2\\
-&= 8\pi^2\ltwof \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau) (1+\partial_x^2)^2\left(x^2j_l(x)) \right)\bigg|^2\\
-&= 8\pi^2\ltwo \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\frac{j_l(x)}{x^2} \bigg|^2\\
+&\supset \frac{4\pi}{2l+1} \int \frac{k^2dk}{(2\pi)^3}  \frac{P_t(k)}{2} \sum_m \bigg| \int d\Omega Y^*_{lm}(\unit{n}) \int_0^{\tau_0} d\tau  S_T(k,\tau)(1-\mu^2)e^{2i\phi}e^{-ix\mu} \bigg|^2\\
+&= 2\pi^2\ltwof \int \frac{k^2dk}{(2\pi)^3}  P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\int_{-1}^1 d\mu P_l^2(\mu)(1-\mu^2)e^{-ix\mu} \bigg|^2\\
+&= 2\pi^2\ltwof \int \frac{k^2dk}{(2\pi)^3} P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\int_{-1}^1 d\mu \partial_\mu^2P_l(\mu)(1-\mu^2)^2e^{-ix\mu}\bigg|^2\\
+&= 2\pi^2\ltwof \int \frac{k^2dk}{(2\pi)^3}  P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\int_{-1}^1 d\mu \partial_\mu^2P_l(\mu)(1+\partial_x^2)^2e^{-ix\mu} \bigg|^2\\
+&= 2\pi^2\ltwof \int \frac{k^2dk}{(2\pi)^3}  P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\int_{-1}^1 d\mu P_l(\mu)(1+\partial_x^2)^2(x^2e^{-ix\mu}) \bigg|^2\\
+&= 2\pi^2\ltwof \int \frac{k^2dk}{(2\pi)^3}  P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)(1+\partial_x^2)^2\left(x^2 \int_{-1}^1 d\mu P_l(\mu)e^{-ix\mu} \right)\bigg|^2\\
+&= 8\pi^2\ltwof \int \frac{k^2dk}{(2\pi)^3}  P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau) (1+\partial_x^2)^2\left(x^2j_l(x)) \right)\bigg|^2\\
+&= 8\pi^2\ltwo \int \frac{dk}{(2\pi)^3} P_t(k) \bigg|  \int_0^{\tau_0} d\tau  S_T(k,\tau)\frac{j_l(x)}{x^2} \bigg|^2\\
 \end{split}\end{equation}
 
 Where we have used the statistical properties \ref{statprops} of $\xi^i(\v{k})$ to compute the primordial expectation value. For readability we have only included the piece arising from $\xi^1$. The piece arising from $\xi^2$ differs in the second line by replacing $e^{2i\phi}$ with its complex conjugate $e^{-2i\phi}$, and can easily be shown to contribute exactly the same, using properties of $P_l^m$ (omitted). The power spectra is therefore twice the result above.\\
@@ -756,10 +756,10 @@ explaining the change in the $l$ dependent prefactor in the last line.\\
 
 This gives final result for the temperature power spectrum. Now we abuse the similarity of expressions in \ref{LoSFourier} to write down the EE and BB power spectra. The angular dependence of $\Delta_{\tilde{E}}$ and $\Delta_{\tilde{B}}$ are exactly the same as those of $\Delta_T$, with the expressions only differing in the operators $\hat{\mathcal{E}}$ and $\hat{\mathcal{B}}$, acting seperately on each $\v{k}$ mode, which can be applied after the angular integrals are performed. We lose the $l$ dependent factor in front by converting from $\tilde{E}, \tilde{B}$ to $E,B$, using \ref{EBmodes}
 \begin{equation}\begin{split}
-C_l^{EE} &= (4\pi)^2 \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0}d\tau  S_P(k,\tau)\hat{\mathcal{E}}(x)\frac{j_l(x)}{x^2} \bigg|^2\\
-&= (4\pi)^2\int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0}d\tau  S_P(k,\tau)[-j_l(x) +j_l''(x)+\frac{2j_l(x)}{x^2} + \frac{4j_l'(x)}{x}]\bigg|^2\\
-C_l^{BB} &= (4\pi)^2 \int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0}d\tau  S_P(k,\tau)\hat{\mathcal{B}}(x)\frac{j_l(x)}{x^2} \bigg|^2\\
-&= (4\pi)^2\int k^2 dk P_t(k) \bigg|  \int_0^{\tau_0} d\tau S_P(k,\tau)[2j_l'(x)+\frac{4j_l(x)}{x}]\bigg|^2
+C_l^{EE} &= (4\pi)^2 \int \frac{k^2dk}{(2\pi)^3}  P_t(k) \bigg|  \int_0^{\tau_0}d\tau  S_P(k,\tau)\hat{\mathcal{E}}(x)\frac{j_l(x)}{x^2} \bigg|^2\\
+&= (4\pi)^2\int \frac{k^2dk}{(2\pi)^3}  P_t(k) \bigg|  \int_0^{\tau_0}d\tau  S_P(k,\tau)[-j_l(x) +j_l''(x)+\frac{2j_l(x)}{x^2} + \frac{4j_l'(x)}{x}]\bigg|^2\\
+C_l^{BB} &= (4\pi)^2 \int \frac{k^2dk}{(2\pi)^3} P_t(k) \bigg|  \int_0^{\tau_0}d\tau  S_P(k,\tau)\hat{\mathcal{B}}(x)\frac{j_l(x)}{x^2} \bigg|^2\\
+&= (4\pi)^2\int \frac{k^2dk}{(2\pi)^3}  P_t(k) \bigg|  \int_0^{\tau_0} d\tau S_P(k,\tau)[2j_l'(x)+\frac{4j_l(x)}{x}]\bigg|^2
 \label{primordialBmodes}
 \end{split}\end{equation}
 
@@ -775,17 +775,20 @@ Having computed these, we may repackage these power spectra neatly by reading of
 with $x=k(\tau_0-\tau)$. These may be further integrated by parts to improve computational efficiency by moving derivatives off the bessel functions. Power spectra may be written in terms of these as 
 
 \begin{equation}
-C_l^{XY} = (4\pi)^2 \int k^2 dk P_t(k) \Delta_{Xl}(k)\Delta_{Yl}(k)
+\begin{split}
+C_l^{XY} &= (4\pi)^2 \int \frac{k^2dk}{(2\pi)^3} P_t(k) \Delta_{Xl}(k)\Delta_{Yl}(k)\\
+ &= 4\pi\int d\ln k \Delta^2_t(k) \Delta_{Xl}(k)\Delta_{Yl}(k)
+\end{split}
 \end{equation}
 
-which are non vanishing only for $XY \in \{TE, TT, EE, BB\}$. 
+which are non vanishing only for $XY \in \{TE, TT, EE, BB\}$. We kept the factor of $(2\pi)^3$ explicit throughout, so that it may easily be removed to compare to \cite{all-sky}.  
 
 \subsection{Interpretation of Power Spectra}
 \label{interpretation}
 
 Having written down expressions for the power spectra contributions of tensor modes we now wish to understand what they look like. As seen when studying CMB anistropies, it is possible to get a good qualitative understanding for the shape of power spectra working analytically, though when percent level precision is needed a suitable numerical code must be used.\\
 
-To do so, we need to understand the objects in the main results above. We have already discussed the visibility function $g$. All power spectra also depend on the unknown tensor power spectrum, which controls their overall amplitude, and also affects their scale dependence. For figures, we take  $A_t = \frac{1}{8(4\pi)^2}, n_t=0$, and remaining cosmological parameters to be a $\Lambda$CDM cosmology with $\Omega_b=0.05, \Omega_{DM}=0.25, \Omega_\Lambda=0.7$ and Hubble parameter $h=0.72$. This sections discussion and figures are in large part from \cite{Pritchard}, though also see \cite{zhao}. It remains to discuss the gravitational wave amplitude evolution $h'$, the projection functions, and finally the source term $\Psi$, a function of polarisation and temperature anisotropy moments. First however we give some intuition about the expected shape of power spectra, shown in figure \ref{tensorpower}.
+To do so, we need to understand the objects in the main results above. We have already discussed the visibility function $g$. All power spectra also depend on the unknown tensor power spectrum, which controls their overall amplitude, and also affects their scale dependence. For figures, we take  $A_t = \frac{(2\pi)^3}{8(4\pi)^2}, n_t=0$, and remaining cosmological parameters to be a $\Lambda$CDM cosmology with $\Omega_b=0.05, \Omega_{DM}=0.25, \Omega_\Lambda=0.7$ and Hubble parameter $h=0.72$. This sections discussion and figures are in large part from \cite{Pritchard}, though also see \cite{zhao}. It remains to discuss the gravitational wave amplitude evolution $h'$, the projection functions, and finally the source term $\Psi$, a function of polarisation and temperature anisotropy moments. First however we give some intuition about the expected shape of power spectra, shown in figure \ref{tensorpower}.
 
 \begin{figure}[h]
   \includegraphics[width=0.5\linewidth]{tensorpowerspectra.png}
@@ -975,7 +978,7 @@ Armed with an analytic solution for $\Psi$ we proceed to compute the polarisatio
 
 where, in the second line we pull the projection term outside the integral, assuming it varies slowly over the width of the visibility function. In the third line we convert from a conformal time to optical depth integral, and in the last line we have evaluated the integrals to $(10/7)\log{10/7}$. From this we may calculate the polarisation power spectra
 \begin{equation}
-C_l^{XY} = (4\pi)^2 (\frac{1}{7}\log{\frac{10}{3}})^2 \int k^2dk P_t(k) P_{Xl}(k(\tau_0-\tau_R))P_{Yl}(k(\tau_0-\tau_R))h'(\tau_R)^2(\Delta\tau_R)^2e^{-(k\Delta\tau_R)^2}
+C_l^{XY} = (4\pi)^2 (\frac{1}{7}\log{\frac{10}{3}})^2 \int \frac{k^2dk}{(2\pi)^3} P_t(k) P_{Xl}(k(\tau_0-\tau_R))P_{Yl}(k(\tau_0-\tau_R))h'(\tau_R)^2(\Delta\tau_R)^2e^{-(k\Delta\tau_R)^2}
 \end{equation}
 
 We have analytic solutions to all of these quantities, which we proceed to plot in figure \ref{analytic1}. For the B mode spectra of interest, we see the analytic solution is rather good for low l, the regime in which our assumptions are most valid. The key features of the spectrum are as follows. We have a peak at $l\approx 90$, corresponding to the horizon size at penultimate scattering. Analytically, this is firstly due to the projection terms being combinations of bessel functions $j_l(k(\tau_0-\tau_R))$ peaking at $l\approx k(\tau_0-\tau_R)\approx k\tau_0$. Then recalling in matter domination $h'(\tau_R) \sim \frac{j_2(k\tau_R)}{\tau_R}$, and using that $j_2(x)$ peaks at $x\approx3$ we see a peak of $h'$ at $k\tau_R=3$, and so overall we have a peak at $l\approx k\tau_0\approx 3\tau_0/\tau_R$. The height of this peak is controlled both by $r$, giving the amplitude of $h$, but also by the duration of last scattering, through the $\Delta\tau_R$ term. We get further peaks, due to the oscillatory behaviour seen in the evolution of $h$, which are suppressed by the phase damping effect, controlled by the width $\Delta\tau_R$ of the SLS. \\
@@ -999,7 +1002,7 @@ Through carefully going through an analytic understanding of these power spectra
 
 \subsection{Scalar Perturbations}
 
-For completeness we should discuss scalar perturbations too. Importantly, these do not produce a B mode polarisation, a fact for which we give just some intuition for here, though one can perform an entirely analogous analysis for scalars also. As before, we work in Fourier space with wave vector $\v{k}$, which we may choose to be aligned with the $\unit{z}$ direction, and take the basis on which we evaluate $Q$ and $U$ to be the natural basis on the sphere: $(\unit{e}_1, \unit{e}_2) = (\unit{e}_\theta, \unit{e}_\phi)$. The angular dependence of this system, and therefore of the Boltzmann equations too, turn out this time to only be in the dot product of relevant directions $\mu=\v{k}\cdot\unit{n}$, unlike for tensor perturbations which also have azimuthal dependence. The scalar quadrupole moment generated therefore has no $\phi$ dependence, i.e. is the $m=0$ mode, and so generates azimuthally symmetric polarisation. Thus, recalling Q describes the difference in power between the $\unit{e}_\theta$ and $\unit{e}_\phi$ directions, we see Q is non zero as polarisation is aligned with $\unit{e}_\theta$. U on the other hand is not, as it measures the difference of power between $\unit{e}_\theta\pm\unit{e}_\phi$, which are equal. Another way to say the same thing is that the polarisation eigenvector must be proportional to $\unit{e}_\theta$, which by the form of the polarisation matrix forces $U=0$. Now by \ref{EBmodes}, we see if $U=0$, then $B(\unit{n})$ is identically 0. One can think of the additional linearly independent degree of freedom in tensor perturbations being responsible for their azimuthal dependence, which results in both Q and U and so both E and B mode polarisation being generated. 
+For completeness we should discuss scalar perturbations too. Importantly, these do not produce a B mode polarisation, a fact for which we give just some intuition for here, though one can perform an entirely analogous analysis for scalars also. As before, we work in Fourier space with wave vector $\v{k}$, which we may choose to be aligned with the $\unit{z}$ direction, and take the basis on which we evaluate $Q$ and $U$ to be the natural basis on the sphere: $(\unit{e}_1, \unit{e}_2) = (\unit{e}_\theta, \unit{e}_\phi)$. The angular dependence of this system, and therefore of the Boltzmann equations too, turn out this time to only be in the dot product of relevant directions $\mu=\unit{k}\cdot\unit{n}$, unlike for tensor perturbations which also have azimuthal dependence. The scalar quadrupole moment generated therefore has no $\phi$ dependence, i.e. is the $m=0$ mode, and so generates azimuthally symmetric polarisation. Thus, recalling Q describes the difference in power between the $\unit{e}_\theta$ and $\unit{e}_\phi$ directions, we see Q is non zero as polarisation is aligned with $\unit{e}_\theta$. U on the other hand is not, as it measures the difference of power between $\unit{e}_\theta\pm\unit{e}_\phi$, which are equal. Another way to say the same thing is that the polarisation eigenvector must be proportional to $\unit{e}_\theta$, which by the form of the polarisation matrix forces $U=0$. Now by \ref{EBmodes}, we see if $U=0$, then $B(\unit{n})$ is identically 0. One can think of the additional linearly independent degree of freedom in tensor perturbations being responsible for their azimuthal dependence, which results in both Q and U and so both E and B mode polarisation being generated. 
 
 
 \newpage
