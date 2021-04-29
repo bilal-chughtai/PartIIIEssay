@@ -28,30 +28,31 @@
 \newcommand{\ltwo}{\left[\frac{(l+2)!}{(l-2)!}\right]}
 \newcommand{\ltwof}{\left[\frac{(l-2)!}{(l+2)!}\right]}
 
-\title{\boldmath The Search for CMB B-mode Polarization from Inflationary Gravitational Waves}
-
-
+\title{ The Search for CMB B-mode Polarization from Inflationary Gravitational Waves}
+\notey{This Essay is submitted as part of the Part III Mathematics Tripos Examination}
+\noteytwo{University of Cambridge, Easter 2021}
 %% %simple case: 2 authors, same institution
 %% \author{A. Uthor}
 %% \author{and A. Nother Author}
 %% \affiliation{Institution,\\Address, Country}
 
 % more complex case: 4 authors, 3 institutions, 2 footnotes
-\author{B. Chughtai}
+%\author{B Chughtai}
 
 % The "\note" macro will give a warning: "Ignoring empty anchor..."
 % you can safely ignore it.
 
-\affiliation{University of Cambridge, Cambridge, UK}
+%\affiliation{University of Cambridge, Cambridge, UK}
 
 
 % e-mail addresses: one for each author, in the same order as the authors
-\emailAdd{bc464@cam.ac.uk}
+%\emailAdd{redacted}
 
 
 
 
 %\abstract{Abstract...}
+
 
 
 
@@ -316,7 +317,7 @@ In order to get a better understanding of the physics of inflation, we would rea
 
 \section{The B Mode Diagnostic}
 
-We now turn to how we go about measuring r, which we will do through the CMB. Recalling from lectures the CMB contains information within its small temperature (T) anisotropies. It contains further information in its partial polarisation. While Thomson scattering of isotropic radiation would produce no polarisation, the CMB possesses a quadrupolar ($Y_{2m}$) temperature variation, which gives rise to linear polarisation upon scattering. When Thomson scattering is rapid, the randomization of photon directions destroys this quadrupole anisotropy and polarization. So, the problem of understanding the polarization pattern of the CMB reduces to understanding the quadrupolar temperature fluctuations when the rate has suffiecently slowed, i.e. at last scattering \cite{hu}. Polarisation is a more direct probe of the last scattering epoch than temperature, since it is unaffected by later universe `integrated' effects - the polarisation of CMB photons is not affected by cosmic expansion. In this section we first introduce the formalism in which we may define polarisation fields on the full sky, and then compute using the line of sight method the power spectrum for B modes arising from primordial tensor perturbations, which we find to be non zero. In contrast we show scalar perturbations don't produce any B modes, instead only contributing to the T and E power spectra. Thus, a measurement of a non zero B mode signal gives us a clean direct probe of the primordial tensor power spectrum, and $r$. 
+We now turn to how we go about measuring r. The CMB contains vasts amount of information within its small temperature (T) anisotropies, but also turns out to be partially polarised, encoding further, harder to extract, information. While Thomson scattering of isotropic radiation would produce no polarisation, the CMB possesses a quadrupolar ($Y_{2m}$) temperature variation, which gives rise to linear polarisation upon scattering. When Thomson scattering is rapid, the randomization of photon directions destroys this quadrupole anisotropy and therefore polarization. So, the problem of understanding the polarization pattern of the CMB reduces to understanding the quadrupolar temperature fluctuations when the rate has suffiecently slowed, i.e. at last scattering \cite{hu}. Polarisation is a more direct probe of the last scattering epoch than temperature, since it is unaffected by later universe `integrated' effects - the polarisation of CMB photons is not affected by cosmic expansion. In this section we first introduce the formalism in which we may define polarisation fields on the full sky, and then compute using the line of sight method the power spectrum for B modes arising from primordial tensor perturbations, which we find to be non zero. In contrast we show scalar perturbations don't produce any B modes, instead only contributing to the T and E power spectra. Thus, a measurement of a non zero B mode signal gives us a clean direct probe of the primordial tensor power spectrum, and $r$. 
 
 \subsection{CMB Observables}
 
@@ -595,7 +596,7 @@ At $\tau=0$, inflation tells us $\xi^+$ and $\xi^\times$ are independent, and dr
 \label{statprops}
 \end{equation}
 
-where $P_t(k) = \frac{2\pi^2}{k^3}\Delta_t^2(k)$ is the standard dimensionfull power spectrum. Note our fourier convention differs from \cite{all-sky}, which will give us a different final angular power spectrum.
+where $P_t(k) = \frac{2\pi^2}{k^3}\Delta_t^2(k)$ is the standard dimensionfull power spectrum. Note our fourier convention differs from \cite{all-sky}, which will give us a different final angular power spectrum.\\
 
 To completely understand the full photon distribution we must follow the evolution of four distributions $f_X$, one for each Stokes parameter $X\in\{I,Q,U,V\}$. Thomson scattering of anisotropic radiation by free electrons gives rise to only linear polarization, so we may safely ignore $f_V$. For homogeneous and isotropic unpolarised radiation the distribution is simply $\bar{f}_I(\tau)= [e^{\hbar \nu/k_b T(\tau)}-1]^{-1}$, $f_Q=f_U=0$, the black body Planck distribution. The presence of metric perturbations breaks this homogeneity, inducing frequency independent perturbations $\Delta_X(\tau,\unit{n},\v{x})$ in real space or $\Delta_X(\tau,\unit{n},\v{k})$ in Fourier space.  Here, $\unit{n}$ is the line of sight, $\v{x}$ denotes spatial position, with conjugate $\v{k}$, and $\tau$ is conformal time. In principle these anisotropies additionally have frequency dependence, but since spectral distortions are second order we may ignore them at linear order. $Q$ and $U$ are measured in their natural basis ($\unit{e}_\theta, \unit{e}_\phi$) on the sphere, and the intensity anisotropy may be related to the temperature anisotropy via $\Delta_I/4=\Delta_T=\frac{\delta T}{\bar{T}}$. Following a method first introduced by Polnarev \cite{polnarev}, we introduce new variables $\tilde{\Delta}_T(\tau,\mu,k)$ and $\tilde{\Delta}_P(\tau,\mu,k)$ with simpler angular dependence to describe temperature and polarisation anisotropies, depending only on $\mu=\unit{n}\cdot\unit{k}=\cos\theta$ rather than on both $\theta$ and $\phi$. They are related to our original variables via
 \begin{equation}\begin{split}
@@ -624,18 +625,20 @@ By multiplying the Boltzmann equations \ref{Boltzmann} by $P_l(\mu)$ and integra
 
 While the Universe is young and hot, baryons are ionised and tightly coupled to photons via Thomson scattering. Once the temperature falls below a few eV, it becomes favourable for electrons and ions to recombine to form neutral molecules. As the number of charged particles falls, the mean free path of any given photon increases. Eventually, the mean free path becomes comparable to the horizon size and the photon and baryon fluids are essentially decoupled. It is at this point in the Universe’s evolution that the CMB photons last scatter \cite{Pritchard}.\\
 
-The visibility function describes the probability density that a given CMB photon last scattered at a particular $\tau$. It is given terms of the optical depth $\kappa$ as
+We define the differential optical depth, and optical depth as follows
 \begin{equation}
-g(\tau) = -\kappa'e^{-\kappa}
+\kappa' = an_ex_e\sigma_T \qquad \kappa(\tau) = \int_\tau^{\tau_0} \kappa'(\tau')d\tau'
+\end{equation}
+
+where $a$ is the scale factor, $n_e$ the electron number density, $x_e$ the ionization fraction, and $\sigma_T$ the Thomson cross section. Note here $\kappa' = -\frac{d\kappa}{d\tau}$ differs from the conformal time derivative by a minus sign to match the conventions of \cite{LoS, all-sky} - this is the only quantity for which this convention is used. We have limiting values $\kappa(\tau_0) = 0$ and $\kappa(0)\rightarrow \infty$ today and in the far past.\\
+
+The visibility function describes the probability density that a given CMB photon last scattered at a particular time $\tau$. It is given terms of the above quantities as
+\begin{equation}
+g(\tau) = \kappa'e^{-\kappa}
 \label{RH1}
 \end{equation}
 
-where $\kappa' = an_ex_e\sigma_T$ is the differential optical depth, the scale factor multiplied by the electron number density, ionisation fraction, and Thomson cross section. The optical depth between conformal time $\tau$ and today is given by the integral of this 
-\begin{equation}
-\kappa(\tau) = \int_\tau^{\tau_0} \kappa'(\tau')d\tau'
-\end{equation}
-
-with limiting values $\kappa(\tau_0) = 0$ and $\kappa(0)\rightarrow \infty$ today and in the far past. Numerical calculations show that $g(\tau)$ is sharply peaked around recombination. The simplest approximation takes it to be a delta function, and bears the name `instantaneous recombination', as every photon decouples at the same time. The next simplest approximation is to take the visibility function to be a narrow Gaussian
+Numerical calculations show that $g(\tau)$ is sharply peaked around recombination. Noting by definition, g must integrate to unity, the simplest approximation takes it to be a delta function, and bears the name `instantaneous recombination', as every photon decouples at the same time. The next simplest approximation is to take the visibility function to be a narrow Gaussian
 \begin{equation}
 g(\tau) = g(\tau_R)e^{-\frac{(\tau-\tau_R)^2}{2\Delta\tau_R^2}}
 \label{RH2}
@@ -653,7 +656,7 @@ This is a decent approximation but we find it isn't quite right. In particular, 
 
 \subsubsection{Line of Sight Expressions}
 
-While one may solve the Boltzmann heirachy directly from initial conditions, it proves more instructive and intuitive to use the `line of sight method', first introduced in \cite{LoS}. We formally integrate these first order linear ODEs, making use of an integrating factor $e^{ik\mu\tau+\kappa}$, from their initial conditions up until today.  Introducing $x=k(\tau_0-\tau)$ we get  
+While one may solve the Boltzmann heirachy directly from initial conditions, it proves more instructive, intuitive and numerically effiecent to use the `line of sight method', first introduced in \cite{LoS}. We formally integrate these first order linear ODEs along the photon path, making use of an integrating factor $e^{\int d\tau (ik\mu+\kappa')} = e^{ik\mu\tau-\kappa}$ (due to the minus sign difference $\kappa'=-\frac{d\kappa}{d\tau}$), from their initial conditions up until today.  Introducing $x=k(\tau_0-\tau)$ we get  
 \begin{equation}\begin{split}
 \tilde{\Delta}_T(\tau_0,\mu,k) &= \int_0^{\tau_0}d\tau e^{-ix\mu}S_T(k,\tau)\\
 \tilde{\Delta}_P(\tau_0,\mu,k) &= \int_0^{\tau_0}d\tau e^{-ix\mu}S_P(k,\tau)
@@ -1641,13 +1644,13 @@ where $\epsilon_{ij}^s$ are in general complex polarisation tensors satisfying
 \end{align}
 In later sections, we will choose a particular choice of basis polarisation vectors for a fixed wavevector $\v{k}$. inserting this expansion into $S^{(2)}$ we obtain 
 \begin{equation}
-S^{(2)} = \frac{\Mp^2}{2} \half \fint{k} d\tau a^2 \sum_{s=+,x} \xi_s'(\tau,\v{k})\xi_s '(\tau,\v{-k})+k^2 \xi_s(\tau,\v{k})\xi_s (\tau,\v{-k})
+S^{(2)} = \frac{\Mp^2}{2} \half \fint{k} d\tau a^2 \sum_{s=+,x} \xi_s'(\tau,\v{k})\xi_s '(\tau,\v{-k})-k^2 \xi_s(\tau,\v{k})\xi_s (\tau,\v{-k})
 \label{gravwaveaction}
 \end{equation}
-This, up to a constant, is really just two copies of a special case of the the second order action we encountered when quantising the inflaton \ref{scalarfieldaction}. To see this, consider writing our second order action for the scalar field \ref{scalarfieldaction} in Fourier space $\phi = \fint{k} \phi(\v{k})e^{i\v{k}\cdot\v{x}}$, in the special case where $\bphi = V(\bphi) = 0$, i.e. $\phi = \delta \phi$
+This, up to a constant, is really just two copies of a special case of the the second order action we encountered when quantising the inflaton \ref{scalarfieldaction}. To see this, consider writing the second order action for the scalar field \ref{scalarfieldaction} in Fourier space $\phi = \fint{k} \phi(\v{k})e^{i\v{k}\cdot\v{x}}$, in the special case where $\bphi = V(\bphi) = 0$, i.e. $\phi = \delta \phi$
 \begin{equation}\begin{split}
 S^{(2)} &= \half \int d\tau d^3x a^2 [(\phi ' )^2 -(\nabla \phi)^2]\\
- &= \half \int d\tau d^3x a^2 [\phi'(\tau, \v{k})\phi'(\tau,\v{-k}) + k^2 \phi(\tau,\v{k})\phi(\tau,\v{-k})]
+ &= \half \fint{k} d\tau a^2 [\phi'(\tau, \v{k})\phi'(\tau,\v{-k}) - k^2 \phi(\tau,\v{k})\phi(\tau,\v{-k})]
 \end{split}\end{equation}
 We may therefore quantise the two independent fields $\tilde{\xi_s} = \frac{\Mp a}{\sqrt{2}} \xi_s$ exactly as we did $ f = a \delta \phi$, noting they obey the same Muhkanov-Sasaki equation \ref{MS} as in the scalar case. The normalisation is required to give canonical factor of $\half$ on the kinetic term in the action, which plays a role when we fix the Wronskian to 1. Going through the same procedure as before, we get
 \begin{enumerate}
@@ -1715,7 +1718,7 @@ Finally the following properties are useful
 \section{Essay Description}
 Our most promising theory for the early universe involves a phase of cosmic inflation, which not only rapidly expands and flattens the universe, but also generates the primordial density perturbations from quantum fluctuations in the inflaton field. While we have good evidence for inflation, e.g. from the Gaussianity, adiabaticity and near-scale invariance of the scalar density perturbations, one prediction of inflation has not yet been found: many inflationary models produce a stochastic background of primordial gravitational waves. A detection of this background would not only provide a definitive confirmation of inflation, but could also give new insights into the microphysics of inflation and, more broadly, physics at the highest energies.\\
 
-The best current way of finding this gravitational wave background is to search for a characteristic pattern in the polarization of the Cosmic Microwave Background (CMB), the B-mode polarization. This essay should explain the physics underlying the search for this B-mode polarization pattern, which is currently a major area of research in cosmology.The essay should first review the calculation of the gravitational wave background produced by standard single-field slow-roll inflation, a standard result described in past Part III lecture notes as well as a comprehensive review of the field (Kamionkowski \& Kovetz 2016 \cite{QBM}). The essay should also explain why the strength of the gravitational wave background(together with the scalar spectral index) can provide powerful constraints on the properties of inflation, such as the potential shape, energy scale, and field excursion \cite{S4, QBM}.\\
+The best current way of finding this gravitational wave background is to search for a characteristic pattern in the polarization of the Cosmic Microwave Background (CMB), the B-mode polarization. This essay should explain the physics underlying the search for this B-mode polarization pattern, which is currently a major area of research in cosmology.The essay should first review the calculation of the gravitational wave background produced by standard single-field slow-roll inflation, a standard result described in past Part III lecture notes as well as a comprehensive review of the field \cite{QBM}. The essay should also explain why the strength of the gravitational wave background (together with the scalar spectral index) can provide powerful constraints on the properties of inflation, such as the potential shape, energy scale, and field excursion \cite{S4, QBM}.\\
 
 Drawing on \cite{S4, QBM}, past lecture notes and other resources, the essay should provide a (brief) review of the basics of CMB polarization, describe what the CMB B-mode polarization is, and explain why it is a powerful probe of inflationary gravitational waves.\\
 

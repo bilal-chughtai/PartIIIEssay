@@ -19,7 +19,8 @@
 \ProvidesPackage{jcappub}[2012/08/02 r764]
 
 
-\gdef\@fpheader{Part III Essay, Mathematical Tripos}
+\gdef\@fpheader{ }
+%\afterTitleSpace
 \gdef\@journal{jcap}
 
 \ProcessOptions\relax
@@ -127,6 +128,8 @@
 
 % Collaboration macros
 \newcommand*\collaboration[1]{\gdef\@collaboration{#1}}
+\newcommand*\notey[1]{\gdef\@notey{#1}}
+\newcommand*\noteytwo[1]{\gdef\@noteytwo{#1}}
 \newcommand*\collaborationImg[2][]{\gdef\@collaborationImg{#2}}
 
 %all pieces get a ``after'' spacing
@@ -134,7 +137,7 @@
 \newcommand\afterSubheaderSpace{\vskip3pt plus 2pt minus 1pt}
 \newcommand\afterProceedingsSpace{\vskip30pt plus0.4fil minus20pt}
 \newcommand\afterTitleSpace{\vskip25pt plus0.3fil minus12pt}
-\newcommand\afterCollaborationSpace{\vskip3pt plus 2pt minus 1pt}
+\newcommand\afterCollaborationSpace{\vskip2pt plus 2pt minus 1pt}
 \newcommand\afterCollaborationImgSpace{\vskip3pt plus 2pt minus 1pt}
 \newcommand\afterAuthorSpace{\vskip-13pt plus1pt minus4pt}
 \newcommand\afterAffiliationSpace{\vskip-2pt plus3pt minus0.5pt}
@@ -165,9 +168,34 @@
 % Proceedings
 \if!\@proceeding!\else\noindent{\sc\@proceeding}\fi
 \afterProceedingsSpace
+
+
+
 % Title
-{{\Huge \flushleft\sffamily\bfseries\@title\par} }
+%\sffamily
+{{\Huge \center\bfseries\@title\par} }
 \afterTitleSpace
+\begin{figure*}[h]
+  \includegraphics[width=0.3\linewidth]{logo.jpg}
+  \centering
+\end{figure*}
+\afterTitleSpace
+% notey
+\if!\@notey!\else
+{\center\bfseries\@notey\par}\par
+\fi
+\afterCollaborationSpace
+\vspace{0.3cm}
+% notey2
+\if!\@noteytwo!\else
+{\center\bfseries\@noteytwo\par}\par
+\fi
+
+
+
+
+
+
 % Collaboration
 \if!\@collaboration!\else
 {\Large\bfseries\sffamily\raggedright\@collaboration}\par
@@ -215,10 +243,11 @@ E-mail: \the\email@toks
 %
 \ifnotoc\else
 \iftoccontinuous\else\newpage\fi
-\beforetochook\hrule
+%\beforetochook\hrule
+\vspace{-0.5cm}
 \tableofcontents
 \afterTocSpace
-\hrule
+%\hrule
 \fi
 \setcounter{footnote}{0}
 \pagestyle{myplain}\pagenumbering{arabic}
