@@ -12,7 +12,7 @@
 \graphicspath{ {images/} }
 
 
-
+%\renewcommand{\v}[1]{\boldsymbol{\mathbf{#1}}}
 \renewcommand{\v}[1]{\mathbf{#1}}
 \newcommand{\Mp}{M_{pl}}
 \newcommand{\half}{\frac{1}{2}}
@@ -86,7 +86,7 @@
 
 This essay focuses on early-universe cosmology. It explores an aspect of the age-old question ``Where do we come from?''. In particular, it asks ``What mechanism drove the first few moments of the universe, and how can we experimentally test that?''. Let us tackle each point in turn.\\
 
-The present leading paradigm for these initial few moments of the Universe is that of inflation, a period of rapid accelerated expansion lasting only $\sim10^{-32}$s . Initially postulated by Guth in 1981 \cite{Guth} to solve some large conceptual holes in the previous hot Big Bang cosmology, it was soon realized it also provided a convenient method of generating the primordial density fluctuations necessary to seed the growth of large scale structure, setting the `initial conditions' for the universe. \\
+The present leading paradigm for these initial few moments of the Universe is that of inflation, a period of rapid accelerated expansion of the universe by at least a factor of $10^21$ within only $\sim10^{-32}$s. Initially postulated by Guth in 1981 \cite{Guth} to solve some large conceptual holes in the previous hot Big Bang cosmology, it was soon realized it also provided a convenient method of generating the primordial density fluctuations necessary to seed the growth of large scale structure, setting the `initial conditions' for the universe. \\
 
 Compared to the complexity of physics on small scales, our cosmic landscape is rather simple. The cosmological principle states that on large scales we expect the universe as a whole to be homogeneous and isotropic. Were this true on all scales, life would not have formed, so it is fortunate this breaks down at some point - this is precisely what modern cosmology relies on. These tiny departures from homogeneity contain vasts amount of information about the universe's evolution. Over the past few decades an era of `precision cosmology' has been ushered in by ever more accurate measurements of the distribution of mass on cosmic scales through galaxy surveys, and through measurements of the temperature and polarization fluctuations of the cosmic microwave background (CMB). \\
 
@@ -94,15 +94,15 @@ The theory community has over the years produced hundreds of well-motivated mode
 
 Turning to the subject of this essay, many inflationary models, including the simplest SFSR ones, predict the existence of a stochastic background of primordial inflationary gravitational waves (IGWs), generated through tensor-like quantum-fluctuations of the metric during inflation, which have yet to be detected. Our best strategy for detecting these is through searching for a characteristic `B mode' polarisation pattern in the CMB. Scalar (i.e. density) perturbations source CMB temperature anisotropies, as well as an `E mode' polarisation pattern. Tensor perturbations on the other hand source temperature anisotropies, E mode polarisation and crucially, B mode polarisation too. The B mode diagnostic is therefore our most sensitive test of primordial tensor perturbations - uncontaminated by dominant scalar perturbations.\\
 
-A detection of this `inflationary B mode signal' has been termed a `smoking gun' for inflation for precisely for this reason. So far we have made precise measurements of the temperature anisotropy and E mode signal, giving us strong constraints on primordial density perturbations, but have yet to detect these B modes from IGWs. At present, a lack of detection has bounded the `tensor-to-scalar' ratio $r$ to less than 1 part in 10. A detection will provide very strong evidence for inflation, and allow us to put strong constraints on the physics of inflation. A lack of detection of IGWs and therefore $r$ is not useless to us either - it will put more stringent upper bounds on $r$, invalidating certain classes of models predicting detectably large tensor amplitudes.\\
+So far we have made precise measurements of the temperature anisotropy and E mode signal, giving us strong constraints on primordial density perturbations, but have yet to detect these B modes from IGWs. At present, a lack of detection has bounded the `tensor-to-scalar' ratio $r$ to less than 1 part in 10. A detection of this `inflationary B mode signal' from IGWs has been termed a `smoking gun' for inflation as it will provide very strong evidence it occurred, and further will allow us to strongly constrain its physics. A lack of detection of IGWs and therefore $r$ is not useless to us either - it will put more stringent upper bounds on $r$, invalidating certain classes of models predicting detectably large tensor amplitudes.\\
 
 \subsection{Outline}
 
-The structure of this essay is as follows. We begin by reviewing the basics of inflationary cosmology, and a derivation of its predictions in SFSR for the stochastic IGW background. We discuss the parameters commonly used to describe inflationary models and current observational constraints on them. We then turn our attention to the CMB, reviewing the basics of CMB polarisation, and its mathematical description on the curved 2-sphere. We show from the Boltzmann equation formalism that tensor perturbations do indeed produce a non zero B mode signal, and derive their power spectrum, while showing on the other hand that scalar perturbations do not. We then show all is not as easy as it seems, and discuss some major complications in attempting to detect this signal: the issues of other possible primordial B modes, foregrounds, and gravitational lensing in some detail. Finally we return again to inflation, discussing some of the exciting implications a detection of an inflationary B mode signal would have for the cosmology and high energy physics communities. 
+The structure of this essay is as follows. We begin by reviewing the basics of inflationary cosmology, and a derivation of its predictions in SFSR for the stochastic IGW background. We discuss the parameters commonly used to describe inflationary models and current observational constraints on them. We then turn our attention to the CMB, reviewing the basics of CMB polarisation, and its mathematical description on the curved 2-sphere. We show from the Boltzmann equation formalism that tensor perturbations do indeed produce a non zero B mode signal, and derive their power spectrum, while showing on the other hand that scalar perturbations do not. We then show all is not as easy as it seems, and discuss some major complications in attempting to detect this tiny signal: the issues of other possible primordial B modes, foregrounds, and gravitational lensing in some detail. Finally we return again to inflation, discussing some of the exciting implications a detection of an inflationary B mode signal would have for the cosmology and high energy physics communities. 
 
 \subsection{Conventions}
 
-We use the mostly plus Lorentzian signature $(-,+,+,+)$ in which Greek letters ($\mu,\nu,\ldots$) are used for spacetime indices, while latin latters ($i,j,\ldots$) are used for spatial indices. The scale factor is denoted $a$, and conformal time by $\tau$, which is related to coordinate time by the relation $a(\tau)d\tau = dt$. Coordinate time derivatives are denoted $\dot{}$, and conformal time derivatives $'$, for example the hubble factor is $H=\frac{\dot{a}}{a}$ and the comoving Hubble factor $\mathcal{H}=\frac{a'}{a}$. We use natural units in which $\hbar=c=k_B=1$, and where the reduced Planck mass $\Mp = 1/\sqrt{8\pi G}$. Our Fourier convention is the inhomogenous one, where $f(\v{x}) = \fint{k} f(\v{k})e^{i\v{k}\cdot\v{x}}$ in 3D, and an analogous statement holds in 2D.
+We use the mostly plus Lorentzian signature $(-,+,+,+)$ in which Greek letters ($\mu,\nu,\ldots$) are used for spacetime indices, while latin latters ($i,j,\ldots$) are used for spatial indices. The scale factor is denoted $a$, and conformal time by $\tau$, which is related to coordinate time by the relation $a(\tau)d\tau = dt$. Coordinate time derivatives are denoted $\dot{}$, and conformal time derivatives $'$, for example the Hubble factor is $H=\frac{\dot{a}}{a}$ and the comoving Hubble factor $\mathcal{H}=\frac{a'}{a}$. We use natural units in which $\hbar=c=k_B=1$, and where the reduced Planck mass $\Mp = 1/\sqrt{8\pi G}$. Our Fourier convention is the inhomogeneous one, where $f(\v{x}) = \fint{k} f(\v{k})e^{i\v{k}\cdot\v{x}}$ in 3D, and an analogous statement holds in 2D.
 
 
 \newpage
@@ -116,12 +116,12 @@ A flat, homogeneous and isotropic universe is described by the Friedmann–Lema�
 \label{FLRW}
 ds^2 = - dt^2 + a^2(t)d\v{x}^2 = a^2(\tau)(-d\tau^2+d\v{x}^2)
 \end{equation}
-Assuming General Relativity, it obeys the Einstein equation $G_{ab} = \frac{1}{\Mp^2} T_{ab}$, sourced by a perfect fluid with energy momentum tensor $T_{ab}$, which by homogeneity and isotropy must take form
+Assuming General Relativity, it obeys the Einstein equation $G_{ab} = \frac{1}{\Mp^2} T_{ab}$, sourced by matter with energy momentum tensor $T_{ab}$. In cosmological contexts we take this to be a perfect fluid whose energy momentum tensor satisfies by homogeneity and isotropy
 \begin{equation}
 \label{densityandpressure}
 T^0_0 = - \rho(t) \quad T^0_i = 0 \quad T^i_j = P(t)\delta^i_j
 \end{equation}
-where we  identify $\rho(t)$ as the total energy density and $P(t)$ as the total pressure. We will consider one component, the inflaton field, to dominate.  Substituting \ref{FLRW} and \ref{densityandpressure} into the Einstein Equation we obtain the Friedmann equations
+where we identify $\rho(t)$ as the total energy density and $P(t)$ as the total pressure. We will consider one component, the inflaton field, to dominate.  Substituting \ref{FLRW} and \ref{densityandpressure} into the Einstein Equation we obtain the Friedmann equations
 \begin{equation}
 H^2 = \left(\frac{\dot{a}}{a}\right)^2 = \frac{1}{3\Mp^2}\rho
 \tag{F1}
@@ -132,7 +132,7 @@ H^2 = \left(\frac{\dot{a}}{a}\right)^2 = \frac{1}{3\Mp^2}\rho
 \tag{F2}
 \label{F2}
 \end{equation}
-Inflation requires a shrinking Hubble radius $\frac{d}{dt}\mathcal{H}^{-1}<0$, equivalent to \textit{accelerated expansion} $\ddot{a} >0$. We may define the first hubble slow roll parameter 
+Inflation requires a shrinking Hubble radius $\frac{d}{dt}\mathcal{H}^{-1}<0$, equivalent to \textit{accelerated expansion} $\ddot{a} >0$. We may define the first Hubble slow roll parameter 
 \begin{equation}
 \label{epsilon}
 \epsilon := -\frac{\dot{H}}{H^2} = -\frac{d\ln{H}}{d\ln{a}} = \frac{3}{2}\left(1+\frac{P}{\rho}\right)
@@ -156,28 +156,32 @@ for $X=-\half g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi$. Slow roll inflation c
 \begin{equation}
 P(X,\phi) = X - V(\phi)
 \end{equation}
-where all inflationary dynamics are specified by the potential $V(\phi)$. The equations of motion  of the classical background $\phi(t)$ may be obtained by directly varying the action, or making the fluid identification by inserting the energy momentum tensor for the matter Lagrangian into \ref{densityandpressure} and the Friedmann equations \ref{F1}, \ref{F2}
-\begin{equation}\begin{split}
+where all inflationary dynamics are specified by the potential $V(\phi)$. The equations of motion of the classical background $\phi(t)$ may be obtained by directly varying the action, or making the fluid identification by inserting the energy momentum tensor for the matter Lagrangian into \ref{densityandpressure} and the Friedmann equations \ref{F1}, \ref{F2} giving 
+\begin{align*}
+\tag{F1'}
+\label{F1'}
 H^2 &= \frac{1}{3\Mp^2}\left(\half\dot{\phi}^2+V(\phi)\right)\\
+\tag{F2'}
+\label{F2'}
 \frac{\ddot{a}}{a} &= -\frac{1}{3\Mp^2}\left(\dot{\phi}^2-V(\phi)\right)\\
-\end{split}\end{equation}
-giving the Klein Gordon equation
+\end{align*}
+and the Klein Gordon equation
 \begin{equation}
 \tag{KG}
 \label{KG}
-\ddot{\phi}+3H\dot{\phi}=-V_{,\phi}
+\ddot{\phi}+3H\dot{\phi}=-V'
 \end{equation}
-From these we see the spacetime experiences accelerated expansion iff the potential energy dominates the kinetic: $V > \dot{\phi}^2$ and is sustained if $|\ddot{\phi}| \ll |V_{,\phi}|$. We also find that by \ref{epsilon} that 
+where $V'=dV/d\phi$. From these we see the spacetime experiences accelerated expansion iff the potential energy dominates the kinetic: $V > \dot{\phi}^2$ and is sustained if $|\ddot{\phi}| \ll |V_{,\phi}|$. We also find by \ref{epsilon} that 
 \begin{equation}
 \epsilon = \frac{1}{\Mp^2}\frac{\half\dot{\phi}^2}{H^2} < 1
 \end{equation}
 
 \subsubsection{Slow Roll}
 
-The slow roll approximation postulates the kinetic energy and acceleration of the background field is much smaller than its potential energy, encapsulated in terms of our slow roll parameters as $(\epsilon, \eta \ll 1)$. In this approximation \ref{F1} and \ref{KG} become
+The slow roll approximation postulates the kinetic energy and acceleration of the background field is much smaller than its potential energy, encapsulated in terms of our slow roll parameters as $(\epsilon, \eta \ll 1)$. In this approximation \ref{F1'} and \ref{KG} become
 \begin{equation}\begin{split}
 H^2 &\approx \frac{V}{3\Mp^2} \\
-3H\dot{\phi} &\approx -V_{,\phi}
+3H\dot{\phi} &\approx -V'
 \end{split}\end{equation}
 from which we see 
 \begin{equation}
@@ -212,10 +216,12 @@ ds^2 &= g_{\mu\nu}dx^\mu dx^\nu\\
 \end{split}
 \label{metricperturb}
 \end{equation}
-\begin{align}
+\begin{equation}
+\begin{split}	
 B_i &= \partial_i B - B_i, \quad \partial^iB_i=0\\
 E_{ij} &= 2\partial_{ij}E + 2\partial_{(i}E_{j)} + h_{ij}, \quad \partial^iE_i=0, \quad h^i_i = \partial^ih_{ij}=0
-\end{align}
+\end{split}
+\end{equation}
 
 Crucially, at linear order  scalars, vectors and tensors evolve independently, and so can be treated separately. Importantly the perturbations $\delta\phi$ and $\delta g_{\mu\nu}$ are gauge dependent variables, and mix the scalars, vectors and tensors separately under coordinate transformations. We therefore must either work in a fixed gauge or use gauge invariant quantities.\\
 
@@ -304,8 +310,8 @@ giving the consistency condition $r=-8n_t$, which serves as a test, at least in 
 A number of inflationary parameters have been measured through CMB experiments. From Planck 2018 temperatuere, polarisation and lensing data at 68\% confidence and for the purposes of this essay, the relevant parameters include \cite{Planck}
  
 \begin{itemize}
-\item A red tilted scalar spectral index $n_s =0.9649 \pm 0.0042$, with no evidence for scale dependence of $n_s$. The perfectly scale invariant $n_s=1$ spectrum is ruled out by more than $8\sigma$, providing strong evidence for inflation
-\item A scalar amplitude  $10^9 A_s \approx 2.100 \pm 0.030$
+\item A red tilted scalar spectral index $n_s =0.9649 \pm 0.0042$, with no evidence for scale dependence of $n_s$. The perfectly scale invariant $n_s=1$ spectrum is ruled out by more than $8\sigma$, providing strong evidence for inflation.
+\item A scalar amplitude  $10^9 A_s \approx 2.100 \pm 0.030$.
 \end{itemize}
 
 We have not yet made a detection of any primordial tensor perturbations, and only have a 95\% confidence upper limit on the tensor to scalar ratio $r_{0.002}<0.10$ from Planck data alone, or $r_{0.002}<0.056$ by also making use of the BICEP2/Keck Array BK15 data \cite{planck-inflation}, where the subscripts denote the pivot scale. We obviously have no bounds on $n_t$.\\
@@ -316,7 +322,7 @@ In order to get a better understanding of the physics of inflation, we would rea
 
 \section{The B Mode Diagnostic}
 
-We now turn to how we go about measuring r. The CMB contains vasts amount of information within its small temperature (T) anisotropies, but also turns out to be partially polarised, encoding further, harder to extract, information. While Thomson scattering of isotropic radiation would produce no polarisation, the CMB possesses a quadrupolar ($Y_{2m}$) temperature variation, which gives rise to linear polarisation upon scattering. When Thomson scattering is rapid, the randomization of photon directions destroys this quadrupole anisotropy and therefore polarization. So, the problem of understanding the polarization pattern of the CMB reduces to understanding the quadrupolar temperature fluctuations when the rate has suffiecently slowed, i.e. at last scattering of recombination and reionization\cite{hu}. Polarisation is a more direct probe of these epochs than temperature, unaffected by later universe `integrated' effects such as the integrated Sachs-Wolfe effect. In this section we first introduce the formalism in which we may define polarisation fields on the full sky, then compute using the `line of sight' method the angular power spectrum for B modes arising from IGWs, which we find to be non zero. In contrast we show scalar perturbations don't produce any B modes, instead only contributing to the T and E power spectra. Thus, a measurement of a non zero B mode signal gives us a direct probe of the primordial tensor power spectrum, and $r$. 
+We now turn to how we go about measuring r. The CMB contains vasts amount of information within its small temperature (T) anisotropies, but also turns out to be partially polarised, encoding further, harder to extract, information. While Thomson scattering of isotropic radiation would produce no polarisation, the CMB possesses a quadrupolar ($Y_{2m}$) temperature variation, which gives rise to linear polarisation upon scattering. When Thomson scattering is rapid, the randomization of photon directions destroys this quadrupole anisotropy and therefore polarization. So, the problem of understanding the polarization pattern of the CMB reduces to understanding the quadrupolar temperature fluctuations when the rate has suffiecently slowed, i.e. at last scattering \cite{hu}, though note reionization also contributes some polarisation. Polarisation is a more direct probe of these epochs than temperature, unaffected by later universe `integrated' effects such as the integrated Sachs-Wolfe effect. In this section we first introduce the formalism in which we may define polarisation fields on the full sky, then compute using the `line of sight' method the angular power spectrum of B modes arising from IGWs, which we find to be non zero. In contrast we show scalar perturbations don't produce any B modes, instead only contributing to the T and E power spectra. Thus, a measurement of a non zero B mode signal gives us a direct probe of the primordial tensor power spectrum, and, combining with the primordial scalar power spectrum, $r$. 
 
 \subsection{CMB Observables}
 
@@ -352,7 +358,7 @@ U & -Q
 \end{equation}
 Q and U are standard Stokes' parameters, which are functions of frequency and direction in general. In linear theory, their frequency dependence follows that of temperature anisotropies. We therefore normalize Q and U with respect to temperature rather than intensity, by dividing by the derivative of the CMB blackbody brightness with respect to log temperature, obtaining frequency independent fractional thermodynamic equivalent temperatures $Q(\unit{n})$ and $U(\unit{n})$ \cite{notes}. \\
 
-The Q parameter can be though of as the difference in power measured between an observer aligned with $\unit{e}_1$ and $\unit{e}_2$ while U can be thought of as the difference between $\unit{e}_1\pm\unit{e}_2$. Note $P_{ij}$ has eigenvalues $\pm (Q^2 + U^2)^\half$, with magnitude the polarisation amplitude, and corresponding eigenvectors making an angle of $\half\arctan(\frac{U}{Q})$ with $\unit{e}_1$. Diagrammatically, we may therefore depict polarisation as headless vectors of length $(Q^2 + U^2)^\half$, making an angle of $\half\arctan(\frac{U}{Q})$ to $\unit{e}_1$, so that the direction indicates the axis of measurement maximising measured signal.\\
+The Q parameter can be thought of as the difference in power measured between an observer aligned with $\unit{e}_1$ and $\unit{e}_2$ while U can be thought of as the difference between $\unit{e}_1\pm\unit{e}_2$. Note $P_{ij}$ has eigenvalues $\pm (Q^2 + U^2)^\half$, with magnitude the polarisation amplitude, and corresponding eigenvectors making an angle of $\half\arctan(\frac{U}{Q})$ with $\unit{e}_1$. Diagrammatically, we may therefore depict polarisation as headless vectors of length $(Q^2 + U^2)^\half$, making an angle of $\half\arctan(\frac{U}{Q})$ to $\unit{e}_1$, so that the direction indicates the axis of measurement maximising measured signal.\\
 
 Since $\delta_{ij}$ is the unique symmetric tensor invariant under rotations we see that $I$ is invariant under rotations, but $Q$ and $U$ are not. In particular if we perform a right handed rotation around $\unit{n}$ by an angle $\psi$ we get transformations
 \begin{equation}
@@ -391,7 +397,7 @@ U
 
 The fact that Q and U are basis dependent is a nuisance:  they aren't physical, and cannot be compared meaningfully at different points on the sphere. The polarisation tensors live in different vector spaces: entirely analogous with the same concept in differential geometry. \\
 
-It is convenient to instead work with complex quantities $Q\pm iU$, equivalent to working in the complex basis $\unit{e}_\pm = \frac{1}{\sqrt{2}}(\unit{e}_1 \pm i\unit{e}_2)$ in which the polarisation tensor is diagonal. Using \ref{QUtranform}, it is easy to see under rotation this quantity transforms more simply as
+It is convenient to instead work with complex quantities $Q\pm iU$, equivalent to working in the complex basis $\unit{e}_\pm = \frac{1}{\sqrt{2}}(\unit{e}_1 \pm i\unit{e}_2)$ in which the polarisation tensor is diagonal. Using \ref{QUtranform}, it is easy to see under rotation these quantities transforms more simply as
 \begin{equation}
 Q'\pm iU' = e^{\mp 2i\psi}(Q\pm iU)
 \label{rotate}
@@ -500,7 +506,7 @@ The last line follows from the parity invariance of power spectra and the parity
 \begin{equation}
 \hat{C}_l^{XY} = \frac{1}{2l+1}\sum_m X_{lm}^*Y_{lm}
 \end{equation}
-for $X,Y \in \{T,E,B\}$. We may calculate the variance easily via Wick:
+for $X,Y \in \{T,E,B\}$. Their variance may be easily calculated via Wick:
 \begin{equation}
 \text{var }\hat{C}_l^{XX}=\frac{2}{2l+1}C_l^{XX}C_l^{XX}
 \end{equation}
@@ -578,7 +584,7 @@ From this we can get a better intuitive understanding of what E and B modes are.
 \begin{figure}[h]
   \includegraphics[width=0.7\linewidth]{EBintuition.png}
   \centering
-  \caption{Polarization patterns associated with (a) a single E mode and (b) a single B mode with horizontal wavevector $\v{l}$. By C.Bischoff and taken from \cite{QBM}.}
+  \caption{Polarization patterns associated with (a) a single E mode and (b) a single B mode with horizontal wavevector $\v{l}$. By C. Bischoff and taken from \cite{QBM}.}
   \label{EBint}
 \end{figure}
 
@@ -591,7 +597,7 @@ It is most convenient throughout to work in Fourier space with wave-vector $\v{k
 \xi^1 = (\xi^+ - i\xi^\times)/\sqrt{2} \qquad \xi^2 = (\xi^+ + i\xi^\times)/\sqrt{2}
 \end{equation}
 
-At $\tau=0$, inflation tells us our initial frozen modes $\xi^+$ and $\xi^\times$ are independent, and drawn from a Gaussian variate, whose individual power spectra are half of the total tensor power spectrum \ref{tensorpowerspec}. Our new variables, being linearly independent combinations of $\xi^s$, are also Gaussian, and a short calculation reveals they are also independent with half of the the total primordial tensor power, i.e. at $\tau=0$ 
+At $\tau=0$, inflation tells us our initial frozen modes $\xi^+$ and $\xi^\times$ are independent, and drawn from a Gaussian variate, whose individual power spectra are half of the total tensor power spectrum \ref{tensorpowerspec}. Our new variables, being linearly independent combinations of $\xi^s$, are also Gaussian, and a short calculation reveals they are also independent, each with half of the the total primordial tensor power, i.e. at $\tau=0$ 
 \begin{equation}
 \begin{split}
 \langle \xi^{1*}(\v{k})\xi^{1}(\v{k'})\rangle=\langle \xi^{2*}(\v{k})\xi^{2}(\v{k'})\rangle &= (2\pi)^3\delta(\v{k}-\v{k'})\frac{P_t(k)}{2}\\
@@ -602,14 +608,14 @@ At $\tau=0$, inflation tells us our initial frozen modes $\xi^+$ and $\xi^\times
 
 where $P_t(k) = \frac{2\pi^2}{k^3}\Delta_t^2(k)$ is the standard dimensionfull power spectrum. Note our fourier convention differs from \cite{all-sky}, which will give us a different final angular power spectrum.\\
 
-To completely understand the full photon distribution we must follow the evolution of four distributions $f_X$, one for each Stokes parameter $X\in\{I,Q,U,V\}$. Thomson scattering of anisotropic radiation by free electrons gives rise to only linear polarization, so we may safely ignore $f_V$. For homogeneous and isotropic unpolarised radiation the distribution is simply $\bar{f}_I(\tau)= [e^{\hbar \nu/k_b T(\tau)}-1]^{-1}$, $f_Q=f_U=0$, the black body Planck distribution. The presence of metric perturbations breaks this homogeneity, inducing frequency independent perturbations $\Delta_X(\tau,\unit{n},\v{x})$ in real space or $\Delta_X(\tau,\unit{n},\v{k})$ in Fourier space.  Here, $\unit{n}$ is the line of sight, $\v{x}$ denotes spatial position, with conjugate $\v{k}$, and $\tau$ is conformal time. In principle these anisotropies additionally have frequency dependence, but since spectral distortions are second order we may ignore them at linear order. Defining $\theta$ and $\phi$ as spherical angles around $\unit{z}$ or equivalently $\v{k}$ to pramaterise $\unit{n}$, $Q$ and $U$ are measured in their natural basis ($\unit{e}_\theta, \unit{e}_\phi$) on the sphere. The intensity anisotropy may be related to the temperature anisotropy via $\Delta_I/4=\Delta_T=\frac{\delta T}{\bar{T}}$. Following a method first introduced by Polnarev \cite{Polnarev}, we introduce new variables $\tilde{\Delta}_T(\tau,\mu,k)$ and $\tilde{\Delta}_P(\tau,\mu,k)$ with simpler angular dependence to describe temperature and polarisation anisotropies, depending only on $\mu=\unit{n}\cdot\unit{k}=\cos\theta$ rather than on both $\theta$ and $\phi$. They are related to our original variables via
+To completely understand the full photon distribution we must follow the evolution of four distributions $f_X$, one for each Stokes parameter $X\in\{I,Q,U,V\}$. Thomson scattering of anisotropic radiation by free electrons gives rise to only linear polarization, so we may safely ignore $f_V$. For homogeneous and isotropic unpolarised radiation the distribution is simply $\bar{f}_I(\tau)= [e^{\hbar \nu/k_b T(\tau)}-1]^{-1}$, $f_Q=f_U=0$, the black body Planck distribution. The presence of metric perturbations breaks this homogeneity, inducing frequency independent perturbations $\Delta_X(\tau,\unit{n},\v{x})$ in real space or $\Delta_X(\tau,\unit{n},\v{k})$ in Fourier space.  Here, $\unit{n}$ is the line of sight, $\v{x}$ denotes spatial position, with conjugate $\v{k}$, and $\tau$ is conformal time. In principle these anisotropies additionally have frequency dependence, but since spectral distortions are second order we may ignore them at linear order. Let $\theta$ and $\phi$ be spherical angles around $\unit{z}$ (or equivalently $\v{k}$) parameterising $\unit{n}$, and measure $Q$ and $U$ in their natural basis ($\unit{e}_\theta, \unit{e}_\phi$) on the sphere. The intensity anisotropy may be related to the temperature anisotropy via $\Delta_I/4=\Delta_T=\frac{\delta T}{\bar{T}}$. Following a method first introduced by Polnarev \cite{Polnarev}, we introduce new variables $\tilde{\Delta}_T(\tau,\mu,k)$ and $\tilde{\Delta}_P(\tau,\mu,k)$ with simpler angular dependence to describe temperature and polarisation anisotropies, depending only on $\mu=\unit{n}\cdot\unit{k}=\cos\theta$ rather than on both $\theta$ and $\phi$. They are related to our original variables via
 \begin{equation}\begin{split}
 \Delta_T(\tau,\unit{n},\v{k}) &= [(1-\mu^2) e^{2i\phi} \xi^1(\v{k})+(1-\mu^2) e^{-2i\phi} \xi^2(\v{k})]\tilde{\Delta}_T(\tau,\mu,k)\\
 (\Delta_Q+i\Delta_U)(\tau,\unit{n},\v{k}) &=[(1-\mu)^2 e^{2i\phi} \xi^1(\v{k})+(1+\mu)^2 e^{-2i\phi} \xi^2(\v{k})]\tilde{\Delta}_P(\tau,\mu,k) \\
 (\Delta_Q-i\Delta_U)(\tau,\unit{n},\v{k}) &=[(1+\mu)^2 e^{2i\phi} \xi^1(\v{k})+(1-\mu)^2 e^{-2i\phi} \xi^2(\v{k})]\tilde{\Delta}_P(\tau,\mu,k)
 \end{split}\end{equation}
 
-and obey \textit{decoupled} Boltzmann equations given by \cite{Polnarev}
+and obey at linear order \textit{decoupled} Boltzmann equations given by \cite{Polnarev}
 \begin{equation}\begin{split}
 \tilde{\Delta}_T'+ik\mu \tilde{\Delta}_T &= -h' -\kappa'[\tilde{\Delta}_T - \Psi]\\
 \tilde{\Delta}_P'+ik\mu\tilde{\Delta}_P &= -\kappa'[\tilde{\Delta}_P + \Psi]
@@ -625,7 +631,7 @@ written in terms of moments, given by $\Delta(k, \mu) = \sum_l (2l+1)(-i)^l\Delt
 
 By multiplying the Boltzmann equations \ref{Boltzmann} by $P_l(\mu)$ and integrating over angular dependence $\mu$, making use of the relevant identities for Legendre polynomials, we obtain a heirachy of equations connecting higher moments to lower, a fact we will use later.
 
-\subsubsection{Recombination History}
+\subsubsection{Optical Depth}
 
 While the Universe is young and hot, baryons are ionised and tightly coupled to photons via Thomson scattering. Once the temperature falls below a few eV, it becomes favourable for electrons and ions to `recombine' into neutral molecules. As the number of charged particles falls, the mean free path photons increases. Eventually, the mean free path becomes comparable to the horizon size and the photon and baryon fluids decouple. It is at this point in the Universe’s evolution that the CMB photons last scatter \cite{Pritchard}.\\
 
@@ -653,14 +659,14 @@ where $\tau_R$ is the time of recombination, $\Delta\tau_R$ is its width, and $g
 \begin{figure}[h]
   \includegraphics[width=0.5\linewidth]{recombinationhistory.png}
   \centering
-  \caption{Recombination history. Plotted are the visibility function and optical depth calculated numerically in bold, and the Gaussian approximation with $\Delta\tau_R=15.7$, dashed \cite{Pritchard}. }
+  \caption{Recombination history. Plotted are the visibility function and optical depth calculated numerically in bold, and the Gaussian approximation with $\Delta\tau_R=15.7$, dashed. Figure from \cite{Pritchard}. }
 \end{figure}
 
 This is a decent approximation for the visibility function but we find it isn't quite right. In particular, after the `dark ages' in which the universe is very neutral, we know from observations of quasar absorption spectra that the universe is highly ionized again at $5<z<20$. This reionization is driven by radiation from the first stars interacting with hot hydrogen gas. CMB photons therefore enter a second phase of Thomson scattering at a later time \cite{reionisation}, which is important to account for in our CMB theory.
 
 \subsubsection{Line of Sight Expressions}
 
-While one may solve the Boltzmann heirachy directly from initial conditions, it proves more instructive, intuitive and numerically effiecent to use the `line of sight method', first introduced in \cite{LoS}. We formally integrate these first order linear ODEs along the photon path, making use of an integrating factor $e^{\int d\tau (ik\mu+\kappa')} = e^{ik\mu\tau-\kappa}$ (by $\kappa'=-\frac{d\kappa}{d\tau}$), from their initial conditions up until today.  Introducing $x=k(\tau_0-\tau)$ we get  
+While one may solve the Boltzmann heirachy directly from initial conditions, it proves more instructive, intuitive and numerically effiecent to use the `line of sight method', first introduced in \cite{LoS}, to predict measured values of the CMB fields on earth today. We formally integrate these first order linear ODEs along the photon path, making use of an integrating factor $e^{\int d\tau (ik\mu+\kappa')} = e^{ik\mu\tau-\kappa}$ (by $\kappa'=-\frac{d\kappa}{d\tau}$), from their initial conditions to now.  Introducing $x=k(\tau_0-\tau)$ we get  
 \begin{equation}\begin{split}
 \tilde{\Delta}_T(\tau_0,\mu,k) &= \int_0^{\tau_0}d\tau e^{-ix\mu}S_T(k,\tau)\\
 \tilde{\Delta}_P(\tau_0,\mu,k) &= \int_0^{\tau_0}d\tau e^{-ix\mu}S_P(k,\tau)
@@ -795,13 +801,13 @@ which are non vanishing only for $XY \in \{TE, TT, EE, BB\}$. We kept the factor
 \begin{figure}[h]
   \includegraphics[width=0.5\linewidth]{tensorpowerspectra.png}
   \centering
-  \caption{Tensor power spectra, with vertical lines indicating the three important angular scales, horizon size at recombination $\tau_R$, horizon size at matter-radiation equality $\tau_{eq}$ and width of last-scattering surface $\Delta\tau_R$}
+  \caption{Tensor power spectra, with vertical lines indicating the three important angular scales, horizon size at recombination $\tau_R$, horizon size at matter-radiation equality $\tau_{eq}$ and width of last-scattering surface $\Delta\tau_R$.}
   \label{tensorpower}
 \end{figure}
 
 Having written down expressions for the power spectra contributions of tensor modes we now wish to understand what they look like. As seen when studying CMB anisotropies, it is possible to get a good qualitative understanding for the shape of power spectra working analytically, though when percent level precision is needed a suitable numerical code must be used.\\
 
-To do so, we need to understand the objects in the main results above. We have already discussed the visibility function $g$, and will use throughout the Gaussian approximation for recombination, bearing in mind this isnt quite right and we should expect a contribution from reionisation too, discussed briefly at the end of the seciton. All power spectra also depend on the unknown tensor power spectrum, which control their overall amplitude, and also affect their scale dependence. For figures, we take  $A_t = \frac{(2\pi)^3}{8(4\pi)^2}, n_t=0$, and remaining cosmological parameters to be a $\Lambda$CDM cosmology with $\Omega_b=0.05, \Omega_{DM}=0.25, \Omega_\Lambda=0.7$ and Hubble parameter $h=0.72$. This sections discussion and figures are in large part from \cite{Pritchard}, though also see \cite{zhao}. It remains to discuss the gravitational wave amplitude evolution $h'$, the projection functions, and finally the source term $\Psi$, a function of polarisation and temperature anisotropy moments. First however we give some intuition about the expected shape of power spectra, shown in figure \ref{tensorpower}.\\
+To do so, we need to understand the objects in the main results above. We have already discussed the visibility function $g$, and will use throughout the Gaussian approximation for recombination, bearing in mind this isnt quite right and we should expect a contribution from reionisation too, discussed briefly at the end of the section. All power spectra also depend on the unknown tensor power spectrum, which control their overall amplitude, and also affect their scale dependence. For figures, we take  $A_t = \frac{(2\pi)^3}{8(4\pi)^2}, n_t=0$, and remaining cosmological parameters to be a $\Lambda$CDM cosmology with $\Omega_b=0.05, \Omega_{DM}=0.25, \Omega_\Lambda=0.7$ and Hubble parameter $h=0.72$. This sections discussion and figures are in large part from \cite{Pritchard}, though also see \cite{zhao}. It remains to discuss the gravitational wave amplitude evolution $h'$, the projection functions, and finally the source term $\Psi$, a function of polarisation and temperature anisotropy moments. First however we give some intuition about the expected shape of power spectra, shown in figure \ref{tensorpower}.\\
 
 Temperature anisotropies 
 \begin{equation}
@@ -818,7 +824,7 @@ Polarisation anisotropies can be written
 
 involving a single SLS localised source, and an $l$ dependent projection function. This is sensible, as free streaming photons, while experiencing energy shifts due to cosmic expansion, should not be repolarised after last scattering. Consider photons scattering off an electron in its rest frame - the photons arrive from all directions from a mean distance determined by the mean free path at recombination. During propagation, they experience the ISW effect, discussed above, and so arrive with different temperatures, i.e. we have a temperature quadrupole which after scattering gives rise to linear polarisation. \\
 
-The power spectrum can be understood as follows. By causality, the gravitational wave amplitude is constant on super horizon scales, but, like radiation, we expect it to decay rapidly upon entering the horizon. So, photons incident on modes that are super horizon at last scattering don't experience much ISW temperature change and generate little polarisation. Optimal ISW and thus maximal polarisation is generated by modes entering the horizon at the time of penultimate scattering, as this is the period in which the gravitational wave loses most of its amplitude. Translating into the form of the polarisation power spectrum, we expect to see a slow increase in power at large scales, peaking at the horizon scale at penultimate scattering. For smaller scales we expect a drop corresponding to the transition between modes entering in the penultimate to last scattering period and those not. The matter-radiation equality scale should be distinctive due to it the gravitational wave amplitude exhibiting differing scaling in the two eras. On very small scales, phase cancellation, defined later but resulting in a similar effect to diffusion damping, becomes important and leads to an exponential suppression. 
+The power spectrum can be understood as follows. By causality, the gravitational wave amplitude is constant on super horizon scales, but, like radiation, we expect it to decay rapidly upon entering the horizon. So, photons incident on modes that are super horizon at last scattering don't experience much ISW temperature change and generate little polarisation. Optimal ISW and thus maximal polarisation is generated by modes entering the horizon at the time of penultimate scattering, as this is the period in which the gravitational wave loses most of its amplitude. Translating into the form of the polarisation power spectrum, we expect to see a slow increase in power at large scales, peaking at the horizon scale at penultimate scattering. For smaller scales we expect a drop corresponding to the transition between modes entering in the penultimate to last scattering period and those not. The matter-radiation equality scale should be distinctive due to the gravitational wave amplitude exhibiting differing scaling in the two eras. On very small scales, phase cancellation, defined later but resulting in a similar effect to diffusion damping, becomes important and leads to an exponential suppression. 
 
 \subsubsection{Gravitational Wave Evolution}
 \label{evolution}
@@ -863,11 +869,11 @@ The behaviour of these solutions splits into three regimes. When $k\tau\ll 1$, $
 \begin{figure}[h]
   \includegraphics[width=0.5\linewidth]{gravwaveev.png}
   \centering
-  \caption{Gravitational wave evolution at wavenumber satisfying $k\tau_{eq}=10$. Shown solutions are numerical without anisotropic stress, analytic matter domination, analytic radiation domination, a WKB approximation, and numerical with anisotropic stress}
+  \caption{Gravitational wave evolution at wavenumber satisfying $k\tau_{eq}=10$. Shown solutions are numerical without anisotropic stress, analytic matter domination, analytic radiation domination, a WKB approximation, and numerical with anisotropic stress.}
   \label{gravwave}
 \end{figure}
 
-Even without a complete analytical solution, we may obtain the scaling of $h$ via a simple argument. Before horizon entry,  by causality the amplitude $h$ should be constant. After horizon entry, the gravitational wave redshifts with expansion as radiation (the graviton is massless), and scales as $h\sim 1/a$. Hence we have the relation between the gravitational wave amplitude today and at horizon entry $h_{\text{today}}/h_{\text{entry}} = a_{\text{today}}/a_{\text{entry}}$. Taking $h_{\text{entry}}$ to be independent of $k$, we have $h_{\text{today}}\propto a_{\text{entry}}$. Horizon entry occurs when $a_{\text{entry}}H_{\text{entry}}=k$ and so from the scaling of H in matter and radiation domination we obtain $a_{\text{entry}}\propto k^{-1}$ for radiation domination and $a_{\text{entry}}\propto k^{-2}$ for matter domination. This gives the scalings
+Even without a complete analytical solution, we may obtain the scaling of $h$ via a simple argument. Before horizon entry,  by causality the amplitude $h$ should be constant. After horizon entry, the gravitational wave redshifts with expansion as radiation (the graviton is massless), and scales as $h\sim 1/a$. Hence we have the relation between the gravitational wave amplitude today and at horizon entry $h_{\text{today}}/h_{\text{entry}} = a_{\text{today}}/a_{\text{entry}}$. Taking $h_{\text{entry}}$ to be independent of $k$, we have $h_{\text{today}}\propto a_{\text{entry}}$. Horizon entry occurs when $a_{\text{entry}}H_{\text{entry}}=k$ and so from the scaling of $H$ in matter and radiation domination we obtain $a_{\text{entry}}\propto k^{-1}$ for radiation domination and $a_{\text{entry}}\propto k^{-2}$ for matter domination. This gives the scalings
 \begin{equation}
   h \propto
     \begin{cases}
@@ -883,12 +889,12 @@ For polarisation $X\in\{E,B\}$ we therefore expect since $k\sim l$ and $C_l^{XX}
     \begin{cases}
       l^2 & l<l_R\\
       l^{-2} & l_R<l<l_{eq}\\
-      l^{-4} & l_{eq}<l
+      1 & l_{eq}<l<l_\Delta \\
+      l^{-4} & l_\Delta<l \\
     \end{cases}       
 \end{equation}
 
-which can be seen in the power spectra, clearly demonstrating the peak at $l_R$ and the different scalings for modes entering in matter and radiation domination.
-
+which can be seen in the power spectra, clearly demonstrating the peak at $l_R$ and the different scalings for modes entering in matter and radiation domination. We have introduced an additional scale $l_\Delta$ corresponding to the width of the SLS, above which the phase damping effect (described below) becomes important, leading to a suppression. Consequently, we don't see the constant scaling in the power spectrum. 
 
 \subsubsection{Projection Factors}
 
@@ -967,7 +973,7 @@ obtained through treating $h'$ as purely oscillatory with a slowly varying envel
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{analytic.png}
 \centering
-\caption{Comparison of E and B power spectra from CMBFAST (solid curve) with (semi)analytic approximations. The (semi)analytic solutions use forms for h in radiation domination, calculated numerically, and calculated numerically  with exponential damping}
+\caption{Comparison of E and B power spectra from CMBFAST (solid curve) with (semi)analytic approximations. The (semi)analytic solutions use forms for h in radiation domination, calculated numerically, and calculated numerically  with exponential damping.}
 \label{analyticcc}
 \end{figure}
 
@@ -992,13 +998,13 @@ We have analytic solutions to all of these quantities, which we proceed to plot 
 
 Throughout we have taken the visibility function to be near Gaussian, and peaked around recombination. We know however CMB photons scatter further at reionisation, which modifies the above discussion. Similarly to recombination, this contributes a peak at a new scale, that of the horizon size at reionisaton, to the polarisation power sepctra. Since the horizon is growing, this peak is at a larger angular scale contribution than the recombination peak, at $l<10$. It also contributes a further exponential suppression at small scales \cite{reionisation2}.\\
 
-Through carefully going through an analytic understanding of these power spectra, we have uncovered certain parameters and scales that can be probed provided a sufficiently precise measurement of the B mode spectrum. Tensor power spectra are sensitive to three main scales: the horizon scale at recombination, the horizon scale at matter-radiation equality, and the width of the SLS, among other cosmological parameters. In the near future we don't expect to be able to measure this full spectrum, and so for the purposes of this essay and for an initial measurement of $r$, the existence of the power spectrum peak at fixed known $l$ and predictable size given $r$ is the key result.
+Through carefully developing an analytic understanding of these power spectra, we have uncovered certain parameters and scales that can be probed provided a sufficiently precise measurement of the B mode spectrum. Tensor power spectra are sensitive to the following: the horizon scales at recombination and reionisation, the horizon scale at matter-radiation equality, the width of the SLS, among other cosmological parameters. In the near future we don't expect to be able to measure this full spectrum, and so for the purposes of this essay and for an initial measurement of $r$, the existence of the power spectrum peaks at fixed known $l$ and predictable size given $r$ is the key result.
 
 
 
 \subsection{Inflationary Density Perturbations}
 
-For completeness we should discuss scalar perturbations too. Importantly, these do not produce a B mode polarisation, a fact for which we give just some intuition for here, though one can perform an entirely analogous analysis for scalars also. As before, we work in Fourier space with wave vector $\v{k}$, which we may choose to be aligned with the $\unit{z}$ direction, and take the basis on which we evaluate $Q$ and $U$ to be the natural basis on the sphere: $(\unit{e}_1, \unit{e}_2) = (\unit{e}_\theta, \unit{e}_\phi)$. The angular dependence of this system, and therefore of the Boltzmann equations too, turn out this time to only be in the dot product of relevant directions $\mu=\unit{k}\cdot\unit{n}$, unlike for tensor perturbations which also have azimuthal dependence. The scalar quadrupole moment generated therefore has no $\phi$ dependence, i.e. is the $m=0$ mode, and so generates azimuthally symmetric polarisation. Thus, recalling Q describes the difference in power between the $\unit{e}_\theta$ and $\unit{e}_\phi$ directions, we see Q is non zero as polarisation is aligned with $\unit{e}_\theta$. U on the other hand is not, as it measures the difference of power between $\unit{e}_\theta\pm\unit{e}_\phi$, which are equal. Another way to say the same thing is that the polarisation eigenvector must be proportional to $\unit{e}_\theta$, which by the form of the polarisation matrix forces $U=0$. Now by \ref{EBmodes}, we see if $U=0$, then $B(\unit{n})$ is identically 0. One can think of the additional linearly independent degree of freedom in tensor perturbations being responsible for their azimuthal dependence, which results in both Q and U and so both E and B mode polarisation being generated. 
+For completeness we should discuss scalar perturbations too. Importantly, these do not produce a B mode polarisation, a fact for which we give just some intuition for here, though one can perform an entirely analogous analysis for scalars also. As before, we work in Fourier space with wave vector $\v{k}$, which we may choose to be aligned with the $\unit{z}$ direction, and take the basis on which we evaluate $Q$ and $U$ along line of sight $\unit{n}$ to be the natural basis on the sphere: $(\unit{e}_1, \unit{e}_2) = (\unit{e}_\theta, \unit{e}_\phi)$. Scalar perturbations are proportional to $\v{k}$, and so the angular dependence of this system, and therefore of the Boltzmann equations too, turn out this time to only be in the dot product of the two relevant directions $\mu=\unit{k}\cdot\unit{n}$ - Tensor perturbations on the other hand additionally had azimuthal dependence. The scalar quadrupole moment generated therefore has no $\phi$ dependence, i.e. is the $m=0$ mode, and so generates azimuthally symmetric polarisation. Thus, recalling Q describes the difference in power between the $\unit{e}_\theta$ and $\unit{e}_\phi$ directions, we see Q is non zero as polarisation is aligned with $\unit{e}_\theta$. U on the other hand is not, as it measures the difference of power between $\unit{e}_\theta\pm\unit{e}_\phi$, which are equal. Another way to say the same thing is that the polarisation eigenvector must be proportional to $\unit{e}_\theta$, which by the form of the polarisation matrix forces $U=0$. Now by \ref{EBmodes}, we see if $U=0$, then $B(\unit{n})$ is identically 0. One can think of the additional linearly independent degree of freedom in tensor perturbations being responsible for their azimuthal dependence, which results in both Q and U and so both E and B mode polarisation being generated. 
 
 
 \newpage
@@ -1012,11 +1018,11 @@ We have seen that primordial perturbations induce characteristic polarisation pa
 \item Tensor (gravitational wave) perturbations create both E and B modes
 \end{enumerate}
 
-In the previous section we showed (1) and (3). We omitted showing (2) since it can be shown that vector perturbations redshift away rapidly due to cosmic expansion, and so are not expected to contribute significantly to the observed B-mode signal  \cite{vector}. They all additionally source temperature anisotropies.\\
+In the previous section we showed (1) and (3). We omitted showing (2) since it can be shown that vector perturbations redshift away rapidly due to cosmic expansion, and so are not expected to contribute significantly to the observed B mode signal  \cite{vector}. They all additionally source temperature anisotropies.\\
 
-The B mode is therefore clearly special - theory tells us scalar perturbations do not produce it. This is the reason why searching for tensor perturbations in the B mode is significantly better than in the E mode or temperature isotropy: Tensors contribute to angular power spectra on large scales, where scalar contributions can be shown to be relatively small. Unfortunately, even in models predicting a large low l reionization feature, the overall power there is still too small to be measurable. For E modes and temperature anistropy cosmic variance limits our ability to accurately measure the low l contribution of scalar perturbations, rendering it hard to unambiguously separate the scalar and tensor contributions. The B mode on the other hand is not contaminated by scalar contributions, only limited by noise. In principle, with sufficient noise sensitivity, we can detect even very small tensor to scalar ratios in the low l regime \cite{Seljak-1997}. This forms the basis of the claim that a detection of B modes is `smoking-gun' evidence for primordial IGWs and therefore \cite{smokinggun}. The search for these B modes is thus a major current focus of observational cosmology - a detection will have far reaching consequences for the entire theoretical physics community. \\
+The B mode is therefore clearly special - theory tells us scalar perturbations do not produce it. This is the reason why searching for tensor perturbations in the B mode is significantly more promising than in the E mode or temperature isotropy. Tensors contribute to angular power spectra on large scales, where scalar contributions can be shown to be relatively small. Unfortunately, even in models predicting a large low l reionization or recombination feature, the overall power there is still too small to be measurable. For the E modes and temperature anistropies cosmic variance limits our ability to accurately measure the low l contribution of scalar perturbations, rendering it hard to unambiguously separate the scalar and tensor contributions. The B mode on the other hand is not contaminated by this cosmic variance prone scalar contribution, instead only limited by noise. In principle, with sufficient noise sensitivity, we can detect even very small tensor to scalar ratios in the low l regime \cite{Seljak_1997}. This forms the basis of the claim that a detection of B modes is `smoking-gun' evidence for primordial IGWs and therefore inflation \cite{smokinggun}. The search for these B modes is thus a major current focus of observational cosmology - a detection will have far reaching consequences for the entire theoretical physics community. \\
 
-Having motivated the search for B-modes, we now turn to a number of issues in their detection. To be sure we have detected primordial gravitational waves, we must be sure a measured signal can only be attributed to them, not generated by some other effect. We discuss three points here, in varying levels of detail. Firstly, other possible sources of B modes in the early universe. Secondly, the issue of foregrounds: emission from other sources obscuring the CMB polarisation signal. Finally, and most interestingly, the weak gravitational lensing of CMB photons by intervening matter between us and the surface of last scattering. These issues, combined with the fact that the expected amplitude of B mode signal is tiny, makes their detection a daunting task.
+Having motivated the search for B modes, we now turn to a number of issues in their detection. To be sure we have detected primordial gravitational waves, we must be sure a measured signal can only be attributed to them, not generated by some other effect. We discuss three points here, in varying levels of detail. Firstly, other possible sources of B modes in the early universe. Secondly, the issue of foregrounds: emission from other sources obscuring the CMB polarisation signal. Finally, and most interestingly, the weak gravitational lensing of CMB photons by intervening matter between us and the surface of last scattering. These issues, combined with the fact that the expected amplitude of B mode signal is tiny, makes their detection a daunting task.
 
 
 \subsection{Other Primordial B modes}
@@ -1024,7 +1030,7 @@ Having motivated the search for B-modes, we now turn to a number of issues in th
 
 A number of other early universe effects are capable of producing B modes even in the absence of IGWs, and our analysis should account for the possibility that these contribute too. We use the illustrative example of topological defects, generically found in supersymettric grand unification models \cite{CMBPol}.\\
 
-The best studied phenomena is that of cosmic strings, formed at the end of multi-field inflation upon the breaking of a $U(1)$ symmetry. If formed, they would induce a B-mode polarisation in the CMB through continously sourced vector perturbations after inflation, no longer negligible as they havn't redshifted away at recombination or reionisation. They predict a spectrum with two peaks, at $l\approx10$ from reionisation and $l\approx 600-1000$ from last-scattering. Recent work has found that topological defects alone cannot explain the measured BICEP-2 B-mode signal, though may be present in combination with tensor or dust contributions \cite{baddefects}.\\
+The best studied phenomena is that of cosmic strings, formed at the end of multi-field inflation upon the breaking of a $U(1)$ symmetry. If formed, they would induce a B mode polarisation in the CMB through continously sourced vector perturbations after inflation, no longer negligible as they havn't redshifted away at recombination or reionisation. They predict a spectrum with two peaks, at $l\approx10$ from reionisation and $l\approx 600-1000$ from last-scattering. Recent work has found that topological defects alone cannot explain the measured BICEP-2 B mode signal, though may be present in combination with tensor or dust contributions \cite{baddefects}.\\
 
 Other primordial B modes may be generated by phase transitions \cite{phase} or primordial magnetic fields \cite{magnetic}, each with their own characteristic spectra.
 
@@ -1032,23 +1038,23 @@ Other primordial B modes may be generated by phase transitions \cite{phase} or p
 
 Unfortunately, spread out between us and the last-scattering surface at $z\approx 1100$, there is a long line of obtruding foregrounds that hinder our ability to accurately measure the CMB fields. In this brief section we give an overview of the main foregrounds that contaminate our CMB polarisation signal, and describe how we may go about dealing with them. We draw from \cite{thesis} and \cite{foregrounds}.\\
 
-Recall first that the CMB is a near perfect black body emitter, with a characteristic frequency profile given by the Planck distribution peaking at about 160Ghz, see \ref{cmbspec}. Foregrounds can broadly be separated into three classes: atmospheric, galactic, or extragalactic. Each individual type of foreground has its own distinctive frequency dependence, and degree of polarisation. Those contributing at CMB frequencies are summarised in figure \ref{foregrounds}. We see the main astrophysical contaminants for our studies of polarisation are galactic in origin, from synchrotron emission at low frequencies below 100Ghz, and thermal dust at higher frequencies. The other contaminants listed in the left panel turn out to not be significantly polarised so don't pose too much of an issue. The right panel demonstrates the extent of the problem - The expected B mode signal, even for a relatively large value of $r\approx0.1$ falls below the average polarised foreground level on the full sky at all CMB frequencies.\\
+Recall first that the CMB is a near perfect black body emitter, with a characteristic frequency profile given by the Planck distribution peaking at about 160Ghz, see figure \ref{cmbspec}. Foregrounds can broadly be separated into three classes: time dependent atmospheric noise, galactic, or extragalactic. Each individual type of foreground has its own distinctive frequency dependence, and degree of polarisation. Those contributing at CMB frequencies are summarised in figure \ref{foregrounds}. We see the main astrophysical contaminants for our studies of polarisation are galactic in origin, from synchrotron emission at low frequencies below 100Ghz, and thermal dust at higher frequencies, rendering the entire galactic plane virtually unusable for CMB measurements. The other contaminants listed in the left panel turn out to not be significantly polarised so don't pose too much of an issue. The right panel demonstrates the extent of the problem - the expected B mode signal, even for a relatively large value of $r\approx0.1$ falls below the average polarised foreground level on the full sky at all CMB frequencies.\\
 
 \begin{figure}[h]
   \includegraphics[width=0.4\linewidth]{cmbspectrum1.png}
   \centering
-  \caption{the CMB spectrum as measured by the COBE sattelite, matches that of a black body emitter at the CMB temperature - image from https://webhome.phy.duke.edu/~kolena/cmb.html}
+  \caption{the CMB spectrum as measured by the COBE sattelite, matches that of a black body emitter at the CMB temperature. Figure from https://webhome.phy.duke.edu/~kolena/cmb.html.}
   \label{cmbspec}
 \end{figure}
 
 \begin{figure}[h]
 \includegraphics[width=0.9\linewidth]{foregrounds.png}
 \centering
-\caption{Spectral energy distributions (SED) of relevant astrophysical foregrounds. The left panel are the main contributions to temperature, and the right, to polarisation. The shaded bars indicate the observation frequencies for the Planck satellite, and the upper and lower limits correspond to different galactic masks obscuring 7 and 19\% of the sky, primarily in the galactic plane. Image from \cite{planck2016b}.}
+\caption{Spectral energy distributions (SEDs) of relevant astrophysical foregrounds. The left panel are the main contributions to temperature, and the right, to polarisation. The shaded bars indicate the observation frequencies for the Planck satellite, and the upper and lower limits correspond to different galactic masks obscuring 7 and 19\% of the sky, primarily in the galactic plane. Figure from \cite{planck2016b}.}
 \label{foregrounds}
 \end{figure}
 
-\textbf{Atomospheric effects}: Absorption lines from oxygen at 60 and 120 Ghz, and water vapour at 20 and 18Ghz limit access to the microwave sky. Thermal emission from the atmosphere is unpolarised, though Zeeman splitting of oxygen lines in Earth's magnetic field gives primarily circularly polarized emission. While the CMB is not expected to be circularly polarized, instrumental issues could lead to a $\approx 0.01\%$ circular-to-linear polarisation conversion, which could still give a measured B mode signal orders of magnitude larger than if $r=0.01$, say. Backscattering of thermal radiation emitted by the earth's surface off ice  crystal clouds in the troposphere may also give B mode signals larger than the expected CMB B mode signal. \\
+\textbf{Atomospheric effects}: Absorption lines from oxygen at 60 and 120 Ghz, and water vapour at 18 and 20Ghz limit access to the microwave sky. Thermal emission from the atmosphere is unpolarised, though Zeeman splitting of oxygen lines in Earth's magnetic field gives primarily circularly polarized emission. While the CMB is not expected to be circularly polarized, instrumental issues could lead to a $\approx 0.01\%$ circular-to-linear polarisation conversion, which could still give a measured B mode signal orders of magnitude larger than if $r=0.01$, say. Backscattering of thermal radiation emitted by the earth's surface off ice  crystal clouds in the troposphere may also give B mode signals larger than the expected CMB B mode signal. \\
 
 \textbf{Galactic Synchrotron}: This emission is produced by acceleration of charged particles in interstellar magnetic fields. Via multi frequency measurements from the WMAP and Planck satellites, we find a very good fit to spectral energy distribution $T_d(\nu) \propto \nu^{\beta_s}$ with $\beta_s \approx -3$ but varying slightly over the sky, due to the dependence on the acceleration of charged particles.\\
 
@@ -1056,27 +1062,27 @@ Recall first that the CMB is a near perfect black body emitter, with a character
 
 The statistical algorithms and methods designed to separate these foregrounds from the clean CMB (the primary signal plus secondary effects) are known as CMB component separation \cite{componentsep}, and make use of several datasets. They can be grouped into two classes. Non blind methods attempt to make use of the known spectral frequency properties of certain foregrounds, while blind methods assume little or no prior information about the form of the foregrounds, instead relying on their statistics: different foregrounds should be statistically independent, and the statistics of the primary CMB are well understood from theory.\\
 
-Proper foreground removal is very important. In order to detect a B mode signal from $r=0.01$ IGWs at a $3\sigma$ significance for example, we must only have a $1\%$ level of residual foregrounds. It is however easy to go wrong. In March 2014 the BICEP2 Collaboration reported detection of B-mode power at 150 GHz in the range $40<l<100$, in excess of that expected from lensing (see next section), and greater than that expected from foregrounds \cite{bicep2cockup}. This would have been huge \cite{smokinggun}, however unfortunately, under further scrutiny, arguments were made that uncertainties in the various dust templates may have been underestimated. By cross correlating with newer BICEP2/Keck and Planck data it was found that this entire excess B mode could be attributed to dust, leaving again only an improved upper bound on $r$ \cite{bicep2cockup2}.
+Proper foreground removal is very important. In order to detect a B mode signal from $r=0.01$ IGWs at a $3\sigma$ significance for example, we must only have a $1\%$ level of residual foregrounds. It is however easy to go wrong. In March 2014 the BICEP2 Collaboration reported detection of B mode power at 150 GHz in the range $40<l<100$, in excess of that expected from lensing (see next section), and greater than that expected from foregrounds \cite{bicep2cockup}. This would have been huge, even making public news \cite{smokinggun}. Gowever unfortunately, under further scrutiny, arguments were made that uncertainties in the various dust templates may have been underestimated. By cross correlating with newer BICEP2/Keck and Planck data it was found that this entire excess B mode could be attributed to dust, leaving again only an improved upper bound on $r$ \cite{bicep2cockup2}.
 
 
 \subsection{CMB Lensing}
 \label{lensing}
 CMB lensing is the deflection of CMB photons by all intervening matter in the universe by gravity. It is a second order effect and is thus not treated in the linearised Boltzmann equation formalism used to describe the CMB so far. While in the linear regime each Fourier mode evolves independently, lensing mixing these Fourier modes, making the statistics of the lensed sky far more complicated than those of the unlensed one. \\
 
-We treat lensing in the `weak lensing' regime, where images (and also generally other fields on the sphere) experience a small shift compared to the original unlensed field. The effect of gravitational lensing is greatest when the lens (i.e. the matter responsible for the deflection) is massive, and close to the source. While some lenses for the CMB are certainly massive, they are relatively far from the $z\approx1100$ source, since structure doesn't form in the universe until a much later time. The opposing `strong lensing' regime is also very interesting, though not relevant here.\\
+We treat lensing in the `weak lensing' regime, where images (and also generally other fields on the sphere) experience a small shift compared to the original unlensed field. The effect of gravitational lensing is greatest when the lens (i.e. the matter responsible for the deflection) is massive, and close to the source. While some lenses for the CMB are certainly massive, they are relatively far from the $z\approx1100$ source, since structure doesn't form in the universe until a much later time. The opposing `strong lensing' regime is also very interesting for cosmology, though not relevant here.\\
 
 Lensing affects all three of our observable CMB fields: the temperature fluctuation $T$, and Stokes parameters $Q$ and $U$, and in doing so also the derived physical $E$ and $B$ fields in a way that will be made precise later. It has the effect of locally (i.e. on small patches of the sky) sqaushing and stretching the CMB, shifting local power spectra towards lower or higher angular scales. Summing over many patches we see a small smoothing of oscillations in the temperature and E mode spectra at a measurable several percent, rendering the effect important in precision cosmology. \\
 
-Importantly, it also has the effect of converting some primordial E modes into lensed B modes, which we demonstrate and quantify in the flat sky limit. This obscures the inflationary B mode signal, and so lensing acts as a nuisance for our studies of the primary CMB. It is not all bad however - a typical analysis of the CMB assumes Gaussianity and statistical isotropy, giving us just a power spectrum. Lensing introduces small amounts of non-Gaussianity, and statistical anisotropy into the CMB, so can be thought of as adding information to the CMB which may be used to probe the matter distribution of the universe at out to further redshifts than possible with current galaxy surveys \cite{sloan}.
+Importantly, it also has the effect of converting some primordial E modes into lensed B modes, which we demonstrate and quantify in the flat sky limit. This obscures the inflationary B mode signal, and so lensing acts as a nuisance for our studies of the primary CMB. It is not all bad however - a typical analysis of the CMB assumes Gaussianity and statistical isotropy, giving us just a power spectrum. Lensing introduces small amounts of non-Gaussianity and statistical anisotropy into the CMB, so can be thought of as adding information to the CMB which may be used to probe the matter distribution of the universe at out to further redshifts than possible with current galaxy surveys \cite{sloan}.
 
 \subsubsection{Mathematical Description}
 
-The mathematical formalism used to describe lensing for our purposes is rather simple, and described in great detail in \cite{lewis}, on which much of this section is based. From General Relativity and a flat FLRW metric, one can derive an expression for the displacement vector $\v{\alpha}$ on the sphere, dependent on observed direction $\unit{n}$, by which the lensed and unlensed fields differ. 
+The mathematical formalism used to describe lensing for our purposes is rather simple, and described in great detail in \cite{lewis}, on which much of this section is based. From General Relativity and a flat FLRW metric, one can derive an expression for the displacement vector $\boldsymbol{\alpha}$ on the sphere, dependent on observed direction $\unit{n}$, by which the lensed and unlensed fields differ. 
 \begin{equation}
-\tilde{X}(\unit{n}) = X(\unit{n}+\v{\alpha})
+\tilde{X}(\unit{n}) = X(\unit{n}+\boldsymbol{\alpha})
 \end{equation}
 \begin{equation}
-\v{\alpha} = -2 \int_0^{\chi_*}d\chi \frac{\chi_*-\chi}{\chi_*\chi}\nabla_{\unit{n}}\Psi(\chi\unit{n},\tau_0-\chi)
+\boldsymbol{\alpha} = -2 \int_0^{\chi_*}d\chi \frac{\chi_*-\chi}{\chi_*\chi}\nabla_{\unit{n}}\Psi(\chi\unit{n},\tau_0-\chi)
 \end{equation}
 
 Throughout this section a tilde indicates a lensed field, not to be confused with how we defined $\tilde{E}$ and $\tilde{B}$ previously. $X$ is an observable field: $X \in \{ T, U, V\}$, $\chi$ is conformal distance, $\tau_0-\chi$ is the conformal time at which the photon was at position $\chi\unit{n}$, $\nabla_{\unit{n}}$ is the angular derivative, or equivalently covariant derivative on the sphere, and $\Psi=\half(\Psi_N+\Phi_N)$ is the Weyl potential, written in terms of the Newtonian potentials \ref{metricperturb}. We have used here the Born approximation - the line of sight integral is performed along the unperturbed geodesic path, valid as we work to first order in $\Psi$, which has been shown to be a very good approximation. $\Psi$ is related to matter perturbations by the Poisson Equation
@@ -1088,7 +1094,7 @@ Throughout this section a tilde indicates a lensed field, not to be confused wit
 where $\bar{\delta\rho}$ is the comoving total density perturbation, i.e. evaluated in its rest frame, and we have assumed no anisotropic stress. It is convenient to write the deflection angle instead in terms of a lensing potential
 \begin{equation}\begin{split}
 \psi(\unit{n}) &= -2 \int_0^{\chi_*}d\chi \frac{\chi_*-\chi}{\chi_*\chi}\Psi(\chi\unit{n},\tau_0-\chi)\\
-\v{\alpha} &= \nabla \psi
+\boldsymbol{\alpha} &= \nabla \psi
 \end{split}\end{equation}
 
 One may worry about the lensing potential being divergent as $\chi \rightarrow 0$. We can amend this by setting the monopole of $\psi$ to 0, which doesn't modify $\v{\alpha}$. 
@@ -1097,7 +1103,7 @@ One may worry about the lensing potential being divergent as $\chi \rightarrow 0
 
 We ultimately wish to calculate the lensed power spectra in terms of the unlensed. In doing so, we will need the lensing potential power spectrum. Here we derive an expression for it, showing it is simply a weighted matter power spectrum. We make use of the Fourier space expression
 \begin{equation}
-\langle \Psi(\v{k},\tau,\tau')\Psi^*(\v{k}',\tau,\tau')\rangle=\frac{2\pi}{k^3}\Delta^2_\Psi(k,\tau,\tau')(2\pi)^3\delta(\v{k}-\v{k}')
+\langle \Psi(\v{k},\tau,\tau')\Psi^*(\v{k}',\tau,\tau')\rangle=(2\pi)^3\delta(\v{k}-\v{k}')\frac{2\pi^2}{k^3}\Delta^2_\Psi(k,\tau,\tau')
 \end{equation}
 
 to get 
@@ -1106,7 +1112,7 @@ to get
 &= 16\pi \sum_{ll'mm'}\int d\chi \int d\chi'(\frac{\chi_*-\chi}{\chi_*\chi})(\frac{\chi_*-\chi'}{\chi_*\chi'})\int \frac{dk}{k}j_l(k\chi)j_{l'}(k\chi')Y_{lm}(\unit{n})Y^*_{l'm'}(\unit{n}')\delta_{ll'}\delta_{mm'}
 \end{split}\end{equation}
 
-where we have made use of the Rayleigh Plane Wave identity with $\v{x}=\chi\unit{n}$
+where we have made use of the Rayleigh plane wave identity with $\v{x}=\chi\unit{n}$
 \begin{equation}
 e^{i\v{k}\cdot\v{x}} = 4\pi\sum_{lm}i^lj_l(k\chi)Y_{lm}^*(\unit{n})Y_{lm}(\unit{k})
 \end{equation}
@@ -1131,7 +1137,7 @@ To make the relation with scalar perturbations explicit, we may relate this to p
 C_l^{\psi\psi} = 16\pi \int \frac{dk}{k} P_s(k) \left[\int_0^{\chi_*} d\chi j_l(\chi) (\frac{\chi_*-\chi}{\chi_*\chi})T_\Psi(k, \tau_0-\chi)\right]^2
 \end{equation}
 
-Alternatively, we may relate the scale invariant power spectrum of $\Psi$ to the matter power spectrum via Fourier transforming the Poisson Equation \ref{poisson}, making concrete the claim the lensing potential power spectrum is a weighted matter power spectrum.
+Alternatively, we may relate the scale invariant power spectrum of $\Psi$ to the conventionally defined matter power spectrum via Fourier transforming the Poisson Equation \ref{poisson}, making concrete the claim the lensing potential power spectrum is a weighted matter power spectrum.
 \begin{equation}
 \Delta^2_\Psi(k,\tau) = \frac{9\Omega^2_m(\tau)H^4(\tau)}{8\pi^2}\frac{P_m(k,\tau)}{k}
 \end{equation}
@@ -1156,12 +1162,12 @@ making use of $\psi(\v{l})=\psi^*(-\v{l})$, and where we have defined
 L(\v{l},\v{l_1}) = \v{l_1}\cdot(\v{l}-\v{l_1})\psi(\v{l}-\v{l_1})+\half\finttwo{l_2}\v{l_1}\cdot(\v{l_1}+\v{l_2}-\v{l})\v{l_1}\cdot\v{l_2}\psi(\v{l_2})\psi^*(\v{l_1}+\v{l_2}-\v{l})\\
 \end{equation}
 
-Now in the flat sky limit the appropriate definition of  the (lensed) power spectrum is
+Now in the flat sky limit the appropriate definition of the (lensed) regular, not angular, power spectrum is
 \begin{equation}
 \langle T^*(\v{l})T(\v{l}')\rangle = (2\pi)^2\delta(\v{l}-\v{l}')C_l^{TT}
 \end{equation}
 
-To lowest order in the lensing potential power spectrum, we calculate, using the fact that $T$ and $\psi$ don't correlate, and Wick's theorem
+in terms of fourier modes. To lowest order in the lensing potential power spectrum, we calculate, using the fact that $T$ and $\psi$ don't correlate, and Wick's theorem
 \begin{equation}\begin{split}
 \tilde{C}_l^{T T} &\approx C_l^{T T}+\finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1})]^2 C^\psi_{|\v{l}-\v{l_1}|}C_{l_1}^{TT} - C_l^{TT}\finttwo{l_1} [\v{l}\cdot\v{l_1}]^2C_{l_1}^{\psi\psi}\\
 &=(1-l^2R^\psi)C_l^{TT}+\finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1})]^2 C^{\psi}_{|\v{l}-\v{l_1}|}C_{l_1}^{TT}
@@ -1216,9 +1222,9 @@ and also $C_l^{TE}$ omitted. Schematically, this calculation is similar to that 
 The integrals are actually all real by symmetry in $\v{l_1}$, and so we may replace the exponentials by cosines. Adding and subtracting we get
 \begin{equation}\begin{split}
 \tilde{C}_l^{EE} &= (1-l^2R^\psi)C_l^{EE}+\half \finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1})]^2 C^\psi_{|\v{l}-\v{l_1}|}\\
-&\qquad \times [(C_{l_1}^{EE}+C_{l_1}^{BB})+\cos{4(\phi_\v{l_1}-\phi_\v{l})}(C_{l_1}^{EE}+C_{l_1}^{BB})]\\
+&\qquad \times [(C_{l_1}^{EE}+C_{l_1}^{BB})+\cos{4(\phi_\v{l_1}-\phi_\v{l})}(C_{l_1}^{EE}-C_{l_1}^{BB})]\\
 \tilde{C}_l^{BB} &= (1-l^2R^\psi)C_l^{BB}+\half \finttwo{l_1}[ \v{l_1}\cdot(\v{l}-\v{l_1})]^2 C^\psi_{|\v{l}-\v{l_1}|}\\
-&\qquad \times [(C_{l_1}^{EE}+C_{l_1}^{BB})-\cos{4(\phi_\v{l_1}-\phi_\v{l})}(C_{l_1}^{EE}+C_{l_1}^{BB})]\\
+&\qquad \times [(C_{l_1}^{EE}+C_{l_1}^{BB})-\cos{4(\phi_\v{l_1}-\phi_\v{l})}(C_{l_1}^{EE}-C_{l_1}^{BB})]\\
 \label{lensedBmodes}
 \end{split}\end{equation}
 
@@ -1236,15 +1242,15 @@ independent of l. This corresponds to a white noise spectrum independent of l fo
 \begin{figure}[h]
   \includegraphics[width=0.7\linewidth]{lensingfucksus.png}
   \centering
-  \caption{Polarisation power. Spectra are shown for IGW B modes with $r=\{0.1,0.01,0.001\}$ in cyan, and lensing induced B modes in magenta. We show here the reionisation feature omitted in the previous discussion, with $\pm1\sigma$ uncertainity due to the current constraint on the optical depth to reionization shown only for $r=0.1$. The cyan dotted line is the result with no reionization. A 90\% delensed signal is shown in dotted magenta. Plots generated using CAMB \cite{CAMBInfo}, and taken from \cite{QBM}}
+  \caption{Polarisation power. Spectra are shown for IGW B modes with $r=\{0.1,0.01,0.001\}$ in cyan, and lensing induced B modes in magenta. We show here the reionisation feature omitted in the previous discussion, with $\pm1\sigma$ uncertainity due to the current constraint on the optical depth to reionization shown only for $r=0.1$. The cyan dotted line is the result with no reionization. A 90\% delensed signal is shown in dotted magenta. Plots generated using CAMB \cite{CAMBInfo}, and taken from \cite{QBM}.}
   \label{lensingisfucked}
 \end{figure}
 
-We are now in a position to demonstrate how large a problem lensing is. Figure \ref{lensingisfucked} plots the power spectrum of B modes from IGWs for various values of $r$. It also plots the power of lensed B modes over the region we expect to see an inflationary B mode signal. We see the lensing contribution heavily obscures IGW B modes, though for r sufficiently large: i.e. within roughly an order of magnitude of the current upper bound, the recombination peak may may still stand out. Several experiments have confirmed detection of these lensing B modes in the range $200<l<1500$, for example first in 2014 by the POLARBEAR collaboration \cite{polarbear}. Shown also on the figure is an ambitious delensed signal, which we discuss next.
+We are now in a position to demonstrate how large a problem lensing is. Figure \ref{lensingisfucked} plots the power spectrum of B modes from IGWs for various values of $r$. It also plots the power of lensed B modes over the region we expect to see an inflationary B mode signal. We see the lensing contribution heavily obscures IGW B modes, though for r sufficiently large: i.e. within roughly an order of magnitude of the current upper bound, the reionisation and recombination peaks may may still stand out. Several experiments have confirmed detection of these lensing B modes in the range $200<l<1500$, for example first in 2014 by the POLARBEAR collaboration \cite{polarbear}. Shown also on the figure is an ambitious delensed signal, which we discuss next.
 
 \subsubsection{Delensing}
 
-In the limit of small instrumental noise, the dominant source of B-mode power on large angular scales is gravitational lensing. For instrumental noise levels falling below the lensing white noise experiments will be lensing-limited: the limiting factor in constraining r will be the lensing B-mode. While foregrounds can be removed through exploiting multifrequency data, this is not possible for lensing. Instead, delensing algorithms have been proposed  which statistically separate the gravitational wave and lensing B-mode signals, offering the prospect for reducing the noise floor and unlocking more modes for observation. These algorithms are based on a relatively simple idea: given information about noisy observed E modes, together with information about the lensing potential and therefore the deflection field, we can estimate the large-scale lensing B-mode and subtract it from the observed B-mode.\\
+In the limit of small instrumental noise, the dominant source of B mode power on large angular scales is gravitational lensing. For instrumental noise levels falling below the lensing white noise experiments will be lensing-limited: the limiting factor in constraining r will be the lensing B mode. While foregrounds can be removed through exploiting multifrequency data, this is not possible for lensing. Instead, delensing algorithms have been proposed  which statistically separate the gravitational wave and lensing B mode signals, offering the prospect for reducing the noise floor and unlocking more modes for observation. These algorithms are based on a relatively simple idea: given information about noisy observed E modes, together with information about the lensing potential and therefore the deflection field, we can estimate the large-scale lensing B mode and subtract it from the observed B mode.\\
 
 The required estimate for the defection field can be any probe of the universes matter distribution and may be obtained externally or internally. A promising external probe is the cosmic IR background, emitted by UV heated dust surrounding early stars, due to its high degree of correlation with the lensing signal \cite{sherwin}. Typically however an internal estimate is used, i.e. from the CMB itself, and we give an example of one such estimator in the next section. \\
 
@@ -1280,7 +1286,7 @@ The $\v{L}\neq 0 $ modes therefore probe the lensing potential. To estimate the 
 \hat{\psi}(\v{L}) = N(\v{L})\finttwo{l} \tilde{T}(\v{l})\tilde{T}^*(\v{l-L})g(\v{l},\v{L})
 \end{equation}
 
-where $g(\v{l},\v{L})$ is some weighting function and $N(\v{L})$ some normalisation. To be unbiased at lowest order we want the estimator to be unbiased $\langle \hat{\psi}(\v{L}) \rangle = \psi(\v{L})$, which by the previous calculation gives
+where $g(\v{l},\v{L})$ is some weighting function and $N(\v{L})$ some normalisation. To be unbiased at lowest order we want $\langle \hat{\psi}(\v{L}) \rangle = \psi(\v{L})$, which by the previous calculation gives
 \begin{equation}
 N(\v{L})^{-1} = \finttwo{l} [(\v{L}-\v{l})\cdot\v{L}C^{TT}_{|\v{l}-\v{L}|}+\v{l}\cdot\v{L}C_l^{TT}]g(\v{l},\v{L})
 \end{equation}
@@ -1314,7 +1320,7 @@ We have constructed the estimator from solely the temperature field here. The po
 \section{Probing Inflationary Physics}
 \label{probe}
 
-The B mode diagnostic is often termed to be a `smoking gun' for inflation: if detected it would provide very strong evidence for inflation, and give us significant insight into its physics. In this section we firstly discuss why this first statement is true, and go on to discuss what additional constraining power a detection of primordial tensor like perturbations would provide.
+The B mode diagnostic is often termed to be a `smoking gun' for inflation: if detected it would provide very strong evidence for its occurrence, and give us significant insight into its physics. In this section we begin by explaining why this first statement is true, and go on to discuss what additional constraining power a detection of primordial tensor like perturbations would provide.
 
 \subsection{Inflation Alternatives}
 
@@ -1349,8 +1355,8 @@ Inflation so far is an excellent phenomenological paradigm for the early univers
 
 \begin{enumerate}
 \item Is the inflaton a particle we know about or is `new physics' beyond the Standard Model or modified gravity at play?
-\item How does the inflaton interact with the Standard Model? Inflation must eventually end and reheat the universe, creating all Standard Model particles, so it certainly must.
-\item What is the energy scale of inflation? How far does the inflaton field travel during inflation and why does it stop?
+\item How does the inflaton interact with the Standard Model? Inflation must eventually end and reheat the universe, creating all Standard Model particles, so it certainly must somehow.
+\item What is the energy scale of inflation? How far does the inflaton field travel during inflation and what causes it to stop?
 \item How many light degrees of freedom are relevant during inflation? 
 \end{enumerate}
 
@@ -1369,8 +1375,7 @@ In the slow roll approximation the tensor power spectrum depends only on the Hub
 
 \textbf{Potential Shape}\\
 
-Recall $\epsilon_V=\epsilon_V(V,V')$ and $\eta_V=\eta_V(V,V'')$. Therefore measurements of $A_t\rightarrow V$, $P_t\rightarrow V'$ and $n_s\rightarrow V''$ at some pivot scale. We can go further by introducing the running of $n_s$, i.e. its scale dependence, which gives us $V'''$. From this we may reconstruct the inflaton potential as a taylor series around $\phi_*$, corresponding to the time when fluctuations at the CMB pivot scale $k_* = 0.05Mpc^{-1}$ exit the horizon
-
+Recall $\epsilon_V=\epsilon_V(V,V')$ and $\eta_V=\eta_V(V,V'')$. Therefore measurements of $A_t\rightarrow V$, $A_s\rightarrow V'$ and $n_s\rightarrow V''$ at some pivot scale. We can go further by introducing the running of $n_s$, i.e. its scale dependence, which gives us $V'''$. From this we may reconstruct the inflaton potential as a taylor series around $\phi_*$, corresponding to the time when fluctuations at the CMB pivot scale $k_* = 0.05Mpc^{-1}$ exit the horizon
 \begin{equation}
 V(\phi) = V\rvert_{*}+V'\rvert_{*}(\phi-\phi_*)+\half V''\rvert_{*}(\phi-\phi_*)^2+\frac{1}{3}V'''\rvert_{*}(\phi-\phi_*)^3 + \ldots
 \end{equation}
@@ -1404,9 +1409,9 @@ where $N_{\text{eff}}$ is model dependent and given by
 \int_0^{N_*}\left(\frac{r(N)}{r_*}\right)^\half dN
 \end{equation}
 
-In slow roll inflation $r$ is approximately constant, but depends slightly on $N$, precisely because $\epsilon$ varies slightly during inflation. For slow roll models $r$ varies only at second order in slow roll parameters and we can estimate  $N_{\text{eff}} \approx 30-60$ to give
+In slow roll inflation $r$ is approximately constant, but depends slightly on $N$, precisely because $\epsilon$ varies slightly during inflation, and so $r$ varies only at second order in slow roll parameters. We can estimate  $N_{\text{eff}} \approx 30-60$ to give
 \begin{equation}
-\frac{\Delta \phi}{\Mp} > 1.06 \times (\frac{r_*}{0.01})^{1/2}
+\frac{\Delta \phi}{\Mp} > 1.06 \times \left(\frac{r_*}{0.01}\right)^{1/2}
 \end{equation}
 
 where the inequality comes from a conservative lower limit on $N_{\text{eff}} > 30$. We see can seperate inflation models into two (vaguely) distinct classes, depending on if $r\lessapprox 0.01$ or $r\gtrapprox 0.01$, known as small and large field models. This is the Lyth bound \cite{Lyth}.\\
@@ -1415,7 +1420,7 @@ where the inequality comes from a conservative lower limit on $N_{\text{eff}} > 
 \begin{figure}[h]
   \includegraphics[width=0.7\linewidth]{smalllargefield.png}
   \centering
-  \caption{Examples of typical small (left) and large (right) field models, with field excursion shown. Figure taken from \cite{baumannTASILecturesInflation2012}}
+  \caption{Examples of typical small (left) and large (right) field models, with field excursion shown. Figure taken from \cite{baumannTASILecturesInflation2012}.}
 \end{figure}
 
 While both small and large field models are challenging to construct consistently, and require some degree of fine tuning, large field models prove more difficult. Suppose we expand the inflaton potential in a SFSR model as 
@@ -1431,9 +1436,7 @@ A detection (or lack thereof) of $r$ in upcoming CMB experiments, with forecaste
 
 Having worked fairly model independently thus far, we give some examples of particular inflation models, and their general predictions for observables, focussing initially on SFSR. In this context, a model prescribes the potential $V$ and a number of e folds of inflation $N_*$ at some pivot scale, a kind of initial condition. From this, we may deduce two observational quantities of interest $n_s$ and $r$. \\
 
-\textbf{Large field models} \\
-
-We demonstrate the calculation alluded to above in the case of a power law potential \cite{QBM}
+We demonstrate the calculation alluded to above in the case of a power law potential, a large field model \cite{QBM}
 \begin{equation}
 V(\phi) = \half m^{4-\alpha}\phi^\alpha
 \end{equation}
@@ -1464,8 +1467,6 @@ Another important large field model is that of natural inflation, motivated by a
 V(\phi) \propto 1-\cos\frac{\phi}{\mu}
 \end{equation}
 for $\mu>\Mp$ a parameter.\\
-
-\textbf{Small field models} \\
 
 The hilltop model is a fairly typical looking small-field model, with
 
@@ -1507,7 +1508,7 @@ where $\sin^2\Delta$ parametrises the ratio between the adiabatic scalar power s
 \newpage
 \section{Prospects and Conclusion}
 
-The CMB has had a track-record of leading to major breakthroughs in cosmology. Its first detection gave concrete evidence for and shifted the community view from a steady state universe towards the mostly correct Big Bang model. Similarly, a measurement of B-modes from IGWs would have far reaching consequences both for cosmology and indeed other areas of physics today. The challenge now is to make these measurements on which this entire essay is based. There exist no major cosmological issues in doing so: through decades of theoretical work we have a very good understanding of the zoo of early universe effects that may contribute to the CMB, and in particular have been able to quantify how recombination and reionisation are expected to source anisotropies in the B mode polarisation power spectrum. We also have a good understanding of later universe effects such as lensing, and what effect we expect them to have on the CMB. \\
+The CMB has had a track-record of leading to major breakthroughs in cosmology. Its first detection gave concrete evidence for and shifted the community view from a steady state universe towards the mostly correct Big Bang model. Similarly, a measurement of B modes from IGWs would have far reaching consequences both for cosmology and indeed other areas of physics today. The challenge now is to make these measurements on which this entire essay is based. There exist no major cosmological issues in doing so: through decades of theoretical work we have a very good understanding of the zoo of early universe effects that may contribute to the CMB, and in particular have been able to quantify how recombination and reionisation are expected to source anisotropies in the B mode polarisation power spectrum. We also have a good understanding of later universe effects such as lensing, and what effect we expect them to have on the CMB. \\
 
 One can therefore attribute the lack of detection so far to two reasons. While we have a reasonable understanding of the theory of contaminants to the primary CMB, removing them is hard. Over the last few years major advances have been made in the realms of foreground separation and delensing so these are slowly becoming manageable. Secondly, as is common with astrophysics, technological advances are necessary to drive progress. The CMB was predicted an entire 25 years before its detection, not because we didn't realise its significance, but because we didn't have the telescopes to see it at the time. To detect B modes we clearly require an even greater level of sensitivity and precision than was available in even the most recent generation of CMB experiments, and so more work needs to be done on the experimental side too.\\
 
@@ -1533,7 +1534,7 @@ In spatially flat gauge, perturbations to $\zeta$ are related to those of the in
 \end{equation}
 where the bar denotes the homogeneous background, since the inflation is the dominant energy source and $\Psi = 0$. We have switched to conformal time. Therefore
 \begin{equation}
-\Delta^2_{s}(k) =(\frac{\mathcal{H}}{\bphi'})^2\Delta^2_{\delta\phi}(k)\\
+\Delta^2_{s}(k) =\left(\frac{\mathcal{H}}{\bphi'}\right)^2\Delta^2_{\delta\phi}(k)\\
 \end{equation}
 To compute the $\delta\phi$ power spectrum, we must quantise the inflaton, and briefly review how we do so here, over a quasi-de Sitter background, following \cite{baumann}. We work in conformal time, and the equations of motion simplify if we introduce a related field $f$ 
 \begin{equation}
@@ -1557,7 +1558,7 @@ after integrating by parts and making use of \ref{F2} in conformal time. In the 
 \begin{equation}
 S^{(2)} \approx \half \int d\tau d^3x \left((f')^2 - (\nabla f)^2 + \frac{a''}{a}f^2\right)
 \end{equation}
-Note since we have dropped the potential entirely, this is just the second order action for a massless scalar field. Integrating by parts and demanding $S^{(2)}=0$ gives the Muhkanov Sasaki equation, which we can write in real or Fourier space
+Note since we have dropped the potential entirely, this is just the second order action for a free massless scalar field. Integrating by parts and demanding $S^{(2)}=0$ gives the Muhkanov Sasaki equation, which we can write in real or Fourier space
 \begin{equation}\begin{split}
 f''-\nabla^2f-\frac{a''}{a}f &= 0 \\
 \Leftrightarrow \quad f''_{\v{k}} + (k^2-\frac{a''}{a})f_{\v{k}} &= 0
@@ -1600,15 +1601,6 @@ f_k(\tau) = \frac{e^{-ik\tau}}{\sqrt{2k}}\left(1-\frac{i}{k\tau}\right)
 \end{equation}
 
 Finally we may compute the power spectrum of $\delta\phi$. The power spectrum of the $f$ field is computed easily as 
-%\begin{equation}
-%\langle f_{\v{k}}f_{\v{k'}} \rangle = \langle 0|f_{\v{k}}f_{\v{k'}}|0\rangle =(2\pi)^3\delta(\v{k}+\v{k'})P_f(k)\
-%\end{equation}
-
-%by
-%
-%\begin{equation}
-%\varepsilon(r)=\varepsilon(\v{x},\v{x}+\v{r})=\fint{k} P_f(k)e^{i\v{k}\cdot\v{r}}
-%\end{equation}
 \begin{equation}
 \begin{split}
 \langle f_{\v{k}}f_{\v{k'}}\rangle &= \langle 0| (f_k(\tau)\ann{k}+f_k^*(\tau)\cre{k})(f_k(\tau)\ann{k'}+f_k^*(\tau)\cre{k'}|0\rangle \\
@@ -1620,7 +1612,7 @@ and so the dimensionless power spectra of interest is
 \Delta^2_{\delta\phi}(k) &= \frac{1}{a^2}\Delta^2_f(k)\\
 &= \frac{k^3}{2\pi^2a^2}|f_k|^2\\
 &=\frac{k^2}{4\pi^2a^2}\left(1+\frac{1}{k^2\tau^2}\right)\\
-&=\left(\frac{H}{2\pi}\right)^2\left(1+\frac{k^2}{a^2H^2}\right) \quad \text{using $a=\frac{-1}{H\tau}$}\\
+&=\left(\frac{H}{2\pi}\right)^2\left(1+\frac{k^2}{a^2H^2}\right) \quad \text{using $a=-\frac{1}{H\tau}$}\\
 \label{inflatonpower}
 \end{split}\end{equation}
 We evaluate the power spectrum at horizon crossing, when the modes become superhorizon and freeze out, to be
@@ -1636,7 +1628,7 @@ and so, making use of \ref{epsilon}
 
 \subsection{Tensors}
 
-In the previous section we avoided quantising the metric, though for tensor perturbations we are forced to. We isolate the the tensor perturbations as 
+In the previous section we used gauge freedom to avoid quantising the metric directly, though for tensor perturbations we are forced to. We isolate the the tensor perturbations as 
 \begin{equation}
 ds^2 = a^2(\tau)[-d\tau^2 + (\delta_{ij}+\xi_{ij})dx^idx^j]
 \end{equation}
@@ -1737,11 +1729,11 @@ Finally the following properties are useful
 \section{Essay Description}
 Our most promising theory for the early universe involves a phase of cosmic inflation, which not only rapidly expands and flattens the universe, but also generates the primordial density perturbations from quantum fluctuations in the inflaton field. While we have good evidence for inflation, e.g. from the Gaussianity, adiabaticity and near-scale invariance of the scalar density perturbations, one prediction of inflation has not yet been found: many inflationary models produce a stochastic background of primordial gravitational waves. A detection of this background would not only provide a definitive confirmation of inflation, but could also give new insights into the microphysics of inflation and, more broadly, physics at the highest energies.\\
 
-The best current way of finding this gravitational wave background is to search for a characteristic pattern in the polarization of the Cosmic Microwave Background (CMB), the B-mode polarization. This essay should explain the physics underlying the search for this B-mode polarization pattern, which is currently a major area of research in cosmology. The essay should first review the calculation of the gravitational wave background produced by standard single-field slow-roll inflation, a standard result described in past Part III lecture notes as well as a comprehensive review of the field \cite{QBM}. The essay should also explain why the strength of the gravitational wave background (together with the scalar spectral index) can provide powerful constraints on the properties of inflation, such as the potential shape, energy scale, and field excursion \cite{S4, QBM}.\\
+The best current way of finding this gravitational wave background is to search for a characteristic pattern in the polarization of the Cosmic Microwave Background (CMB), the B mode polarization. This essay should explain the physics underlying the search for this B mode polarization pattern, which is currently a major area of research in cosmology. The essay should first review the calculation of the gravitational wave background produced by standard single-field slow-roll inflation, a standard result described in past Part III lecture notes as well as a comprehensive review of the field \cite{QBM}. The essay should also explain why the strength of the gravitational wave background (together with the scalar spectral index) can provide powerful constraints on the properties of inflation, such as the potential shape, energy scale, and field excursion \cite{S4, QBM}.\\
 
-Drawing on \cite{S4, QBM}, past lecture notes and other resources, the essay should provide a (brief) review of the basics of CMB polarization, describe what the CMB B-mode polarization is, and explain why it is a powerful probe of inflationary gravitational waves.\\
+Drawing on \cite{S4, QBM}, past lecture notes and other resources, the essay should provide a (brief) review of the basics of CMB polarization, describe what the CMB B mode polarization is, and explain why it is a powerful probe of inflationary gravitational waves.\\
 
-The remaining parts of the essay can, to some extent, be tailored to the student’s interests. One option is to explain in detail the major observational challenges in B-mode searches for inflationary gravitational waves, discussing the problems of foregrounds (Bicep/Keck/Planck 2015) and gravitational lensing as well as mitigation methods such as multifrequency cleaning and delensing \cite{smith}. Another option is to focus more on the theoretical background, describing in detail different classes of inflationary models and what these generically predict for B-mode polarization (\cite{S4} and references therein). Students may also discuss a combination of both observational and theoretical aspects.\\
+The remaining parts of the essay can, to some extent, be tailored to the student’s interests. One option is to explain in detail the major observational challenges in B mode searches for inflationary gravitational waves, discussing the problems of foregrounds (Bicep/Keck/Planck 2015) and gravitational lensing as well as mitigation methods such as multifrequency cleaning and delensing \cite{smith}. Another option is to focus more on the theoretical background, describing in detail different classes of inflationary models and what these generically predict for B mode polarization (\cite{S4} and references therein). Students may also discuss a combination of both observational and theoretical aspects.\\
 
 \textbf{Relevant Courses}\\
 
