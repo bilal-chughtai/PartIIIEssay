@@ -90,11 +90,11 @@ The present leading paradigm for these initial few moments of the Universe is th
 
 How do we go about testing inflation? Compared to the complexity of physics on small scales, our cosmic landscape is rather simple. The cosmological principle states that on large scales we expect the universe as a whole to be homogeneous and isotropic. Were this true on all scales, life would not have formed, so it is fortunate this breaks down at some point. These tiny departures from homogeneity are precisely what modern cosmology relies on - they contain vasts amount of information about the universe's evolution. Over the past few decades an era of `precision cosmology' has been ushered in by ever more accurate measurements of the distribution of mass on cosmic scales through galaxy surveys, and through measurements of the temperature and polarization fluctuations of the cosmic microwave background (CMB). These observables link the late universe to the very early. \\
 
-The theory community has over the years produced hundreds of well-motivated models for inflation, with data now being required to validate or invalidate any particular one. The simplest, and indeed canonical models of inflation are those of so called single-field slow-roll (SFSR), which generically make a number of predictions validated by increasingly precise measurements of the above observables over the past two decades. Namely the present day spatial flatness of the universe to within 1\% and the approximate scale-free, adiabatic, and Gaussian nature of primordial density perturbations. However, there remains more that we do not know about inflation than we do: What is the physical mechanism behind it? How and why did it stop? Progress towards these may only be made by putting more stringent observational constraints on the theory space of permissible models. Finally there remains the question as to whether inflation even occurred in the first place - some believe more evidence is needed.\\
+The theory community has over the years produced hundreds of well-motivated models for inflation, with data now being required to validate or invalidate any particular one. The simplest, and indeed canonical models of inflation are those of so called single-field slow-roll (SFSR), which generically make a number of predictions validated by increasingly precise measurements of the above observables over the past two decades. Namely the present day spatial flatness of the universe to within 1\% and the approximate scale-free, adiabatic, and Gaussian nature of primordial density perturbations. However, there remains more we do not know about inflation than we do; What is the physical mechanism behind it? How and why did it stop? Progress towards these may only be made by putting more stringent observational constraints on the theory space of permissible models. Finally there remains the question as to whether inflation even occurred in the first place - some believe more evidence is needed.\\
 
 Turning to the subject of this essay, many inflationary models, including the simplest SFSR ones, predict the existence of a stochastic background of primordial inflationary gravitational waves (IGWs), generated through tensor-like quantum-fluctuations of the metric during inflation, which have yet to be detected. Our best strategy for detecting these is through searching for a characteristic `B mode' polarisation pattern in the CMB. Inflationary Scalar (i.e. density) perturbations source CMB temperature anisotropies, as well as an `E mode' polarisation pattern. Tensor perturbations on the other hand source temperature anisotropies, E mode polarisation and crucially, B mode polarisation too. The B mode diagnostic is therefore our most sensitive test of primordial tensor perturbations - uncontaminated by dominant scalar perturbations.\\
 
-So far we have made precise measurements of the temperature anisotropy and E mode signal, giving us strong constraints on primordial density perturbations, but have yet to detect these B modes from IGWs. At present, a lack of detection has bounded the `tensor-to-scalar' ratio $r$ to less than 1 part in 10. A detection of this `inflationary B mode signal' from IGWs has been termed a `smoking gun' for inflation as it will provide very strong evidence it occurred, and further will allow us to strongly constrain its physics. A lack of detection of IGWs and therefore $r$ is not useless to us either - it will put more stringent upper bounds on $r$, invalidating certain classes of models predicting detectably large tensor amplitudes.\\
+So far we have made precise measurements of the temperature anisotropy and E mode signal, giving us strong constraints on primordial density perturbations, but have yet to detect these B modes from IGWs. At present, a lack of detection has bounded the `tensor-to-scalar' ratio $r$ to less than 1 part in 10. A detection of this `inflationary B mode signal' from IGWs has been termed a `smoking gun' for inflation as it will provide very strong evidence that inflation did occur, and further will allow us to strongly constrain its physics. A lack of detection of IGWs and therefore $r$ is not useless to us either - it will put more stringent upper bounds on $r$, invalidating certain classes of models predicting detectably large tensor amplitudes.\\
 
 \subsection{Outline}
 
@@ -506,7 +506,7 @@ The last line follows from the parity invariance of power spectra and the parity
 \begin{equation}
 \hat{C}_l^{XY} = \frac{1}{2l+1}\sum_m X_{lm}^*Y_{lm}
 \end{equation}
-for $X,Y \in \{T,E,B\}$. Their variance may be easily calculated via Wick:
+for $X,Y \in \{T,E,B\}$. Their variance may be easily calculated via Wick
 \begin{equation}
 \text{var }\hat{C}_l^{XX}=\frac{2}{2l+1}C_l^{XX}C_l^{XX}
 \end{equation}
@@ -658,7 +658,7 @@ g(\tau) = g(\tau_R)e^{-\frac{(\tau-\tau_R)^2}{2\Delta\tau_R^2}}
 where $\tau_R$ is the time of recombination, $\Delta\tau_R$ is its width, and $g(\tau_R)$ is the amplitude. We will also make use of an approximation for the optical depth during recombination. Writing $\kappa = e^{-f(\tau)}$, consistency between \ref{RH1} and \ref{RH2} requires $\kappa \approx e^{-(\tau-\tau_R) / \Delta\tau_R}$ and $g(\tau_R)\approx 1/(e\Delta\tau_R)$ near $\tau_R$. 
 
 \begin{figure}[h]
-  \includegraphics[width=0.5\linewidth]{recombinationhistory.png}
+  \includegraphics[width=0.4\linewidth]{recombinationhistory.png}
   \centering
   \caption{Recombination history. Plotted are the visibility function and optical depth calculated numerically in bold, and the Gaussian approximation with $\Delta\tau_R=15.7$, dashed. Figure from \cite{Pritchard}. }
 \end{figure}
@@ -727,7 +727,6 @@ If we had chosen to work with Q and U here, in order to sum up Fourier modes wit
 \subsubsection{Tensor Power Spectra}
 
 We see tensor perturbations have induced both E and B modes. Thankfully the form of these expressions are very similar, allowing us to compute all the power spectra in one go. We'll begin by calculating the TT power spectrum $C_l^{TT}$ sourced by tensor perturbations. Using the expression for spherical multipole coefficients 
-
 \begin{equation}
 T_{lm} = \int d\Omega Y_{lm}^*(\unit{n})\Delta_T(\tau_0,\unit{n})
 \end{equation}
@@ -802,7 +801,7 @@ which are non vanishing only for $XY \in \{TE, TT, EE, BB\}$. We kept the factor
 \begin{figure}[h]
   \includegraphics[width=0.5\linewidth]{tensorpowerspectra.png}
   \centering
-  \caption{Tensor power spectra, with vertical lines indicating the three important angular scales, horizon size at recombination $\tau_R$, horizon size at matter-radiation equality $\tau_{eq}$ and width of last-scattering surface $\Delta\tau_R$. Reionisationless model used.}
+  \caption{Tensor power spectra in reionisationless model, with vertical lines indicating the three important angular scales, horizon size at recombination $\tau_R$, horizon size at matter-radiation equality $\tau_{eq}$ and width of last-scattering surface $\Delta\tau_R$.}
   \label{tensorpower}
 \end{figure}
 
@@ -899,15 +898,6 @@ which can be seen in the power spectra, clearly demonstrating the peak at $l_R$ 
 
 \subsubsection{Projection Factors}
 
-When viewing the CMB we are viewing the projection of a 3D system onto a sphere. We can think of the weird looking spherical bessel like terms as projection factors, defining
-\begin{align}
-P_{Tl}(x) &= \frac{j_l(x)}{x^2}\\
-P_{El}(x) &= -j_l(x) +j_l''(x)+\frac{2j_l(x)}{x^2} + \frac{4j_l'(x)}{x}\\
-P_{Bl}(x) &= 2j_l'(x)+\frac{4j_l(x)}{x}
-\end{align}
-
-with argument $x=k(\tau_0-\tau)$, the lookback time scaled by wavenumber. 
-
 \begin{figure}[h]
   \includegraphics[width=0.7\linewidth]{projection.png}
   \label{proj}
@@ -915,8 +905,14 @@ with argument $x=k(\tau_0-\tau)$, the lookback time scaled by wavenumber.
   \caption{Squares of projection terms for $l=50$. Dashed curve shows time averaged analytic approximations used.}
 \end{figure}
 
+When viewing the CMB we are viewing the projection of a 3D system onto a sphere. We can think of the weird looking spherical bessel like terms as projection factors, defining
+\begin{align}
+P_{Tl}(x) &= \frac{j_l(x)}{x^2}\\
+P_{El}(x) &= -j_l(x) +j_l''(x)+\frac{2j_l(x)}{x^2} + \frac{4j_l'(x)}{x}\\
+P_{Bl}(x) &= 2j_l'(x)+\frac{4j_l(x)}{x}
+\end{align}
 
-These are all peaked at $x\approx l$, i.e. $C_l$ is dominated by the behaviour of the source at $x\approx l$. The polarisation source function is strongly peaked at $\tau=\tau_R$, implying $k\approx l/(\tau_0-\tau_R)$ dominates the power spectrum. The departure of these projectors from a delta function, ie the large $x>l$ tail, indicates larger wave number modes also contribute to power at this angular scale, giving an overall smoothing to the power spectrum.\\
+with argument $x=k(\tau_0-\tau)$, the lookback time scaled by wavenumber. These are all peaked at $x\approx l$, i.e. $C_l$ is dominated by the behaviour of the source at $x\approx l$. The polarisation source function is strongly peaked at $\tau=\tau_R$, implying $k\approx l/(\tau_0-\tau_R)$ dominates the power spectrum. The departure of these projectors from a delta function, ie the large $x>l$ tail, indicates larger wave number modes also contribute to power at this angular scale, giving an overall smoothing to the power spectrum.\\
 
 There exist several approximations for spherical bessel functions at $x\gg l$ and $x\ll l$, but unfortunately for our purposes we are interested in the peaks at $x\approx l$. Noticing the projection functions only really contribute for $x>l$ we may use the approximation valid for $x>l$
 
@@ -1367,8 +1363,8 @@ In the slow roll approximation the tensor power spectrum depends only on the Hub
 
 \begin{equation}
 \begin{split}
-\Delta^2_s(k) &= \frac{V}{24\pi^2\epsilon\Mp^4} \qquad n_s=2\eta_V-6\epsilon_V\\
-\Delta^2_t(k) &= \frac{2V}{3\pi^2\Mp^4} \qquad n_t=-2\eta_V \qquad r=16\epsilon_V
+\Delta^2_s(k) &= \frac{V}{24\pi^2\epsilon\Mp^4} \hspace{4mm}\quad n_s=2\eta_V-6\epsilon_V\\
+\Delta^2_t(k) &= \frac{2V}{3\pi^2\Mp^4}  \hspace{4mm}\qquad n_t=-2\eta_V \qquad r=16\epsilon_V
 \end{split}
 \label{asdiufh}
 \end{equation}
@@ -1435,9 +1431,9 @@ A detection (or lack thereof) of $r$ in upcoming CMB experiments, with forecaste
 
 \subsection{Inflation Models}
 
-Having worked fairly model independently thus far, we give some examples of particular inflation models, and their general predictions for observables, focussing initially on SFSR. In this context, a model prescribes the potential $V$ and a number of e folds of inflation $N_*$ at some pivot scale, a kind of initial condition. From this, we may deduce two observational quantities of interest $n_s$ and $r$. \\
+Having worked fairly model independently thus far, we give some examples of particular inflation models, and their general predictions for observables, focussing initially on SFSR. In this context, a model prescribes the potential $V$ and a number of e folds of inflation $N_*$ at some pivot scale, a kind of initial condition. From this, we may deduce two observational quantities of interest $n_s$ and $r$. There exist many such models, here we'll just list a few. \\
 
-We demonstrate the calculation alluded to above in the case of a power law potential, a large field model \cite{QBM}
+We demonstrate the calculation alluded to above in the case of a simple large field power law model \cite{QBM}
 \begin{equation}
 V(\phi) = \half m^{4-\alpha}\phi^\alpha
 \end{equation}
@@ -1451,33 +1447,32 @@ and therefore
 \begin{equation}
 \begin{split}
 N = \int_{\phi_e}^\phi \frac{d\phi}{\Mp}\frac{1}{\sqrt{2\epsilon}} 
-= \frac{1}{2\Mp^2}(\phi^2-\phi^2_e)\\
+= \frac{1}{2\Mp^2}(\phi^2-\phi^2_e)
 = \frac{\alpha}{4}\left(\frac{1}{\epsilon-1}\right)
 \end{split}
 \end{equation}
 
-using $\epsilon(\phi_e)=1$. This gives $\epsilon_V \approx \frac{\alpha}{4N}$ to first order in slow roll parameters. Using this, one calculates $\eta_V=\frac{\alpha-1}{2N}$. Finally we obtain using \ref{spectral} 
+using $\epsilon(\phi_e)=1$. This gives $\epsilon_V \approx \frac{\alpha}{4N}$. Using this, one calculates $\eta_V=\frac{\alpha-1}{2N}$. Finally we obtain using \ref{spectral} 
 \begin{equation}
 n_s-1 = -\frac{2+\alpha}{2N} \qquad r=\frac{4\alpha}{N}
 \end{equation}
 
 %We may break the degeneracy by expressing  $N=N(\alpha, n_s)$, and therefore $r=r(\alpha, n_s)$, and then using the Planck best fit value of $n_s=0.968$. We can also extract the energy scale at the end of inflation as  $V(\phi_e)=m^{4-\alpha}(\frac{\alpha\Mp}{\sqrt{2}})^\alpha/2$, and also infer the field excursion.\\
 
-Another important large field model is that of natural inflation, motivated by axions
-\begin{equation}
-V(\phi) \propto 1-\cos\frac{\phi}{\mu}
-\end{equation}
-for $\mu>\Mp$ a parameter.\\
-
+%Another important large field model is that of natural inflation, motivated by axions
+%\begin{equation}
+%V(\phi) \propto 1-\cos\frac{\phi}{\mu}
+%\end{equation}
+%for $\mu>\Mp$ a parameter. 
 The hilltop model is a fairly typical looking small-field model, with
-
 \begin{equation}
 V(\phi) \propto 1-\left(\frac{\phi}{\mu}\right)^p + \ldots 
 \end{equation}
 
-for $p>2$, as $p=2$ turns out to be large field, and $\phi<\mu \ll \Mp$. This predicts $n_s-1 \approx \frac{-2}{N}\frac{p-1}{p-2}$ and an upper limit on $r\lesssim 8\frac{p}{N(p-2)}(\frac{8\pi}{Np(p-2)})^{p/(p-2)}$. The potential may be considered as an approximation to a generic symmetry breaking potential, with the dots denoting higher order terms becoming important near the end of inflation and during reheating. \\
+for $p>2$ and $\phi<\mu \ll \Mp$ and may be considered as an approximation to a generic symmetry breaking potential, with the dots denoting higher order terms becoming important near the end of inflation and during reheating. \\
+%This predicts $n_s-1 \approx \frac{-2}{N}\frac{p-1}{p-2}$ and an upper limit on \\$r\lesssim 8\frac{p}{N(p-2)}(\frac{8\pi}{Np(p-2)})^{p/(p-2)}$.
 
-These parameters provide a simple way of meeting SFSR models with observational data, as demonstrated for some of the above models and many others in figure \ref{inflationconstraints}. In general SFSR models can have a blue or red tilt, with current measurements of the primordial scalar power ruling out all blue models. From the precise shape of the data we get more stringent constraints. For progress to be made we must further constrain the range of allowed $r$ values - a detection of $r$ to any uncertainty would do so significantly, collapsing the semicircular contour in the $(n_s,r)$ plane into a tighter elliptical shape.\\
+These parameters provide a simple way of meeting SFSR models with observational data, as demonstrated for the above models and many others in figure \ref{inflationconstraints}. In general SFSR models can have a blue or red tilt, with current measurements of the primordial scalar power ruling out all blue models. From the precise shape of the data we get more stringent constraints. For progress to be made we must further constrain the range of allowed $r$ values - a detection of $r$ to any uncertainty would do so significantly, collapsing the semicircular contour in the $(n_s,r)$ plane into a tighter elliptical shape.\\
 
 \begin{figure}[h]
   \includegraphics[width=0.7\linewidth]{modeldepconstraints.png}
@@ -1489,7 +1484,7 @@ These parameters provide a simple way of meeting SFSR models with observational 
 
 In this section we have only scratched the surface of the vast literature on inflationary models. We have worked only with SFSR models, though by taking a non trivial kinetic term in \ref{inflationaction} one gets a more generic single field model. One can also add more effective fields, extending the number of possibilities massively though diminishing predictive power, to obtain a multifield model. We can develop further plausible models by introducing a non minimal coupling to gravity, or by modifying gravity entirely, though this last one is substantially harder to do consistently \cite{baumannTASILecturesInflation2012}.\\
 
-For illustration beyond SFSR, we describe briefly how we may be able to distinguish some of these classes of model by a measurement of the scale dependence of the tensor power spectrum. To see this, working through a similar calculation to ours, one finds for generic single field models the scalar to tensor ratio depends on the sound speed \cite{CMBPol}
+For illustration beyond SFSR, we describe briefly how we may be able to distinguish some of these classes of model by a measurement of the scale dependence of the tensor power spectrum. To see this, working through a similar calculation to ours, one finds for generic single field models the tensor to scalar ratio depends on the sound speed \cite{CMBPol}
 \begin{equation}
 c_s^2 = \frac{P_{,X}}{\rho_X} = \frac{P_{,X}}{P_{,X}+2XP_{,XX}}
 \end{equation}
@@ -1504,18 +1499,18 @@ providing an experimental test for non canonical physics. Multifield models enjo
 r=-8n_t\sin^2\Delta
 \end{equation}
 
-where $\sin^2\Delta$ parametrises the ratio between the adiabatic scalar power spectrum at horizon exit during inflation and that which is observed today. In two field inflation this is directly measurable. We see these consistency criterion can be used as generic tests for broad families of inflation models, given a measurement of the scale dependence of tensor power spectrum $n_t$, a measurement still far in the future.
+where $\sin^2\Delta$ parametrises the ratio between the adiabatic scalar power spectrum at horizon exit during inflation and that which is observed today. In two field inflation this is directly measurable. These consistency criterion may be used as generic tests for broad families of inflation models, though do rely on a measurement of the scale dependence of tensor power spectrum $n_t$, which is still far in the future.
 
 \newpage
 \section{Prospects and Conclusion}
 
-The CMB has had a track-record of leading to major breakthroughs in cosmology. Its first detection for instance gave a further independent probe of the expansion of the universe, firmly shifting the community view from a steady state universe towards the mostly correct Big Bang model described by the adiabatically expanding and cooling FLRW solution. Its small temperature anisotropies have given us incredibly precise measurements of certain important cosmological parameters over the past few decades. B modes from IGWs are the next frontier - a measurement of them would have far reaching consequences both for cosmology as well as other areas of physics today. The challenge now is to make these measurements on which this entire essay is based. There exist no major cosmological issues in doing so; through decades of theoretical work we have a good quantitative understanding of the zoo of early and late universe effects that may contribute to the CMB temperature anisotropies and polarisation, up to some free parameters.\\
+The CMB has had a strong track-record of providing major breakthroughs in cosmology. Its first detection gave further independent evidence for the expansion of the universe, firmly shifting the community view from a `steady state' universe towards the mostly correct Big Bang model described by an adiabatically expanding and cooling FLRW solution. Its small temperature anisotropies have given us incredibly precise measurements of certain important cosmological parameters over the past few decades. B modes from IGWs are the next frontier - a measurement of them would have far reaching consequences for cosmology as well as other areas of physics today. The challenge now is to make these measurements on which this entire essay is based. There exist no major cosmological issues in doing so; through decades of theoretical work we have a good quantitative understanding of the zoo of early and late universe effects that may contribute both to CMB temperature anisotropies and polarisation, up to some free parameters.\\
 
-We can therefore attribute the lack of detection so far to two reasons. While we have some understanding of the theory of contaminants to the primary CMB, removing them to reveal the small inflationary B mode signal remains difficult. Over the last few years major advances have been made in the realms of foreground separation and delensing so these are slowly becoming manageable. Secondly, as is common with astrophysics, technological advances are necessary to drive progress. The CMB was predicted an entire 17 years before its first detection in 1965, and a further 25 years followed before COBE first measured its anisotropies in 1990. The roadblock was always technological, not that we did not appreciate the potential significance of these discoveries. To detect inflationary B modes we clearly require an even greater level of sensitivity and precision than was available in even the most recent generation of CMB experiments, and so more work needs to be done on the experimental side too.\\
+We can therefore attribute the lack of detection so far to two reasons. While we have a reasonable understanding of the theory of contaminants to the primary CMB, removing them to reveal the small inflationary B mode signal remains difficult. Over the last few years major advances have been made in the realms of foreground separation and delensing so these are slowly becoming manageable. Secondly, as is common with astrophysics, technological advances are necessary to drive progress. The CMB was predicted an entire 17 years before its first detection in 1965, and a further 25 years followed before COBE first measured its anisotropies in 1990. The roadblock was always technological, not that we did not appreciate the potential significance of these discoveries. To detect inflationary B modes we clearly require an even greater level of sensitivity and precision than was available in even the most recent generation of CMB experiments, and so more work needs to be done on the experimental side too.\\
 
 Given the significance a detection would have, there is a massive global effort under way in attempting a measurement of B modes. If $r$ is not too far below the current upper bound, which is certainly plausible given the vast array of well motivated inflationary models whose prediction for $r$ lies in this large field regime, a detection may be just around the corner, in the next few years. Our best prospects for this are through complementing upcoming ground based experiments such as CMB-S4, with space based missions such as LiteBIRD, PIXIE or COrE \cite{S4}. Space based satellite or balloon missions have the advantage of little or no obscuring atmospheric noise, and wider possible sky coverage allowing access to low $l$ modes, whereas ground based measurements will generally focus on smaller angular scales. CMB-S4 for example boasts a target sensitivity of $\sigma(r) \sim 10^{-3}$, through focussing on the degree scale recombination peak expected in the B mode spectrum. \\
 
-If successful, we will unlock a new probe of fundamental physics at some of the highest energy scales expected in nature and earliest times we may expect to have access to. It will provide definitive proof of inflation, and would constrain its properties significantly. Further work into characterising this IGW signal through measurements of $n_t$ and other parameters will provide us with further insights. The far reaching consequences of this make the considerable effort being put into detecting these primordial B modes completely worth it, despite our lack of success so far. Even if unsuccesful, this effort is not in vain - a lack of detection while not giving concrete evidence for inflation would still significantly constrain it. Furthermore, the inflationary epoch is not the sole goal of CMB science right now, and so much of this work carries over to other important science goals such as better constraining neutrino physics, dark matter, and dark energy \cite{S4}.
+If successful, we will unlock a new probe of fundamental physics at some of the highest energy scales expected in nature and earliest times we may expect to have access to. It will provide definitive proof of inflation, and would constrain its properties significantly. Further work into characterising this IGW signal through measurements of $n_t$ and other parameters will provide us with further insights. The far reaching consequences of this make the considerable effort being put into detecting these inflationary B modes completely worth it, despite our lack of success so far. Even if unsuccesful, this effort is not in vain - a lack of detection to high sensitivity, while not giving concrete evidence for inflation, would still significantly constrain it. Furthermore, the inflationary epoch is not the sole goal of CMB science right now, and so much of this work carries over to other important science goals such as better constraining neutrino physics, dark matter, and dark energy \cite{S4}.
 
 
 
